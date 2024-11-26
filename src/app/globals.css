@@ -62,9 +62,3 @@
     -ms-overflow-style: none;
   }
 }
-
-/* @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-} */
