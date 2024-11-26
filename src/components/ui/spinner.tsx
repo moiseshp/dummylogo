@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils';
-import { IconLoader2 } from '@tabler/icons-react';
+import { Loader2 } from 'lucide-react';
 
 const Spinner = ({
   className,
@@ -13,7 +13,7 @@ const Spinner = ({
       )}
       {...props}
     >
-      <IconLoader2 className="animate-spin dark:text-white" />
+      <Loader2 className="animate-spin dark:text-white" />
     </div>
   );
 };
