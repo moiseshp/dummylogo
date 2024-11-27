@@ -1,10 +1,13 @@
 'use client';
 import * as React from 'react';
 import { BrandLogo } from '@/components/brand-logo';
-import { ChevronDown, Circle } from 'lucide-react';
+import { Circle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { LogoNameEditor } from './logo-name-editor';
 import Link from 'next/link';
-import TextEditor from './text-editor';
+import { CategoryPicker } from './category-picker';
+import { LayoutPicker } from './layout-picker';
+import { ThemeToggle } from '@/components/theme-toggle';
 
 export const Navbar = () => {
   return (
@@ -13,15 +16,10 @@ export const Navbar = () => {
         <BrandLogo />
       </Link>
       <nav className="flex items-center gap-x-4 h-full text-muted-foreground">
-        <TextEditor />
-        <Button variant="ghost">
-          Categorias
-          <ChevronDown className="w-4 h-4" />
-        </Button>
-        <Button variant="ghost">
-          Layout
-          <ChevronDown className="w-4 h-4" />
-        </Button>
+        <ThemeToggle />
+        <LogoNameEditor />
+        <CategoryPicker />
+        <LayoutPicker />
         <Button variant="ghost">
           Color Text
           <Circle className="w-4 h-4" />

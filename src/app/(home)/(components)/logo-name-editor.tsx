@@ -5,7 +5,7 @@ import { useLogoStore } from '@/app/(home)/(hooks)/use-logo-store';
 import { Button } from '@/components/ui/button';
 import { useDebounce } from '@/hooks/use-debounce';
 
-const TextEditor = () => {
+export const LogoNameEditor = () => {
   const setText = useLogoStore((state) => state.setText);
   const [inputText, setInputText] = useState<string>('');
   const debouncedValue = useDebounce(inputText);
@@ -20,14 +20,19 @@ const TextEditor = () => {
   }, [debouncedValue, setText]);
 
   return (
-    <div className="hover:bg-secondary/80 transition px-3 rounded-md w-80">
+    <div className="hover:bg-muted-foreground/10 transition pl-3 pr-1 rounded-md w-80">
       <Input
         placeholder="Type your text"
         className="border-none shadow-none focus-visible:ring-0 w-80"
         leftIcon={<PencilLine className="w-4 h-4" />}
         rightIcon={
           inputText && (
-            <Button size="icon" variant="ghost" onClick={handleInputClear}>
+            <Button
+              size="icon"
+              variant="link"
+              className="rounded-full text-inherit"
+              onClick={handleInputClear}
+            >
               <X className="w-4 h-4" />
             </Button>
           )
@@ -38,5 +43,3 @@ const TextEditor = () => {
     </div>
   );
 };
-
-export default TextEditor;

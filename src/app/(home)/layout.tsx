@@ -4,6 +4,7 @@ import { baseFont } from '@/app/fonts';
 import { Navbar } from '@/app/(home)/(components)/navbar';
 import { cn } from '@/lib/utils';
 import '@/app/globals.css';
+import { ThemeProvider } from '@/components/theme-provider';
 
 // const accentFont = AccentFont({
 //   subsets: ['latin'],
@@ -23,27 +24,34 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         {/* <script src="https://unpkg.com/react-scan/dist/auto.global.js" async /> */}
       </head>
       <body
         // className={`${baseFont.className} ${accentFont.variable}`}
         className={cn(
-          'flex flex-col min-h-screen',
+          'flex flex-col min-h-screen bg-muted',
           baseFont.className,
           // accentFont.variable,
         )}
       >
-        <header className="sticky top-0 border-b bg-white">
-          <Navbar />
-        </header>
-        <main className="flex flex-col flex-grow">{children}</main>
-        <footer className="bg-muted">
-          <div className="container text-center text-xs text-muted-foreground py-4">
-            Copyright © 2021 — 2024 Indian Type Foundry. All rights reserved.
-          </div>
-        </footer>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <header className="sticky top-0 border-b z-10 bg-inherit">
+            <Navbar />
+          </header>
+          <main className="flex flex-col flex-grow">{children}</main>
+          <footer>
+            <div className="container text-center text-xs text-muted-foreground py-4">
+              Copyright © 2021 — 2024 Indian Type Foundry. All rights reserved.
+            </div>
+          </footer>
+        </ThemeProvider>
       </body>
     </html>
   );
