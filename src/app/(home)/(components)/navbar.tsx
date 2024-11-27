@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 import { BrandLogo } from '@/components/brand-logo';
-import { Circle } from 'lucide-react';
+import { CircleIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { LogoNameEditor } from './logo-name-editor';
 import Link from 'next/link';
@@ -22,11 +22,11 @@ export const Navbar = () => {
         <LayoutPicker />
         <Button variant="ghost">
           Color Text
-          <Circle className="w-4 h-4" />
+          <CircleIcon className="w-4 h-4" />
         </Button>
         <Button variant="ghost">
           Color Icon
-          <Circle className="w-4 h-4" />
+          <CircleIcon className="w-4 h-4" />
         </Button>
         <Button>Reset all</Button>
       </nav>

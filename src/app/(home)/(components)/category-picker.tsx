@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDownIcon } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -19,7 +19,7 @@ export const CategoryPicker = () => {
       <DropdownMenuTrigger asChild>
         <Button variant="ghost">
           Category
-          <ChevronDown className="w-4 h-4" />
+          <ChevronDownIcon className="w-4 h-4" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
