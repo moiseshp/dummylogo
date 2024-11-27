@@ -1,8 +1,11 @@
+import Link from 'next/link';
+
 export default function Home() {
   return (
     <div className="grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-0 -mt-[1px]">
       {Array.from({ length: 40 }).map((_, i) => (
-        <div
+        <Link
+          href={`/logo-${i + 1}`}
           key={i}
           className="flex items-center bg-white justify-center h-96 border -mr-[1px] -mb-[1px]"
         >
@@ -15,7 +18,7 @@ export default function Home() {
               autem in?
             </p>
           </div>
-        </div>
+        </Link>
       ))}
     </div>
   );

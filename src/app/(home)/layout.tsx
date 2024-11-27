@@ -4,6 +4,7 @@ import { baseFont } from '@/app/fonts';
 import { Navbar } from '@/app/(home)/(components)/navbar';
 import { cn } from '@/lib/utils';
 import '@/app/globals.css';
+import Link from 'next/link';
 
 // const accentFont = AccentFont({
 //   subsets: ['latin'],
@@ -36,7 +37,9 @@ export default function RootLayout({
         )}
       >
         <header className="sticky top-0 border-b bg-white">
-          <Navbar />
+          <Link href="/">
+            <Navbar />
+          </Link>
         </header>
         <main className="flex flex-col flex-grow">{children}</main>
         <footer className="bg-muted">
