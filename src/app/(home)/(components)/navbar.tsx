@@ -15,7 +15,7 @@ export const Navbar = () => {
       <Link href="/">
         <BrandLogo />
       </Link>
-      <nav className="flex items-center gap-x-4 h-full text-muted-foreground">
+      <nav className="flex items-center gap-x-4 h-full">
         <ThemeToggle />
         <LogoNameEditor />
         <CategoryPicker />

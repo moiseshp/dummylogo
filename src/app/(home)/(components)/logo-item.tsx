@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils';
 import { useLogoStore } from '../(hooks)/use-logo-store';
 import { Button } from '@/components/ui/button';
 import { DownloadIcon, LinkIcon } from 'lucide-react';
+import { Separator } from '@/components/ui/separator';
 
 const layoutOptions = {
   left: 'flex-row',
@@ -16,18 +17,33 @@ const layoutOptions = {
 const LogoItem = memo(({ text }: any) => {
   const layout = useLogoStore((state) => state.layout);
   return (
-    <div className="h-96 flex flex-col relative hover:bg-white dark:hover:bg-white/10 transition-all border -mr-[1px] -mb-[1px]">
-      <div className="h-16 flex items-center px-6 text-xs text-muted-foreground">
-        {['Tech', 'Mode'].map((item) => (
+    <div className="h-96 flex flex-col relative transition-all border -mr-[1px] -mb-[1px] text-muted-foreground hover:text-primary">
+      <div className="h-16 flex items-center px-6 text-xs">
+        <div>
+          <span>Google Font: </span>
           <Button
-            key={item}
             variant="link"
-            size="sm"
-            className="mr-2 text-inherit"
+            className="font-normal text-xs !text-inherit"
+            asChild
           >
-            {item}
+            <Link href={`/logo-${text}`}>Outfit</Link>
           </Button>
-        ))}
+        </div>
+        <div className="w-5">
+          <Separator orientation="vertical" className="mx-2" />
+        </div>
+        <div>
+          {['Tech', 'Mode'].map((item) => (
+            <Button
+              key={item}
+              variant="link"
+              size="sm"
+              className="mr-2 text-inherit"
+            >
+              {item}
+            </Button>
+          ))}
+        </div>
       </div>
       <section className="flex-grow flex items-start p-6">
         <div className={cn('flex items-center gap-4', layoutOptions[layout])}>
@@ -35,16 +51,21 @@ const LogoItem = memo(({ text }: any) => {
           <p className="text-2xl font-bold">Logo - {text}</p>
         </div>
       </section>
-      <div className="h-16 flex items-center px-6 text-xs justify-between text-muted-foreground">
+      <div className="h-16 flex items-center px-6 text-xs justify-between">
         <div>
-          <Button size="sm" variant="ghost">
+          <Button size="sm" variant="ghost" className="!text-inherit">
             <DownloadIcon />
           </Button>
-          <Button size="sm" variant="ghost">
+          <Button size="sm" variant="ghost" className="!text-inherit">
             <LinkIcon />
           </Button>
         </div>
-        <Button variant="ghost" size="sm" className="font-normal" asChild>
+        <Button
+          variant="ghost"
+          size="sm"
+          className="font-normal !text-inherit"
+          asChild
+        >
           <Link href={`/logo-${text}`}>View examples</Link>
         </Button>
       </div>

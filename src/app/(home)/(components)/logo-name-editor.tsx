@@ -20,7 +20,7 @@ export const LogoNameEditor = () => {
   }, [debouncedValue, setText]);
 
   return (
-    <div className="hover:bg-muted-foreground/10 transition pl-3 pr-1 rounded-md w-80">
+    <div className="text-muted-foreground hover:bg-muted-foreground/10 transition pl-3 pr-1 rounded-md w-80">
       <Input
         placeholder="Type your text"
         className="border-none shadow-none focus-visible:ring-0 w-80"
