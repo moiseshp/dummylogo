@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { BrandLogo } from '@/components/brand-logo';
 // import { Input as InputIcon } from '@/components/ui/input';
-import { ChevronDown, Circle, Pencil, PencilLine } from 'lucide-react';
+import { ChevronDown, Circle, PencilLine } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
