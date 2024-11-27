@@ -1,46 +1,43 @@
 'use client';
 import * as React from 'react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { cn } from '@/lib/utils';
-
-const menuItems = [
-  {
-    route: '/',
-    text: 'All Logos',
-  },
-  {
-    route: '/favorites',
-    text: 'Favorites',
-  },
-  {
-    route: '/examples',
-    text: 'Examples',
-  },
-];
+import { BrandLogo } from '@/components/brand-logo';
+// import { Input as InputIcon } from '@/components/ui/input';
+import { ChevronDown, Circle, Pencil, PencilLine } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 
 export const Navbar = () => {
   // const path = usePathname();
 
   return (
-    <header className="sticky top-0 border-b h-24">
-      <div className="container h-full flex items-center justify-between mx-auto">
-        <div>Dummylogo</div>
-        <nav className="flex gap-x-4 h-full">
-          {/* {menuItems.map(({ route, text }) => (
-            <Link
-              key={route}
-              href={route}
-              className={cn(
-                'px-4 transition border-b hover:border-black flex items-center -mb-[1px]',
-                route === path && 'bg-slate-100',
-              )}
-            >
-              {text}
-            </Link>
-          ))} */}
-        </nav>
-      </div>
-    </header>
+    <div className="h-16 flex items-center justify-between gap-x-10 px-6">
+      <BrandLogo />
+      <nav className="flex items-center gap-x-20 h-full">
+        <div className="flex items-center gap-3 w-96">
+          <PencilLine className="w-4 h-4" />
+          <Input
+            placeholder="Type your text"
+            className="border-none shadow-none focus-visible:ring-0"
+          />
+        </div>
+        <Button variant="ghost">
+          Categorias
+          <ChevronDown className="w-4 h-4" />
+        </Button>
+        <Button variant="ghost">
+          Layout
+          <ChevronDown className="w-4 h-4" />
+        </Button>
+        <Button variant="ghost">
+          Color Text
+          <Circle className="w-4 h-4" />
+        </Button>
+        <Button variant="ghost">
+          Color Icon
+          <Circle className="w-4 h-4" />
+        </Button>
+        <Button>Reset all</Button>
+      </nav>
+    </div>
   );
 };

@@ -1,4 +1,5 @@
-import { Roboto_Flex as BaseFont } from 'next/font/google';
+// import { Roboto_Flex as BaseFont } from 'next/font/google';
+import { Outfit as BaseFont } from 'next/font/google';
 
 const baseFont = BaseFont({
   subsets: ['latin'],
