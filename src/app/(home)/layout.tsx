@@ -1,14 +1,16 @@
-import { Licorice as AccentFont } from 'next/font/google';
+// import { Licorice as AccentFont } from 'next/font/google';
 import type { Metadata } from 'next';
 import { baseFont } from '@/app/fonts';
+import { Navbar } from '@/app/(home)/(components)/navbar';
 import '@/app/globals.css';
+import { cn } from '@/lib/utils';
 
-const accentFont = AccentFont({
-  subsets: ['latin'],
-  display: 'swap',
-  weight: ['400'],
-  variable: '--font-fancy',
-});
+// const accentFont = AccentFont({
+//   subsets: ['latin'],
+//   display: 'swap',
+//   weight: ['400'],
+//   variable: '--font-fancy',
+// });
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -22,8 +24,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${baseFont.className} ${accentFont.variable}`}>
-        {children}
+      <head>
+        {/* <script src="https://unpkg.com/react-scan/dist/auto.global.js" async /> */}
+      </head>
+      <body
+        // className={`${baseFont.className} ${accentFont.variable}`}
+        className={cn('flex flex-col min-h-screen', baseFont.className)}
+      >
+        <Navbar />
+        <main className="flex flex-col flex-grow">
+          <div className="container">{children}</div>
+        </main>
+        <footer className="bg-muted">
+          <div className="container text-center text-xs text-muted-foreground py-4">
+            Copyright © 2021 — 2024 Indian Type Foundry. All rights reserved.
+          </div>
+        </footer>
       </body>
     </html>
   );

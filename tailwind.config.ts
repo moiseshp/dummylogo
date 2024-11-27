@@ -1,11 +1,19 @@
 import type { Config } from 'tailwindcss';
 import tailwindcssAnimate from 'tailwindcss-animate';
+import defaultTheme from 'tailwindcss/defaultTheme';
 
 const config: Config = {
   darkMode: ['class'],
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
+      container: {
+        center: true,
+        screens: {
+          ...defaultTheme.screens,
+          '3xl': '2000px',
+        },
+      },
       fontFamily: {
         accent: ['var(--font-accent)'], // for resume headings
       },
