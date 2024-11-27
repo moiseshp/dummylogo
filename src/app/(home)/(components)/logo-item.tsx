@@ -18,7 +18,16 @@ const LogoItem = memo(({ text }: any) => {
   return (
     <div className="h-96 flex flex-col relative hover:bg-white dark:hover:bg-white/10 transition-all border -mr-[1px] -mb-[1px]">
       <div className="h-16 flex items-center px-6 text-xs text-muted-foreground">
-        Tech, Mode
+        {['Tech', 'Mode'].map((item) => (
+          <Button
+            key={item}
+            variant="link"
+            size="sm"
+            className="mr-2 text-inherit"
+          >
+            {item}
+          </Button>
+        ))}
       </div>
       <section className="flex-grow flex items-start p-6">
         <div className={cn('flex items-center gap-4', layoutOptions[layout])}>
@@ -35,7 +44,9 @@ const LogoItem = memo(({ text }: any) => {
             <LinkIcon />
           </Button>
         </div>
-        <Link href={`/logo-${text}`}>View examples</Link>
+        <Button variant="ghost" size="sm" className="font-normal" asChild>
+          <Link href={`/logo-${text}`}>View examples</Link>
+        </Button>
       </div>
     </div>
   );
