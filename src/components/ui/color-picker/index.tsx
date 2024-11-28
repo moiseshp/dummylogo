@@ -10,13 +10,13 @@ import './styles.css';
 
 interface ColorPickerProps
   extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> {
-  color?: string;
-  onChange?: (color: string) => void;
+  value?: string;
+  onChange?: (value: string) => void;
 }
 
 const ColorPicker = React.forwardRef<HTMLDivElement, ColorPickerProps>(
-  ({ className, onChange, color: inputColor = '#334455', ...props }, ref) => {
-    const [hsva, setHsva] = React.useState(hexToHsva(inputColor));
+  ({ className, onChange, value = '#334455', ...props }, ref) => {
+    const [hsva, setHsva] = React.useState(hexToHsva(value));
     const debouncedValue = useDebounce(hsvaToHex(hsva));
 
     React.useEffect(() => {

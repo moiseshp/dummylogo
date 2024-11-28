@@ -6,5 +6,4 @@ export interface ILogo {
   layout: TLayout;
   category: TCategory;
   color: string;
-  bgColor: string;
 }

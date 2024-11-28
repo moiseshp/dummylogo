@@ -1,14 +1,12 @@
 'use client';
-import * as React from 'react';
 import { BrandLogo } from '@/components/brand-logo';
-import { CircleIcon } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import { LogoNameEditor } from './logo-name-editor';
 import Link from 'next/link';
 import { CategoryPicker } from './category-picker';
 import { LayoutPicker } from './layout-picker';
 import { ThemeToggle } from '@/components/theme-toggle';
-import { ColorPickerEditor } from './color-picker-editor';
+import { ColorPicker } from './color-picker';
+import { ResetButton } from './reset-button';
 
 export const Navbar = () => {
   return (
@@ -21,12 +19,8 @@ export const Navbar = () => {
         <LogoNameEditor />
         <CategoryPicker />
         <LayoutPicker />
-        <ColorPickerEditor />
-        {/* <Button variant="ghost">
-          Color
-          <CircleIcon className="w-4 h-4" />
-        </Button> */}
-        <Button>Reset all</Button>
+        <ColorPicker />
+        <ResetButton />
       </nav>
     </div>
   );

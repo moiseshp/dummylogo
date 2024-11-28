@@ -4,8 +4,7 @@ import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { useLogoStore } from '../(hooks)/use-logo-store';
 import { Button } from '@/components/ui/button';
-import { DownloadIcon, LinkIcon, TypeIcon } from 'lucide-react';
-import { Separator } from '@/components/ui/separator';
+import { DownloadIcon, LinkIcon } from 'lucide-react';
 
 const layoutOptions = {
   left: 'flex-row',
@@ -16,6 +15,8 @@ const layoutOptions = {
 
 const LogoItem = memo(({ text }: any) => {
   const layout = useLogoStore((state) => state.layout);
+  const color = useLogoStore((state) => state.color);
+
   return (
     <div className="h-96 flex flex-col relative transition-all border -mr-[1px] -mb-[1px] text-muted-foreground hover:text-primary">
       <div className="h-16 flex items-center justify-between px-4 text-xs">
@@ -27,7 +28,10 @@ const LogoItem = memo(({ text }: any) => {
         </Button>
       </div>
       <section className="flex-grow flex items-center justify-center">
-        <div className={cn('flex items-center gap-4', layoutOptions[layout])}>
+        <div
+          className={cn('flex items-center gap-4', layoutOptions[layout])}
+          style={{ color }}
+        >
           <span>¿i?</span>
           <p className="text-2xl font-bold">Logo - {text}</p>
         </div>

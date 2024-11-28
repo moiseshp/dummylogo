@@ -1,6 +1,6 @@
 'use client';
 import { Button } from '@/components/ui/button';
-import { ColorPicker } from '@/components/ui/color-picker';
+import { ColorPicker as ColorPickerUI } from '@/components/ui/color-picker';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -8,20 +8,27 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import { useLogoStore } from '@/app/(home)/(hooks)/use-logo-store';
 
-export const ColorPickerEditor = () => {
+export const ColorPicker = () => {
+  const color = useLogoStore((state) => state.color);
+  const setColor = useLogoStore((state) => state.setColor);
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost">
-          Category
-          {/* <ChevronDownIcon className="w-4 h-4" /> */}
+          Color
+          <span
+            className="w-3 h-3 rounded-full"
+            style={{ backgroundColor: color }}
+          />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuLabel>Panel Position</DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <ColorPicker onChange={(value) => console.info({ value })} />
+        <ColorPickerUI value={color} onChange={setColor} />
       </DropdownMenuContent>
     </DropdownMenu>
   );
