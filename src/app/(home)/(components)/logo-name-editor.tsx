@@ -24,7 +24,7 @@ export const LogoNameEditor = () => {
       <Input
         placeholder="Type your text"
         className="border-none shadow-none focus-visible:ring-0 w-80"
-        leftIcon={<PencilLineIcon className="w-4 h-4" />}
+        leftIcon={<PencilLineIcon className="w-6 h-6" />}
         rightIcon={
           inputText && (
             <Button

@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { useLogoStore } from '../(hooks)/use-logo-store';
 import { Button } from '@/components/ui/button';
-import { DownloadIcon, LinkIcon } from 'lucide-react';
+import { DownloadIcon, LinkIcon, TypeIcon } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 
 const layoutOptions = {
@@ -18,40 +18,21 @@ const LogoItem = memo(({ text }: any) => {
   const layout = useLogoStore((state) => state.layout);
   return (
     <div className="h-96 flex flex-col relative transition-all border -mr-[1px] -mb-[1px] text-muted-foreground hover:text-primary">
-      <div className="h-16 flex items-center px-6 text-xs">
-        <div>
-          <span>Google Font: </span>
-          <Button
-            variant="link"
-            className="font-normal text-xs !text-inherit"
-            asChild
-          >
-            <Link href={`/logo-${text}`}>Outfit</Link>
-          </Button>
-        </div>
-        <div className="w-5">
-          <Separator orientation="vertical" className="mx-2" />
-        </div>
-        <div>
-          {['Tech', 'Mode'].map((item) => (
-            <Button
-              key={item}
-              variant="link"
-              size="sm"
-              className="mr-2 text-inherit"
-            >
-              {item}
-            </Button>
-          ))}
-        </div>
+      <div className="h-16 flex items-center justify-between px-4 text-xs">
+        <Button variant="ghost" size="sm">
+          Outfit
+        </Button>
+        <Button variant="ghost" size="sm">
+          Label
+        </Button>
       </div>
-      <section className="flex-grow flex items-start p-6">
+      <section className="flex-grow flex items-center justify-center">
         <div className={cn('flex items-center gap-4', layoutOptions[layout])}>
           <span>¿i?</span>
           <p className="text-2xl font-bold">Logo - {text}</p>
         </div>
       </section>
-      <div className="h-16 flex items-center px-6 text-xs justify-between">
+      <div className="h-16 flex items-center px-4 text-xs justify-between">
         <div>
           <Button size="sm" variant="ghost" className="!text-inherit">
             <DownloadIcon />

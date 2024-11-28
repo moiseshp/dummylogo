@@ -15,17 +15,13 @@ export const Navbar = () => {
       <Link href="/">
         <BrandLogo />
       </Link>
-      <nav className="flex items-center gap-x-4 h-full">
+      <nav className="flex items-center gap-x-4 h-full text-muted-foreground">
         <ThemeToggle />
         <LogoNameEditor />
         <CategoryPicker />
         <LayoutPicker />
         <Button variant="ghost">
-          Color Text
-          <CircleIcon className="w-4 h-4" />
-        </Button>
-        <Button variant="ghost">
-          Color Icon
+          Color
           <CircleIcon className="w-4 h-4" />
         </Button>
         <Button>Reset all</Button>

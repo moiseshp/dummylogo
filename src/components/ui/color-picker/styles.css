@@ -1,0 +1,23 @@
+.w-color-alpha > div {
+  border-radius: calc(0.4rem - 3px) !important;
+}
+
+.w-color-alpha .w-color-alpha-fill {
+  transform: translate(-9px, -5px) !important;
+}
+
+.w-color-editable-input input {
+  box-shadow: none !important;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: inherit !important;
+  font-size: inherit !important;
+  line-height: inherit;
+  padding: 0;
+  margin: 0;
+  width: auto;
+  height: auto !important;
+  text-align: inherit;
+  width: 100%;
+}
