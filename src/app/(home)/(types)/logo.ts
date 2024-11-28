@@ -1,7 +1,14 @@
-export type TLayout = 'top' | 'right' | 'bottom' | 'left';
+export type Layout = 'top' | 'right' | 'bottom' | 'left';
 
-export interface ILogo {
+export interface Logo {
+  id: string;
+  iconName: string;
+  fontName: string;
+  customization?: Customization;
+}
+
+export interface Customization {
   text: string;
-  layout: TLayout;
+  layout: Layout;
   color: string;
 }

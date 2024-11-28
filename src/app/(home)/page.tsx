@@ -1,15 +1,19 @@
-import { LogoGrid } from './(components)/logo-grid';
+import { Logo } from './(types)/logo';
+import { Home as HomePage } from './home';
 
 export default function Home() {
-  const data = [
-    { id: 1, fontName: 'Sour Gummy', text: 'Logo 1' },
-    { id: 2, fontName: 'Lobster', text: 'Logo 2' },
-    { id: 21, fontName: 'Pacifico', text: 'Logo 21' },
-    { id: 22, fontName: 'Borel', text: 'Logo 22' },
+  const data: Logo[] = [
+    { id: '1', fontName: 'Sour Gummy', iconName: 'bird' },
+    { id: '2', fontName: 'Lobster', iconName: 'turtle' },
+    { id: '21', fontName: 'Pacifico', iconName: 'bug' },
+    { id: '22', fontName: 'Borel', iconName: 'fish' },
   ];
+
+  const fonts = data.map(({ fontName }) => fontName);
+
   return (
     <>
-      <LogoGrid data={data} />
+      <HomePage data={data} fonts={fonts} />
     </>
   );
 }

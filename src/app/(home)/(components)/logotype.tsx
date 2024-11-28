@@ -1,25 +1,17 @@
 import * as React from 'react';
 import { cn } from '@/lib/utils';
-import { ILogo } from '@/app/(home)/(types)/logo';
+import { Logo } from '@/app/(home)/(types)/logo';
 import { Icon } from '@/components/ui/icon';
 
-const layoutItems = {
-  left: 'flex-row',
-  right: 'flex-row-reverse',
-  top: 'flex-col',
-  bottom: 'flex-col-reverse',
-};
-
-const Logotype: React.FC<ILogo> = React.memo(({ layout, color, text }) => {
+const Logotype: React.FC<Logo> = React.memo(({ iconName, customization }) => {
   return (
     <div className="flex-grow flex items-center justify-center">
       <div
-        className={cn('flex items-center gap-4', layoutItems[layout])}
-        style={{ color }}
+        className={cn('flex items-center gap-4')}
+        style={{ color: customization?.color }}
       >
-        <Icon name="bird" />
-        {/* <span>¿i?</span> */}
-        <p className="text-2xl font-bold">{text}</p>
+        <Icon name={iconName as any} />
+        <p className="text-2xl">{customization?.text}</p>
       </div>
     </div>
   );

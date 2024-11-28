@@ -1,17 +1,17 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { ILogo, TLayout } from '@/app/(home)/(types)/logo';
+import { Layout, Customization } from '@/app/(home)/(types)/logo';
 
 const LOGO_STORE_KEY = 'dummylogo_v0.1';
 const DEFAULT_LOGO_STORE = {
   text: '',
   layout: 'left',
   color: '#334455',
-} as ILogo;
+} as Customization;
 
-interface LogoStore extends ILogo {
+interface LogoStore extends Customization {
   setText: (text: string) => void;
-  setLayout: (layout: TLayout) => void;
+  setLayout: (layout: Layout) => void;
   setColor: (color: string) => void;
   reset: () => void;
 }
