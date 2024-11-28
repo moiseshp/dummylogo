@@ -10,7 +10,9 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { useLogoStore } from '@/app/(home)/(hooks)/use-logo-store';
-import { TLayout } from '../(types)/logo';
+import { Layout } from '@/app/(home)/(types)/logo';
+
+const layoutOptions: Layout[] = ['top', 'right', 'bottom', 'left'];
 
 export const LayoutPicker = () => {
   const layout = useLogoStore((state) => state.layout);
@@ -29,12 +31,17 @@ export const LayoutPicker = () => {
         <DropdownMenuSeparator />
         <DropdownMenuRadioGroup
           value={layout}
-          onValueChange={(value) => setLayout(value as TLayout)}
+          onValueChange={(value) => setLayout(value as Layout)}
         >
-          <DropdownMenuRadioItem value="top">Top</DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="right">Right</DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="bottom">Bottom</DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="left">Left</DropdownMenuRadioItem>
+          {layoutOptions.map((item) => (
+            <DropdownMenuRadioItem
+              key={item}
+              value={item}
+              className="first-letter:uppercase"
+            >
+              {item}
+            </DropdownMenuRadioItem>
+          ))}
         </DropdownMenuRadioGroup>
       </DropdownMenuContent>
     </DropdownMenu>
