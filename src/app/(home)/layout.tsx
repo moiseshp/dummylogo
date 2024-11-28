@@ -1,17 +1,9 @@
-// import { Outfit as AccentFont } from 'next/font/google';
 import type { Metadata } from 'next';
 import { baseFont } from '@/app/fonts';
 import { Navbar } from '@/app/(home)/(components)/navbar';
 import { cn } from '@/lib/utils';
-import '@/app/globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
-
-// const accentFont = AccentFont({
-//   subsets: ['latin'],
-//   display: 'swap',
-//   weight: ['400', '700', '800'],
-//   variable: '--font-accent',
-// });
+import '@/app/globals.css';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -28,14 +20,7 @@ export default function RootLayout({
       <head>
         {/* <script src="https://unpkg.com/react-scan/dist/auto.global.js" async /> */}
       </head>
-      <body
-        // className={`${baseFont.className} ${accentFont.variable}`}
-        className={cn(
-          'flex flex-col min-h-screen bg-muted',
-          baseFont.className,
-          // accentFont.variable,
-        )}
-      >
+      <body className={cn('flex flex-col min-h-screen', baseFont.className)}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

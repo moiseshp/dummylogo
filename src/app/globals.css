@@ -27,7 +27,8 @@
   }
 
   .dark {
-    --background: 224 71% 4%;
+    /* --background: 224 71% 4%; */
+    --background: #323232;
     --foreground: 213 31% 91%;
     --muted: 223 47% 11%;
     --muted-foreground: 215.4 16.3% 56.9%;
@@ -58,7 +59,8 @@
     display: none;
   }
   body {
-    @apply font-sans antialiased bg-background text-foreground;
+    /* @apply font-sans antialiased bg-background text-foreground; */
+    @apply antialiased bg-background text-foreground;
     -ms-overflow-style: none;
   }
 }

@@ -36,7 +36,7 @@ const Home: React.FC<HomeProps> = React.memo(({ data, fonts }) => {
           },
         };
         return (
-          <div key={item.id} style={{ fontFamily: item.fontName }}>
+          <div key={item.id}>
             <LogoItem {...logo}>
               <Logotype {...logo} />
             </LogoItem>
