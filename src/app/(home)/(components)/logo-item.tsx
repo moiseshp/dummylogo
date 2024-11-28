@@ -7,7 +7,7 @@ import { Logotype } from './logotype';
 import { ILogo } from '@/app/(home)/(types)/logo';
 
 const LogoItem: React.FC<{
-  logo: Partial<ILogo>;
+  logo: ILogo;
 }> = React.memo(({ logo }) => {
   return (
     <div className="h-96 flex flex-col relative transition-all border -mr-[1px] -mb-[1px] text-muted-foreground hover:text-primary">

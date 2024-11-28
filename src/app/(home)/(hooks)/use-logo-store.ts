@@ -6,7 +6,6 @@ const LOGO_STORE_KEY = 'dummylogo_v0.1';
 const DEFAULT_LOGO_STORE = {
   text: '',
   layout: 'left',
-  category: 'tech',
   color: '#334455',
 } as ILogo;
 
@@ -25,9 +24,9 @@ export const useLogoStore = create<LogoStore>()(
       setLayout: (layout) => set(() => ({ layout })),
       setColor: (color) => set(() => ({ color })),
       reset: () =>
-        set((state) => ({
-          ...state,
-          ...DEFAULT_LOGO_STORE,
+        set(() => ({
+          layout: DEFAULT_LOGO_STORE.layout,
+          color: DEFAULT_LOGO_STORE.color,
         })),
     }),
     {

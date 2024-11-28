@@ -16,11 +16,11 @@ export const Navbar = () => {
       </Link>
       <nav className="flex items-center gap-x-2 h-full text-muted-foreground">
         <LogoNameEditor />
-        <CategoryPicker />
         <LayoutPicker />
         <ColorPicker />
-        <ThemeToggle />
         <ResetButton />
+        <CategoryPicker />
+        <ThemeToggle />
       </nav>
     </div>
   );
