@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { cn } from '@/lib/utils';
 import { ILogo } from '@/app/(home)/(types)/logo';
+import { Icon } from '@/components/ui/icon';
 
 const layoutItems = {
   left: 'flex-row',
@@ -16,7 +17,8 @@ const Logotype: React.FC<ILogo> = React.memo(({ layout, color, text }) => {
         className={cn('flex items-center gap-4', layoutItems[layout])}
         style={{ color }}
       >
-        <span>¿i?</span>
+        <Icon name="bird" />
+        {/* <span>¿i?</span> */}
         <p className="text-2xl font-bold">{text}</p>
       </div>
     </div>
