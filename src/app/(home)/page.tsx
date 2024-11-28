@@ -1,12 +1,9 @@
-// import { LogoGrid } from './(components)/logo-grid';
-
-import { ColorPickerEditor } from './(components)/color-picker-editor';
+import { LogoGrid } from './(components)/logo-grid';
 
 export default function Home() {
   return (
     <>
-      <ColorPickerEditor />
-      {/* <LogoGrid /> */}
+      <LogoGrid />
     </>
   );
 }

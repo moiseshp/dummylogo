@@ -8,6 +8,7 @@ import Link from 'next/link';
 import { CategoryPicker } from './category-picker';
 import { LayoutPicker } from './layout-picker';
 import { ThemeToggle } from '@/components/theme-toggle';
+import { ColorPickerEditor } from './color-picker-editor';
 
 export const Navbar = () => {
   return (
@@ -20,10 +21,11 @@ export const Navbar = () => {
         <LogoNameEditor />
         <CategoryPicker />
         <LayoutPicker />
-        <Button variant="ghost">
+        <ColorPickerEditor />
+        {/* <Button variant="ghost">
           Color
           <CircleIcon className="w-4 h-4" />
-        </Button>
+        </Button> */}
         <Button>Reset all</Button>
       </nav>
     </div>

@@ -1,3 +1,4 @@
+import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import { ChevronDownIcon } from 'lucide-react';
 import {
@@ -9,10 +10,9 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { useState } from 'react';
 
 export const CategoryPicker = () => {
-  const [position, setPosition] = useState('bottom');
+  const [position, setPosition] = React.useState('bottom');
 
   return (
     <DropdownMenu>
