@@ -1,23 +1,23 @@
-import { useEffect, useState } from 'react';
+import * as React from 'react';
 import { PencilLineIcon, XIcon } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { useLogoStore } from '@/app/(home)/(hooks)/use-logo-store';
 import { Button } from '@/components/ui/button';
-import { useDebounce } from '@/hooks/use-debounce';
 
 export const LogoNameEditor = () => {
   const setText = useLogoStore((state) => state.setText);
-  const [inputText, setInputText] = useState<string>('');
-  const debouncedValue = useDebounce(inputText);
+  const [inputText, setInputText] = React.useState<string>('');
 
   const handleInputClear = () => {
     setInputText('');
     setText('');
   };
 
-  useEffect(() => {
-    setText(debouncedValue);
-  }, [debouncedValue, setText]);
+  const handleInputTexxt = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target;
+    setInputText(value);
+    setText(value);
+  };
 
   return (
     <div className="text-muted-foreground hover:bg-muted-foreground/10 transition pl-3 pr-1 rounded-md w-80">
@@ -37,7 +37,7 @@ export const LogoNameEditor = () => {
             </Button>
           )
         }
-        onChange={(e) => setInputText(e.target.value)}
+        onChange={handleInputTexxt}
         value={inputText}
       />
     </div>

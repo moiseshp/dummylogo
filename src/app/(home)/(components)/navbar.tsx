@@ -14,12 +14,12 @@ export const Navbar = () => {
       <Link href="/">
         <BrandLogo />
       </Link>
-      <nav className="flex items-center gap-x-4 h-full text-muted-foreground">
-        <ThemeToggle />
+      <nav className="flex items-center gap-x-2 h-full text-muted-foreground">
         <LogoNameEditor />
         <CategoryPicker />
         <LayoutPicker />
         <ColorPicker />
+        <ThemeToggle />
         <ResetButton />
       </nav>
     </div>
