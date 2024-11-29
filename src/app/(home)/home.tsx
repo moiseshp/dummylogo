@@ -31,7 +31,7 @@ const Home: React.FC<HomeProps> = React.memo(({ data }) => {
           customization: {
             layout: layoutItems[layout] as Layout,
             color: color || item.color,
-            name: name || item.name,
+            name: name || 'dummylogo',
           },
         };
         return (

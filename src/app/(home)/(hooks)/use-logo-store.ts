@@ -25,6 +25,7 @@ export const useLogoStore = create<LogoStore>()(
       setColor: (color) => set(() => ({ color })),
       reset: () =>
         set(() => ({
+          name: '',
           layout: DEFAULT_LOGO_STORE.layout,
           color: '',
         })),
