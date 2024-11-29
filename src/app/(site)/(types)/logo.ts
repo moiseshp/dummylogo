@@ -1,13 +1,12 @@
-export type Layout = 'top' | 'right' | 'bottom' | 'left';
+import * as React from 'react';
 
+export type Layout = 'top' | 'right' | 'bottom' | 'left';
 export interface Logo {
   id: string;
   name: string;
-  fontFamily: string;
-  fontWeight: number;
-  fontSize: number;
+  styles: React.CSSProperties;
   iconName: string;
-  iconSize: number;
+  strokeWidth: number;
   color: string;
   category: string;
   customization?: Customization;

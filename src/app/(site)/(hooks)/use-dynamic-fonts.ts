@@ -5,10 +5,13 @@ export function useDynamicFonts(data: Logo[]) {
   React.useEffect(() => {
     const fontsQuery = data
       .map(
-        ({ fontFamily, fontWeight }) =>
-          `family=${encodeURIComponent(fontFamily)}:wght@${fontWeight}`,
+        ({ styles }) =>
+          `family=${styles.fontFamily!.replaceAll(' ', '+')}:wght@${
+            styles.fontWeight
+          }`,
       )
       .join('&');
+
     const googleFontUrl = `https://fonts.googleapis.com/css2?${fontsQuery}&display=swap`;
 
     const fontLink = document.createElement('link');

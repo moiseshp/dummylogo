@@ -24,7 +24,7 @@ const Home: React.FC<HomeProps> = React.memo(({ data }) => {
   useDynamicFonts(data);
 
   return (
-    <div className="grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 -mt-[1px]">
+    <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 2xl:grid-cols-5 -mt-[1px]">
       {data.map((item: Logo) => {
         const logo = {
           ...item,
