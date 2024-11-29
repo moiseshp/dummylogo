@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import { DownloadIcon, EyeIcon, LinkIcon, SparklesIcon } from 'lucide-react';
-import { Logo } from '@/app/(home)/(types)/logo';
+import { Logo } from '@/app/(site)/(types)/logo';
 import Link from 'next/link';
 
 type LogoItemProps = {

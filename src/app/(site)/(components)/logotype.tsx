@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { cn } from '@/lib/utils';
-import { Logo } from '@/app/(home)/(types)/logo';
+import { Logo } from '@/app/(site)/(types)/logo';
 import { Icon } from '@/components/ui/icon';
 
 const Logotype: React.FC<Logo> = React.memo(

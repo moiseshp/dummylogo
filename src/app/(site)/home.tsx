@@ -1,9 +1,9 @@
 'use client';
 import * as React from 'react';
-import { useLogoStore } from '@/app/(home)/(hooks)/use-logo-store';
+import { useLogoStore } from '@/app/(site)/(hooks)/use-logo-store';
 import { Logotype } from './(components)/logotype';
 import { LogoItem } from './(components)/logo-item';
-import { useDynamicFonts } from '@/app/(home)/(hooks)/use-dynamic-fonts';
+import { useDynamicFonts } from '@/app/(site)/(hooks)/use-dynamic-fonts';
 import { Layout, Logo } from './(types)/logo';
 
 const layoutItems = {

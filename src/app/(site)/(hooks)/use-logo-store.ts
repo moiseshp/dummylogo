@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { Layout, Customization } from '@/app/(home)/(types)/logo';
+import { Layout, Customization } from '@/app/(site)/(types)/logo';
 
 const LOGO_STORE_KEY = 'dummylogo_v0.1';
 const DEFAULT_LOGO_STORE = {

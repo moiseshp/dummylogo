@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { PencilLineIcon, XIcon } from 'lucide-react';
 import { Input } from '@/components/ui/input';
-import { useLogoStore } from '@/app/(home)/(hooks)/use-logo-store';
+import { useLogoStore } from '@/app/(site)/(hooks)/use-logo-store';
 import { Button } from '@/components/ui/button';
 
 export const LogoNameEditor = () => {

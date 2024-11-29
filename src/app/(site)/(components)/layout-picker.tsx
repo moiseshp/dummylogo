@@ -9,8 +9,8 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { useLogoStore } from '@/app/(home)/(hooks)/use-logo-store';
-import { Layout } from '@/app/(home)/(types)/logo';
+import { useLogoStore } from '@/app/(site)/(hooks)/use-logo-store';
+import { Layout } from '@/app/(site)/(types)/logo';
 
 const layoutOptions: Layout[] = ['top', 'right', 'bottom', 'left'];
 

@@ -8,7 +8,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { useLogoStore } from '@/app/(home)/(hooks)/use-logo-store';
+import { useLogoStore } from '@/app/(site)/(hooks)/use-logo-store';
 
 export const ColorPicker = () => {
   const color = useLogoStore((state) => state.color);

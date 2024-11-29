@@ -1,5 +1,5 @@
 import * as React from 'react';
-import type { Logo } from '@/app/(home)/(types)/logo';
+import type { Logo } from '@/app/(site)/(types)/logo';
 
 export function useDynamicFonts(data: Logo[]) {
   React.useEffect(() => {
