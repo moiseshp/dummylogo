@@ -5,18 +5,18 @@ import { useLogoStore } from '@/app/(home)/(hooks)/use-logo-store';
 import { Button } from '@/components/ui/button';
 
 export const LogoNameEditor = () => {
-  const setText = useLogoStore((state) => state.setText);
+  const setName = useLogoStore((state) => state.setName);
   const [inputText, setInputText] = React.useState<string>('');
 
   const handleInputClear = () => {
     setInputText('');
-    setText('');
+    setName('');
   };
 
-  const handleInputTexxt = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputText = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
     setInputText(value);
-    setText(value);
+    setName(value);
   };
 
   return (
@@ -37,7 +37,7 @@ export const LogoNameEditor = () => {
             </Button>
           )
         }
-        onChange={handleInputTexxt}
+        onChange={handleInputText}
         value={inputText}
       />
     </div>

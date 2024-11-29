@@ -1,10 +1,13 @@
 import * as React from 'react';
+import type { Logo } from '@/app/(home)/(types)/logo';
 
-export function useDynamicFonts(fontNames: string[]) {
+export function useDynamicFonts(data: Logo[]) {
   React.useEffect(() => {
-    const uniqueFontNames = Array.from(new Set(fontNames));
-    const fontsQuery = uniqueFontNames
-      .map((font) => `family=${encodeURIComponent(font)}:wght@400;700`)
+    const fontsQuery = data
+      .map(
+        ({ fontFamily, fontWeight }) =>
+          `family=${encodeURIComponent(fontFamily)}:wght@${fontWeight}`,
+      )
       .join('&');
     const googleFontUrl = `https://fonts.googleapis.com/css2?${fontsQuery}&display=swap`;
 
@@ -21,7 +24,7 @@ export function useDynamicFonts(fontNames: string[]) {
           link.remove();
         });
     };
-  }, [fontNames]);
+  }, [data]);
 
   return;
 }

@@ -1,0 +1,68 @@
+[
+  {
+    "id": "techify",
+    "name": "Techify",
+    "fontFamily": "Roboto",
+    "fontWeight": 500,
+    "fontSize": 24,
+    "iconName": "cpu",
+    "iconSize": 40,
+    "color": "#007BFF",
+    "category": "technology"
+  },
+  {
+    "id": "codestream",
+    "name": "CodeStream",
+    "fontFamily": "Poppins",
+    "fontWeight": 600,
+    "fontSize": 28,
+    "iconName": "code",
+    "iconSize": 40,
+    "color": "#E73E44",
+    "category": "technology"
+  },
+  {
+    "id": "pixelgrid",
+    "name": "PixelGrid",
+    "fontFamily": "Inter",
+    "fontWeight": 700,
+    "fontSize": 26,
+    "iconName": "grid",
+    "iconSize": 26,
+    "color": "#4CAF50",
+    "category": "technology"
+  },
+  {
+    "id": "datanode",
+    "name": "DataNode",
+    "fontFamily": "Lato",
+    "fontWeight": 400,
+    "fontSize": 24,
+    "iconName": "database",
+    "iconSize": 24,
+    "color": "#FF9900",
+    "category": "technology"
+  },
+  {
+    "id": "cybersphere",
+    "name": "CyberSphere",
+    "fontFamily": "Montserrat",
+    "fontWeight": 600,
+    "fontSize": 28,
+    "iconName": "shield",
+    "iconSize": 28,
+    "color": "#6C63FF",
+    "category": "technology"
+  },
+  {
+    "id": "EcoSphere",
+    "name": "EcoSphere",
+    "fontFamily": "Poppins",
+    "fontWeight": 400,
+    "fontSize": 24,
+    "iconName": "leaf",
+    "iconSize": 34,
+    "color": "#27AE60",
+    "category": "environment"
+  }
+]

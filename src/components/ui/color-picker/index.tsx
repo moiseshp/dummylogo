@@ -22,7 +22,8 @@ const ColorPicker = React.forwardRef<HTMLDivElement, ColorPickerProps>(
     React.useEffect(() => {
       if (!onChange) return;
       onChange(debouncedValue);
-    }, [debouncedValue, onChange]);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [debouncedValue]);
 
     return (
       <div

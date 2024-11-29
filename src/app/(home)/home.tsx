@@ -15,14 +15,13 @@ const layoutItems = {
 
 type HomeProps = {
   data: Logo[];
-  fonts: string[];
 };
 
-const Home: React.FC<HomeProps> = React.memo(({ data, fonts }) => {
+const Home: React.FC<HomeProps> = React.memo(({ data }) => {
   const layout = useLogoStore((state) => state.layout);
   const color = useLogoStore((state) => state.color);
-  const text = useLogoStore((state) => state.text);
-  useDynamicFonts(fonts);
+  const name = useLogoStore((state) => state.name);
+  useDynamicFonts(data);
 
   return (
     <div className="grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 -mt-[1px]">
@@ -31,8 +30,8 @@ const Home: React.FC<HomeProps> = React.memo(({ data, fonts }) => {
           ...item,
           customization: {
             layout: layoutItems[layout] as Layout,
-            color,
-            text: text || item.fontName,
+            color: color || item.color,
+            name: name || item.name,
           },
         };
         return (
