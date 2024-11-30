@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { cn } from '@/lib/utils';
 import { Logo } from '@/app/(site)/(types)/logo';
-// import { Icon } from '@/components/ui/icon';
+import { Icon } from '@/components/ui/icon';
+import { PhosphorLogo } from '@phosphor-icons/react';
 
 // const DEFAULT_ICON_SIZE = 34;
 
@@ -26,6 +27,8 @@ const Logotype: React.FC<Logo> = React.memo(
         )}
         style={{ color: customization?.color }}
       >
+        <Icon name={iconName} size={40} weight="fill" />
+        {/* <PhosphorLogo /> */}
         {/* <Icon
           name={iconName}
           strokeWidth={iconStrokeWidthByLayout}
