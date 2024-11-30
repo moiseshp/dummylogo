@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 // import { DownloadIcon, EyeIcon, LinkIcon, SparklesIcon } from 'lucide-react';
 import { Logo } from '@/app/(site)/(types)/logo';
 import Link from 'next/link';
+import { DownloadSimple, Eye, LinkSimple } from '@phosphor-icons/react';
 
 type LogoItemProps = {
   children: React.ReactNode;
@@ -53,13 +54,15 @@ const LogoItem: React.FC<LogoItemProps> = React.memo(
         <div className="h-16 flex items-center px-4 text-xs justify-between">
           <div>
             <Button size="sm" variant="ghost" className="!text-inherit">
-              {/* <DownloadIcon /> */}
+              <DownloadSimple />
             </Button>
             <Button size="sm" variant="ghost" className="!text-inherit">
-              {/* <LinkIcon /> */}
+              <LinkSimple />
             </Button>
             <Button size="sm" variant="ghost" className="!text-inherit" asChild>
-              <Link href={`/${id}`}>{/* <EyeIcon /> */}</Link>
+              <Link href={`/${id}`}>
+                <Eye />
+              </Link>
             </Button>
           </div>
           <Button variant="ghost" size="sm">
