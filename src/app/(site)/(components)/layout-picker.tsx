@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { ChevronDownIcon } from 'lucide-react';
+// import { ChevronDownIcon } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -23,7 +23,7 @@ export const LayoutPicker = () => {
       <DropdownMenuTrigger asChild>
         <Button variant="ghost">
           Layout
-          <ChevronDownIcon className="w-4 h-4" />
+          {/* <ChevronDownIcon className="w-4 h-4" /> */}
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">

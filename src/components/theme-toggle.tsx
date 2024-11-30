@@ -1,5 +1,5 @@
 'use client';
-import { MoonIcon, SunIcon } from 'lucide-react';
+// import { MoonIcon, SunIcon } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { Button } from './ui/button';
 import { useMounted } from '@/hooks/use-mounted';
@@ -17,7 +17,7 @@ export const ThemeToggle = () => {
 
   return (
     <Button variant="ghost" onClick={handleTheme}>
-      {isDark() ? <SunIcon /> : <MoonIcon />}
+      {/* {isDark() ? <SunIcon /> : <MoonIcon />} */}
     </Button>
   );
 };

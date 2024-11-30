@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PencilLineIcon, XIcon } from 'lucide-react';
+// import { PencilLineIcon, XIcon } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { useLogoStore } from '@/app/(site)/(hooks)/use-logo-store';
 import { Button } from '@/components/ui/button';
@@ -24,7 +24,7 @@ export const LogoNameEditor = () => {
       <Input
         placeholder="Type your text"
         className="border-none shadow-none focus-visible:ring-0 w-80"
-        leftIcon={<PencilLineIcon className="w-6 h-6" />}
+        // leftIcon={<PencilLineIcon className="w-6 h-6" />}
         rightIcon={
           inputText && (
             <Button
@@ -33,7 +33,7 @@ export const LogoNameEditor = () => {
               className="rounded-full text-inherit"
               onClick={handleInputClear}
             >
-              <XIcon className="w-4 h-4" />
+              {/* <XIcon className="w-4 h-4" /> */}
             </Button>
           )
         }

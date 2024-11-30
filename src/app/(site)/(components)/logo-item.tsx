@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 import { Button } from '@/components/ui/button';
-import { DownloadIcon, EyeIcon, LinkIcon, SparklesIcon } from 'lucide-react';
+// import { DownloadIcon, EyeIcon, LinkIcon, SparklesIcon } from 'lucide-react';
 import { Logo } from '@/app/(site)/(types)/logo';
 import Link from 'next/link';
 
@@ -10,16 +10,16 @@ type LogoItemProps = {
 } & Logo;
 
 const LogoItem: React.FC<LogoItemProps> = React.memo(
-  ({ id, fontFamily, iconName, color, category, children }) => {
+  ({ id, styles, iconName, color, category, children }) => {
     return (
       <div className="h-96 flex flex-col relative transition-all border -mr-[1px] -mb-[1px] text-muted-foreground hover:bg-white dark:hover:bg-black">
         <div className="h-16 flex items-center justify-between px-4 gap-x-1">
           <div className="flex items-center">
             <Button variant="ghost" size="sm" asChild>
               <a
-                href={`https://fonts.google.com/specimen/${fontFamily}`}
+                href={`https://fonts.google.com/specimen/${styles.fontFamily}`}
                 target="_blank"
-                title={`Google Font: ${fontFamily}`}
+                title={`Google Font: ${styles.fontFamily}`}
               >
                 <img
                   src="/google-fonts-logo.png"
@@ -43,7 +43,7 @@ const LogoItem: React.FC<LogoItemProps> = React.memo(
             </Button>
           </div>
           <Button variant="ghost" size="sm">
-            <SparklesIcon />
+            {/* <SparklesIcon /> */}
             {category}
           </Button>
         </div>
@@ -53,15 +53,13 @@ const LogoItem: React.FC<LogoItemProps> = React.memo(
         <div className="h-16 flex items-center px-4 text-xs justify-between">
           <div>
             <Button size="sm" variant="ghost" className="!text-inherit">
-              <DownloadIcon />
+              {/* <DownloadIcon /> */}
             </Button>
             <Button size="sm" variant="ghost" className="!text-inherit">
-              <LinkIcon />
+              {/* <LinkIcon /> */}
             </Button>
             <Button size="sm" variant="ghost" className="!text-inherit" asChild>
-              <Link href={`/${id}`}>
-                <EyeIcon />
-              </Link>
+              <Link href={`/${id}`}>{/* <EyeIcon /> */}</Link>
             </Button>
           </div>
           <Button variant="ghost" size="sm">

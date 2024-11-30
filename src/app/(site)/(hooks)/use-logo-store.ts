@@ -6,7 +6,7 @@ const LOGO_STORE_KEY = 'dummylogo_v0.1';
 const DEFAULT_LOGO_STORE = {
   name: '',
   layout: 'left',
-  color: '',
+  color: '#334455',
 } as Customization;
 
 interface LogoStore extends Customization {
