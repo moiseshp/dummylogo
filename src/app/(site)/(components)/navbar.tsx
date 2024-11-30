@@ -15,12 +15,12 @@ export const Navbar = () => {
         <BrandLogo />
       </Link>
       <nav className="flex items-center gap-x-2 h-full text-muted-foreground">
+        <ThemeToggle />
+        <CategoryPicker />
         <LogoNameEditor />
         <LayoutPicker />
         <ColorPicker />
         <ResetButton />
-        <CategoryPicker />
-        <ThemeToggle />
       </nav>
     </div>
   );

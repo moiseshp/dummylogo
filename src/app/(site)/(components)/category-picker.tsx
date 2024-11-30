@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Button } from '@/components/ui/button';
-// import { ChevronDownIcon } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,6 +9,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import { CaretDown } from '@phosphor-icons/react';
 
 const categories = [
   { id: 'all', name: 'All' },
@@ -33,7 +33,7 @@ export const CategoryPicker = () => {
       <DropdownMenuTrigger asChild>
         <Button variant="ghost">
           Category
-          {/* <Chevron className="w-4 h-4" /> */}
+          <CaretDown />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">

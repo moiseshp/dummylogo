@@ -1,8 +1,8 @@
 'use client';
-// import { MoonIcon, SunIcon } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { Button } from './ui/button';
 import { useMounted } from '@/hooks/use-mounted';
+import { MoonStars, Sun } from '@phosphor-icons/react';
 
 export const ThemeToggle = () => {
   const { setTheme, resolvedTheme } = useTheme();
@@ -17,7 +17,7 @@ export const ThemeToggle = () => {
 
   return (
     <Button variant="ghost" onClick={handleTheme}>
-      {/* {isDark() ? <SunIcon /> : <MoonIcon />} */}
+      {isDark() ? <Sun /> : <MoonStars />}
     </Button>
   );
 };

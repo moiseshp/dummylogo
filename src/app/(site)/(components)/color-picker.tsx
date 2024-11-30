@@ -20,7 +20,7 @@ export const ColorPicker = () => {
         <Button variant="ghost">
           Color
           <span
-            className="w-3 h-3 rounded-full"
+            className="w-3 h-3 rounded-full border border-muted-foreground"
             style={{ backgroundColor: color }}
           />
         </Button>

@@ -1,5 +1,4 @@
 import { Button } from '@/components/ui/button';
-// import { ChevronDownIcon } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,6 +10,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { useLogoStore } from '@/app/(site)/(hooks)/use-logo-store';
 import { Layout } from '@/app/(site)/(types)/logo';
+import { CaretDown } from '@phosphor-icons/react';
 
 const layoutOptions: Layout[] = ['top', 'right', 'bottom', 'left'];
 
@@ -23,7 +23,7 @@ export const LayoutPicker = () => {
       <DropdownMenuTrigger asChild>
         <Button variant="ghost">
           Layout
-          {/* <ChevronDownIcon className="w-4 h-4" /> */}
+          <CaretDown />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">

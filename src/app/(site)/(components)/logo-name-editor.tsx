@@ -1,8 +1,8 @@
 import * as React from 'react';
-// import { PencilLineIcon, XIcon } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { useLogoStore } from '@/app/(site)/(hooks)/use-logo-store';
 import { Button } from '@/components/ui/button';
+import { PencilSimpleLine, X } from '@phosphor-icons/react';
 
 export const LogoNameEditor = () => {
   const setName = useLogoStore((state) => state.setName);
@@ -20,26 +20,24 @@ export const LogoNameEditor = () => {
   };
 
   return (
-    <div className="text-muted-foreground hover:bg-muted-foreground/10 transition pl-3 pr-1 rounded-md w-80">
-      <Input
-        placeholder="Type your text"
-        className="border-none shadow-none focus-visible:ring-0 w-80"
-        // leftIcon={<PencilLineIcon className="w-6 h-6" />}
-        rightIcon={
-          inputText && (
-            <Button
-              size="icon"
-              variant="link"
-              className="rounded-full text-inherit"
-              onClick={handleInputClear}
-            >
-              {/* <XIcon className="w-4 h-4" /> */}
-            </Button>
-          )
-        }
-        onChange={handleInputText}
-        value={inputText}
-      />
-    </div>
+    <Input
+      placeholder="Your logo name"
+      className="border-none shadow-none hover:bg-muted-foreground/10 transition"
+      leftIcon={<PencilSimpleLine />}
+      rightIcon={
+        inputText && (
+          <Button
+            size="icon"
+            variant="link"
+            className="rounded-full text-inherit"
+            onClick={handleInputClear}
+          >
+            <X />
+          </Button>
+        )
+      }
+      onChange={handleInputText}
+      value={inputText}
+    />
   );
 };
