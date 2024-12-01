@@ -4,7 +4,14 @@ import { Button } from '@/components/ui/button';
 // import { DownloadIcon, EyeIcon, LinkIcon, SparklesIcon } from 'lucide-react';
 import { Logo } from '@/app/(site)/(types)/logo';
 import Link from 'next/link';
-import { DownloadSimple, Eye, LinkSimple } from '@phosphor-icons/react';
+import {
+  DownloadSimple,
+  Eye,
+  GoogleLogo,
+  LinkSimple,
+  PhosphorLogo,
+  TextT,
+} from '@phosphor-icons/react';
 
 type LogoItemProps = {
   children: React.ReactNode;
@@ -16,31 +23,15 @@ const LogoItem: React.FC<LogoItemProps> = React.memo(
       <div className="h-96 flex flex-col relative transition-all border -mr-[1px] -mb-[1px] text-muted-foreground hover:bg-white dark:hover:bg-black">
         <div className="h-16 flex items-center justify-between px-4 gap-x-1">
           <div className="flex items-center">
-            <Button variant="ghost" size="sm" asChild>
-              <a
-                href={`https://fonts.google.com/specimen/${styles.fontFamily}`}
-                target="_blank"
-                title={`Google Font: ${styles.fontFamily}`}
-              >
-                <img
-                  src="/google-fonts-logo.png"
-                  alt="Google Fonts - Logo"
-                  width={16}
-                />
-              </a>
+            <Button variant="ghost" size="sm">
+              <img
+                src="/google-fonts-logo.png"
+                alt="Google Fonts - Logo"
+                width={16}
+              />
             </Button>
-            <Button variant="ghost" size="sm" asChild>
-              <a
-                href={`https://lucide.dev/icons/${iconName}`}
-                target="_blank"
-                title={`Lucide Icon: ${iconName}`}
-              >
-                <img
-                  src="/lucide-logo.png"
-                  alt="Lucide Icons - Logo"
-                  width={16}
-                />
-              </a>
+            <Button variant="ghost" size="sm">
+              <PhosphorLogo weight="fill" />
             </Button>
           </div>
           <Button variant="ghost" size="sm">
