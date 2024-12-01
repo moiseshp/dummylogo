@@ -1,13 +1,13 @@
 'use client';
+import Link from 'next/link';
 import { BrandLogo } from '@/components/brand-logo';
 import { LogoNameEditor } from './logo-name-editor';
-import Link from 'next/link';
 import { CategorySelector } from './category-selector';
 import { LayoutPicker } from './layout-picker';
-import { ThemeToggle } from '@/components/theme-toggle';
 import { ColorPicker } from './color-picker';
 import { ResetButton } from './reset-button';
-import { IconWeightSelector } from './icon-weight-selector';
+import { IconStyleSelector } from './icon-style-selector';
+import { ThemeToggle } from '@/components/theme-toggle';
 
 export const Navbar = () => {
   return (
@@ -20,7 +20,7 @@ export const Navbar = () => {
         <CategorySelector />
         <LogoNameEditor />
         <LayoutPicker />
-        <IconWeightSelector />
+        <IconStyleSelector />
         <ColorPicker />
         <ResetButton />
       </nav>

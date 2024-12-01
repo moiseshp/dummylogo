@@ -27,7 +27,7 @@ const Home: React.FC<HomeProps> = React.memo(({ data }) => {
   return (
     <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 2xl:grid-cols-5 -mt-[1px]">
       {data.map((item: Logo) => {
-        const logo = {
+        const logo: Logo = {
           ...item,
           customization: {
             layout: layoutItems[layout] as Layout,

@@ -4,7 +4,6 @@ import * as React from 'react';
 export type Layout = 'top' | 'right' | 'bottom' | 'left';
 export interface Logo {
   id: string;
-  name: string;
   iconName: string;
   color: string;
   category: string;
@@ -17,6 +16,6 @@ export interface Customization {
   layout: Layout;
   color: string;
   iconWeight: IconWeight;
-  iconName: string;
-  fontFamily: string;
+  iconName?: string;
+  fontFamily?: string;
 }

@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 import { Button } from '@/components/ui/button';
-import { Logo } from '@/app/(site)/(types)/logo';
+import type { Logo } from '@/app/(site)/(types)/logo';
 import Link from 'next/link';
 import {
   DownloadSimple,

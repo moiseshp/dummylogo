@@ -18,7 +18,7 @@ const options = [
   { id: 'duotone', name: 'Duotone' },
 ];
 
-export const IconWeightSelector = () => {
+export const IconStyleSelector = () => {
   const iconWeight = useLogoStore((state) => state.iconWeight);
   const setIconWeight = useLogoStore((state) => state.setIconWeight);
 
@@ -26,7 +26,7 @@ export const IconWeightSelector = () => {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost">
-          Icon weight
+          Icon style
           <CaretDown />
         </Button>
       </DropdownMenuTrigger>
