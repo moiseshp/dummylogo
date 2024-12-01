@@ -15,8 +15,8 @@ interface ColorPickerProps
 }
 
 const ColorPicker = React.forwardRef<HTMLDivElement, ColorPickerProps>(
-  ({ className, onChange, value = '#334455', ...props }, ref) => {
-    const [hsva, setHsva] = React.useState(hexToHsva(value));
+  ({ className, onChange, value, ...props }, ref) => {
+    const [hsva, setHsva] = React.useState(hexToHsva(value || '#1c1d1f'));
     const debouncedValue = useDebounce(hsvaToHex(hsva));
 
     React.useEffect(() => {

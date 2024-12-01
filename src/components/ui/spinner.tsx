@@ -1,21 +1,8 @@
 import { cn } from '@/lib/utils';
-// import { Loader2Icon } from 'lucide-react';
+import { CircleNotch, IconProps } from '@phosphor-icons/react';
 
-const Spinner = ({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLDivElement>) => {
-  return (
-    <div
-      className={cn(
-        'w-full flex justify-center items-center h-full',
-        className,
-      )}
-      {...props}
-    >
-      {/* <Loader2Icon className="animate-spin dark:text-white" /> */}
-    </div>
-  );
+const Spinner = ({ className, ...props }: IconProps) => {
+  return <CircleNotch className={cn('animate-spin', className)} {...props} />;
 };
 
 export { Spinner };

@@ -2,23 +2,9 @@ import * as React from 'react';
 import { cn } from '@/lib/utils';
 import { Logo } from '@/app/(site)/(types)/logo';
 import { Icon } from '@/components/ui/icon';
-import { PhosphorLogo } from '@phosphor-icons/react';
-
-// const DEFAULT_ICON_SIZE = 34;
 
 const Logotype: React.FC<Logo> = React.memo(
-  ({ styles, iconName, strokeWidth, customization }) => {
-    // const iconSizeByLayout = ['flex-row', 'right'].includes(
-    //   customization?.layout as string,
-    // )
-    //   ? DEFAULT_ICON_SIZE
-    //   : DEFAULT_ICON_SIZE * 1.4;
-    // const iconStrokeWidthByLayout = ['flex-row', 'right'].includes(
-    //   customization?.layout as string,
-    // )
-    //   ? strokeWidth
-    //   : strokeWidth / 1.4;
-
+  ({ styles, iconName, customization }) => {
     return (
       <div
         className={cn(
@@ -27,13 +13,9 @@ const Logotype: React.FC<Logo> = React.memo(
         )}
         style={{ color: customization?.color }}
       >
-        <Icon name={iconName} size={40} weight="fill" />
-        {/* <PhosphorLogo /> */}
-        {/* <Icon
-          name={iconName}
-          strokeWidth={iconStrokeWidthByLayout}
-          size={iconSizeByLayout}
-        /> */}
+        <span className="w-9 h-9 flex items-center justify-center">
+          <Icon name={iconName} size={38} weight={customization?.iconWeight} />
+        </span>
         <p style={styles}>{customization?.name}</p>
       </div>
     );

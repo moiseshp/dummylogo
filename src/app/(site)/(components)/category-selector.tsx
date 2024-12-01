@@ -25,7 +25,7 @@ const categories = [
   { id: 'travel-and-tourism', name: 'Travel & Tourism' },
 ];
 
-export const CategoryPicker = () => {
+export const CategorySelector = () => {
   const [position, setPosition] = React.useState('all');
 
   return (

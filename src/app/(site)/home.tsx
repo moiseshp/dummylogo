@@ -21,6 +21,7 @@ const Home: React.FC<HomeProps> = React.memo(({ data }) => {
   const layout = useLogoStore((state) => state.layout);
   const color = useLogoStore((state) => state.color);
   const name = useLogoStore((state) => state.name);
+  const iconWeight = useLogoStore((state) => state.iconWeight);
   useDynamicFonts(data);
 
   return (
@@ -32,6 +33,7 @@ const Home: React.FC<HomeProps> = React.memo(({ data }) => {
             layout: layoutItems[layout] as Layout,
             color: color || item.color,
             name: name || 'dummylogo',
+            iconWeight,
           },
         };
         return (

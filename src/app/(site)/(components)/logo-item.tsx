@@ -1,16 +1,13 @@
 'use client';
 import * as React from 'react';
 import { Button } from '@/components/ui/button';
-// import { DownloadIcon, EyeIcon, LinkIcon, SparklesIcon } from 'lucide-react';
 import { Logo } from '@/app/(site)/(types)/logo';
 import Link from 'next/link';
 import {
   DownloadSimple,
   Eye,
-  GoogleLogo,
   LinkSimple,
   PhosphorLogo,
-  TextT,
 } from '@phosphor-icons/react';
 
 type LogoItemProps = {
@@ -18,7 +15,7 @@ type LogoItemProps = {
 } & Logo;
 
 const LogoItem: React.FC<LogoItemProps> = React.memo(
-  ({ id, styles, iconName, color, category, children }) => {
+  ({ id, color, category, children }) => {
     return (
       <div className="h-96 flex flex-col relative transition-all border -mr-[1px] -mb-[1px] text-muted-foreground hover:bg-white dark:hover:bg-black">
         <div className="h-16 flex items-center justify-between px-4 gap-x-1">
@@ -35,7 +32,6 @@ const LogoItem: React.FC<LogoItemProps> = React.memo(
             </Button>
           </div>
           <Button variant="ghost" size="sm">
-            {/* <SparklesIcon /> */}
             {category}
           </Button>
         </div>
