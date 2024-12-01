@@ -1,13 +1,16 @@
 export default function Page({ params }: any) {
   return (
-    <div className="">
-      <h1>L. {params.logo}</h1>
-      <main>
+    <div className="container bg-gray-100">
+      <div className="sticky top-20 bg-yellow-400 w-[400px]">
+        <h1>Logo Selected {params.logo}</h1>
+      </div>
+      <section className="flex-grow ml-[450px]">
         <ul>
           <li>
             Navbar (Simula diferentes estilos de navbar (clara, oscura,
             transparente).)
           </li>
+          <li>Login</li>
           <li>Card de tarjetas de producto, perfil y contenido en general</li>
           <li>Firma de correo electrónico</li>
           <li>
@@ -22,7 +25,10 @@ export default function Page({ params }: any) {
             sociales)
           </li>
         </ul>
-      </main>
+        {[...Array(130)].map((_, index) => (
+          <p key={index}>Lorem Ipsum sit amet...</p>
+        ))}
+      </section>
     </div>
   );
 }
