@@ -2,8 +2,8 @@
 
 ## Next Steps
 
-- [ ] Global Icon Selector
-- [ ] Global Font Selector
+- [x] Global Icon Selector
+- [x] Global Font Selector
 - [ ] Category Filter (logo-item)
 - [ ] Copy link of the Logo
 - [ ] To init load font validate repeat fonts (mixeed fonts)
