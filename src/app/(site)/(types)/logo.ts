@@ -1,5 +1,4 @@
 import { IconWeight } from '@phosphor-icons/react';
-import * as React from 'react';
 
 export type Layout = 'top' | 'right' | 'bottom' | 'left';
 export interface Logo {
@@ -12,10 +11,10 @@ export interface Logo {
 }
 
 export interface Customization {
-  name: string;
+  name: string | null;
+  color: string | null;
   layout: Layout;
-  color: string;
-  iconWeight: IconWeight;
-  iconName?: string;
-  fontFamily?: string;
+  iconStyle: IconWeight;
+  iconName: string | null;
+  fontFamily: string | null;
 }

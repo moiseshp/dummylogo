@@ -2,7 +2,10 @@ import * as React from 'react';
 import type { Logo } from '@/app/(site)/(types)/logo';
 
 export function useDynamicFonts(data: Logo[]) {
+  const [isFontsLoaded, setIsFontsLoaded] = React.useState(false);
+
   React.useEffect(() => {
+    console.info('load font');
     const fontsQuery = data
       .map(
         ({ styles }) =>
@@ -20,6 +23,8 @@ export function useDynamicFonts(data: Logo[]) {
     fontLink.dataset.dynamicFont = 'true';
     document.head.appendChild(fontLink);
 
+    fontLink.onload = () => setIsFontsLoaded(true);
+
     return () => {
       document.head
         .querySelectorAll('link[data-dynamic-font]')
@@ -29,5 +34,5 @@ export function useDynamicFonts(data: Logo[]) {
     };
   }, [data]);
 
-  return;
+  return isFontsLoaded;
 }

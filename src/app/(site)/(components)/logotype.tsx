@@ -14,7 +14,7 @@ const Logotype: React.FC<Logo> = React.memo(
         style={{ color: customization?.color }}
       >
         <span className="w-9 h-9 flex items-center justify-center">
-          <Icon name={iconName} size={38} weight={customization?.iconWeight} />
+          <Icon name={iconName} size={38} weight={customization?.iconStyle} />
         </span>
         <p style={styles}>{customization?.name}</p>
       </div>

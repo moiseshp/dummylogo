@@ -1,15 +1,15 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DummyLogo
 
 ## Next Steps
 
 - [ ] Global Icon Selector
 - [ ] Global Font Selector
 - [ ] Category Filter (logo-item)
-- [ ] Download Logo (svg + png + jpg)
 - [ ] Copy link of the Logo
-- [ ] Show Logo into new page
 - [ ] To init load font validate repeat fonts (mixeed fonts)
-- [ ] Validate an use ScrollInfite
+- [ ] Validate an use ScrollInfite or Simple Pagination
+- [ ] Download Logo (svg + png + jpg) (canvas) by [Fabric](https://fabricjs.com/)
+- [ ] Show Logo into new page
 
 ## Benchmarks
 

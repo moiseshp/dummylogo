@@ -5,6 +5,7 @@ import { Logotype } from './(components)/logotype';
 import { LogoItem } from './(components)/logo-item';
 import { useDynamicFonts } from '@/app/(site)/(hooks)/use-dynamic-fonts';
 import { Layout, Logo } from './(types)/logo';
+import { Spinner } from '@/components/ui/spinner';
 
 const layoutItems = {
   left: 'flex-row',
@@ -18,11 +19,15 @@ type HomeProps = {
 };
 
 const Home: React.FC<HomeProps> = React.memo(({ data }) => {
-  const layout = useLogoStore((state) => state.layout);
-  const color = useLogoStore((state) => state.color);
   const name = useLogoStore((state) => state.name);
-  const iconWeight = useLogoStore((state) => state.iconWeight);
-  useDynamicFonts(data);
+  const color = useLogoStore((state) => state.color);
+  const layout = useLogoStore((state) => state.layout);
+  const iconStyle = useLogoStore((state) => state.iconStyle);
+  const iconName = useLogoStore((state) => state.iconName);
+  const fontFamily = useLogoStore((state) => state.fontFamily);
+  const isFontsLoaded = useDynamicFonts(data);
+
+  if (!isFontsLoaded) return <Spinner />;
 
   return (
     <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 2xl:grid-cols-5 -mt-[1px]">
@@ -33,7 +38,9 @@ const Home: React.FC<HomeProps> = React.memo(({ data }) => {
             layout: layoutItems[layout] as Layout,
             color: color || item.color,
             name: name || 'dummylogo',
-            iconWeight,
+            iconStyle,
+            iconName,
+            fontFamily,
           },
         };
         return (
