@@ -4,11 +4,11 @@
 
 - [x] Global Icon Selector
 - [x] Global Font Selector
-- [ ] Category Filter (logo-item)
-- [ ] Copy link of the Logo
 - [ ] To init load font validate repeat fonts (mixeed fonts)
 - [ ] Validate an use ScrollInfite or Simple Pagination
 - [ ] Download Logo (svg + png + jpg) (canvas) by [Fabric](https://fabricjs.com/)
+- [ ] Category Filter (logo-item)
+- [ ] Copy link of the Logo
 - [ ] Show Logo into new page
 
 ## Benchmarks

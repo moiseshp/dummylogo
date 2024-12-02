@@ -33,21 +33,29 @@ const LogoItem: React.FC<LogoItemProps> = React.memo(
     children,
   }) => {
     return (
-      <div className="h-96 flex flex-col relative transition-all border -mr-[1px] -mb-[1px] text-muted-foreground hover:bg-white dark:hover:bg-black">
+      <div className="h-96 flex flex-col relative transition-all border -mr-[1px] -mb-[1px] text-muted-foreground hover:bg-muted">
         <div className="h-16 flex items-center px-4 gap-x-1">
-          <Button variant="ghost" size="sm" onClick={onFontSelected}>
+          <Button
+            variant={isFontSelected ? 'secondary' : 'ghost'}
+            size="sm"
+            onClick={onFontSelected}
+          >
             <img
               src="/google-fonts-logo.png"
               alt="Google Fonts - Logo"
               width={16}
             />
             {styles.fontFamily}
-            {isFontSelected ? <CheckSquare weight="fill" /> : <Square />}
+            {isFontSelected && <CheckSquare weight="fill" />}
           </Button>
-          <Button variant="ghost" size="sm" onClick={onIconSelected}>
+          <Button
+            variant={isIconSelected ? 'secondary' : 'ghost'}
+            size="sm"
+            onClick={onIconSelected}
+          >
             <PhosphorLogo weight="fill" />
             {iconName}
-            {isIconSelected ? <CheckSquare weight="fill" /> : <Square />}
+            {isIconSelected && <CheckSquare weight="fill" />}
           </Button>
         </div>
         <div className="flex-grow flex items-center justify-center">
