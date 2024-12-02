@@ -9,7 +9,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { CaretDown, iconStyle } from '@phosphor-icons/react';
+import { CaretDown, IconWeight } from '@phosphor-icons/react';
 import { useLogoStore } from '../(hooks)/use-logo-store';
 
 const options = [
@@ -20,7 +20,7 @@ const options = [
 
 export const IconStyleSelector = () => {
   const iconStyle = useLogoStore((state) => state.iconStyle);
-  const seticonStyle = useLogoStore((state) => state.seticonStyle);
+  const setIconStyle = useLogoStore((state) => state.setIconStyle);
 
   return (
     <DropdownMenu>
@@ -35,7 +35,7 @@ export const IconStyleSelector = () => {
         <DropdownMenuSeparator />
         <DropdownMenuRadioGroup
           value={iconStyle}
-          onValueChange={(value) => seticonStyle(value as iconStyle)}
+          onValueChange={(value) => setIconStyle(value as IconWeight)}
         >
           {options.map((item) => (
             <DropdownMenuRadioItem key={item.id} value={item.id}>

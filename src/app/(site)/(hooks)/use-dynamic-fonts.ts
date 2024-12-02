@@ -5,7 +5,6 @@ export function useDynamicFonts(data: Logo[]) {
   const [isFontsLoaded, setIsFontsLoaded] = React.useState(false);
 
   React.useEffect(() => {
-    console.info('load font');
     const fontsQuery = data
       .map(
         ({ styles }) =>

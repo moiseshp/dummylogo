@@ -4,7 +4,7 @@ import { IconProps as IconLibProps } from '@phosphor-icons/react';
 import { Spinner } from './spinner';
 
 interface IconProps extends IconLibProps {
-  name: string;
+  name?: string;
 }
 
 export const Icon = ({ name, ...props }: IconProps) => {

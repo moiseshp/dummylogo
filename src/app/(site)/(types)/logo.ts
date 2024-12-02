@@ -11,10 +11,10 @@ export interface Logo {
 }
 
 export interface Customization {
-  name: string | null;
-  color: string | null;
+  name?: string;
+  color?: string;
   layout: Layout;
   iconStyle: IconWeight;
-  iconName: string | null;
-  fontFamily: string | null;
+  iconName?: string;
+  styles?: React.CSSProperties;
 }

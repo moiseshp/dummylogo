@@ -25,9 +25,9 @@ export default function Page({ params }: any) {
             sociales)
           </li>
         </ul>
-        {[...Array(130)].map((_, index) => (
+        {/* {[...Array(130)].map((_, index) => (
           <p key={index}>Lorem Ipsum sit amet...</p>
-        ))}
+        ))} */}
       </section>
     </div>
   );

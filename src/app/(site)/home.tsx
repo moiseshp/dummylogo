@@ -4,8 +4,9 @@ import { useLogoStore } from '@/app/(site)/(hooks)/use-logo-store';
 import { Logotype } from './(components)/logotype';
 import { LogoItem } from './(components)/logo-item';
 import { useDynamicFonts } from '@/app/(site)/(hooks)/use-dynamic-fonts';
-import { Layout, Logo } from './(types)/logo';
+import type { Customization, Layout, Logo } from './(types)/logo';
 import { Spinner } from '@/components/ui/spinner';
+import { useTheme } from 'next-themes';
 
 const layoutItems = {
   left: 'flex-row',
@@ -18,14 +19,26 @@ type HomeProps = {
   data: Logo[];
 };
 
-const Home: React.FC<HomeProps> = React.memo(({ data }) => {
+const Home = React.memo(({ data }: HomeProps) => {
   const name = useLogoStore((state) => state.name);
   const color = useLogoStore((state) => state.color);
   const layout = useLogoStore((state) => state.layout);
   const iconStyle = useLogoStore((state) => state.iconStyle);
   const iconName = useLogoStore((state) => state.iconName);
-  const fontFamily = useLogoStore((state) => state.fontFamily);
+  const styles = useLogoStore((state) => state.styles);
+  const setIconName = useLogoStore((state) => state.setIconName);
+  const setStyles = useLogoStore((state) => state.setStyles);
   const isFontsLoaded = useDynamicFonts(data);
+
+  const { resolvedTheme } = useTheme();
+  const initialColor = () => (resolvedTheme === 'dark' ? 'white' : 'black');
+
+  const customization: Customization = {
+    name: name || 'dummylogo',
+    color: color || initialColor(),
+    layout: layoutItems[layout] as Layout,
+    iconStyle,
+  };
 
   if (!isFontsLoaded) return <Spinner />;
 
@@ -35,20 +48,39 @@ const Home: React.FC<HomeProps> = React.memo(({ data }) => {
         const logo: Logo = {
           ...item,
           customization: {
-            layout: layoutItems[layout] as Layout,
-            color: color || item.color,
-            name: name || 'dummylogo',
-            iconStyle,
-            iconName,
-            fontFamily,
+            ...customization,
+            iconName: iconName || item.iconName,
+            styles: styles || item.styles,
           },
         };
+        const isFontSelected = styles?.fontFamily === item.styles.fontFamily;
+        const isIconSelected = iconName === item.iconName;
+
         return (
-          <div key={item.id}>
-            <LogoItem {...logo}>
-              <Logotype {...logo} />
-            </LogoItem>
-          </div>
+          <LogoItem
+            {...logo}
+            isFontSelected={isFontSelected}
+            isIconSelected={isIconSelected}
+            onFontSelected={() => {
+              if (isFontSelected) {
+                setStyles();
+                return;
+              }
+              setStyles(item.styles);
+              setIconName();
+            }}
+            onIconSelected={() => {
+              if (isIconSelected) {
+                setIconName();
+                return;
+              }
+              setIconName(item.iconName);
+              setStyles();
+            }}
+            key={item.id}
+          >
+            <Logotype {...logo} />
+          </LogoItem>
         );
       })}
     </div>
