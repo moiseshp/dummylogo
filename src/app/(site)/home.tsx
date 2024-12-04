@@ -120,7 +120,7 @@ const Home = React.memo(({ data }: HomeProps) => {
             isIconSelected={isIconSelected}
             onSetFont={() => handleSetFont(isFontSelected, item.styles)}
             onSetIcon={() => handleSetIcon(isIconSelected, item.iconName)}
-            onLogoDownload={handleLogoDownload}
+            onLogoDownload={() => {}}
             {...logo}
           >
             <Logotype {...logo} />
