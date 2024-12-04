@@ -16,6 +16,7 @@ type LogoItemProps = {
   isIconSelected: boolean;
   onSetFont: () => void;
   onSetIcon: () => void;
+  onLogoDownload: () => void;
   children: React.ReactNode;
 } & Logo;
 
@@ -29,6 +30,7 @@ const LogoItem: React.FC<LogoItemProps> = React.memo(
     isIconSelected = false,
     onSetFont,
     onSetIcon,
+    onLogoDownload,
     children,
   }) => {
     return (
@@ -62,7 +64,12 @@ const LogoItem: React.FC<LogoItemProps> = React.memo(
         </div>
         <div className="h-16 flex items-center px-4 text-xs justify-between">
           <div>
-            <Button size="sm" variant="ghost" className="!text-inherit">
+            <Button
+              size="sm"
+              variant="ghost"
+              className="!text-inherit"
+              onClick={onLogoDownload}
+            >
               <DownloadSimple />
             </Button>
             <Button size="sm" variant="ghost" className="!text-inherit">
