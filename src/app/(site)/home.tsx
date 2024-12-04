@@ -42,6 +42,27 @@ const Home = React.memo(({ data }: HomeProps) => {
 
   if (!isFontsLoaded) return <Spinner />;
 
+  const handleSetFont = (
+    isFontSelected: boolean,
+    styles: React.CSSProperties,
+  ) => {
+    if (isFontSelected) {
+      setStyles();
+      return;
+    }
+    setStyles(styles);
+    setIconName();
+  };
+
+  const handleSetIcon = (isIconSelected: boolean, iconName: string) => {
+    if (isIconSelected) {
+      setIconName();
+      return;
+    }
+    setIconName(iconName);
+    setStyles();
+  };
+
   return (
     <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 2xl:grid-cols-5 -mt-[1px]">
       {data.map((item: Logo) => {
@@ -58,26 +79,12 @@ const Home = React.memo(({ data }: HomeProps) => {
 
         return (
           <LogoItem
-            {...logo}
+            key={item.id}
             isFontSelected={isFontSelected}
             isIconSelected={isIconSelected}
-            onFontSelected={() => {
-              if (isFontSelected) {
-                setStyles();
-                return;
-              }
-              setStyles(item.styles);
-              setIconName();
-            }}
-            onIconSelected={() => {
-              if (isIconSelected) {
-                setIconName();
-                return;
-              }
-              setIconName(item.iconName);
-              setStyles();
-            }}
-            key={item.id}
+            onSetFont={() => handleSetFont(isFontSelected, item.styles)}
+            onSetIcon={() => handleSetIcon(isIconSelected, item.iconName)}
+            {...logo}
           >
             <Logotype {...logo} />
           </LogoItem>

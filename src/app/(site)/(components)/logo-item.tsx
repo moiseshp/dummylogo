@@ -9,14 +9,13 @@ import {
   Eye,
   LinkSimple,
   PhosphorLogo,
-  Square,
 } from '@phosphor-icons/react';
 
 type LogoItemProps = {
   isFontSelected: boolean;
   isIconSelected: boolean;
-  onFontSelected: () => void;
-  onIconSelected: () => void;
+  onSetFont: () => void;
+  onSetIcon: () => void;
   children: React.ReactNode;
 } & Logo;
 
@@ -28,8 +27,8 @@ const LogoItem: React.FC<LogoItemProps> = React.memo(
     styles,
     isFontSelected = false,
     isIconSelected = false,
-    onFontSelected,
-    onIconSelected,
+    onSetFont,
+    onSetIcon,
     children,
   }) => {
     return (
@@ -38,7 +37,7 @@ const LogoItem: React.FC<LogoItemProps> = React.memo(
           <Button
             variant={isFontSelected ? 'secondary' : 'ghost'}
             size="sm"
-            onClick={onFontSelected}
+            onClick={onSetFont}
           >
             <img
               src="/google-fonts-logo.png"
@@ -51,7 +50,7 @@ const LogoItem: React.FC<LogoItemProps> = React.memo(
           <Button
             variant={isIconSelected ? 'secondary' : 'ghost'}
             size="sm"
-            onClick={onIconSelected}
+            onClick={onSetIcon}
           >
             <PhosphorLogo weight="fill" />
             {iconName}
