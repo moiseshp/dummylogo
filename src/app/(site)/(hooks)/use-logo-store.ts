@@ -8,6 +8,7 @@ const DEFAULT_LOGO_STORE = {
   name: undefined,
   color: undefined,
   layout: 'left',
+  iconSize: 40,
   iconStyle: 'fill',
   iconName: undefined,
   styles: undefined,

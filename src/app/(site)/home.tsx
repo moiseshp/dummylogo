@@ -1,29 +1,18 @@
 'use client';
 import * as React from 'react';
 import { useLogoStore } from '@/app/(site)/(hooks)/use-logo-store';
-import { Logotype } from './(components)/logotype';
 import { LogoItem } from './(components)/logo-item';
 import { useDynamicFonts } from '@/app/(site)/(hooks)/use-dynamic-fonts';
 import type { Customization, Layout, Logo } from './(types)/logo';
 import { Spinner } from '@/components/ui/spinner';
 import { useTheme } from 'next-themes';
-// import { FabricText, loadSVGFromString, StaticCanvas, util } from 'fabric';
-
-// import { Boat } from '@phosphor-icons/react';
-// import { renderToString } from 'react-dom/server';
-
-const layoutItems = {
-  left: 'flex-row',
-  right: 'flex-row-reverse',
-  top: 'flex-col',
-  bottom: 'flex-col-reverse',
-};
-
-// const generateIconSVG = (IconComponent: any, props: any) => {
-//   return renderToString(<IconComponent {...props} />);
-// };
-
-// const svgString = generateIconSVG(Boat, { weight: 'fill', size: 1 });
+import { createCanvasLogo } from './(utils)/create-canvas-logo';
+import { renderToString } from 'react-dom/server';
+import { downloadImage } from '@/lib/download-image';
+import * as icons from './(utils)/icons';
+import { cn } from '@/lib/utils';
+import { layoutItems } from './(utils)/layout-items';
+import { getInitialColor } from './(utils)/get-initial-color';
 
 type HomeProps = {
   data: Logo[];
@@ -34,23 +23,21 @@ const Home = React.memo(({ data }: HomeProps) => {
   const color = useLogoStore((state) => state.color);
   const layout = useLogoStore((state) => state.layout);
   const iconStyle = useLogoStore((state) => state.iconStyle);
+  const iconSize = useLogoStore((state) => state.iconSize);
   const iconName = useLogoStore((state) => state.iconName);
   const styles = useLogoStore((state) => state.styles);
   const setIconName = useLogoStore((state) => state.setIconName);
   const setStyles = useLogoStore((state) => state.setStyles);
   const isFontsLoaded = useDynamicFonts(data);
-
   const { resolvedTheme } = useTheme();
-  const initialColor = () => (resolvedTheme === 'dark' ? 'white' : 'black');
 
-  const customization: Customization = {
+  const initCustomization: Customization = {
     name: name || 'dummylogo',
-    color: color || initialColor(),
+    color: color || getInitialColor(resolvedTheme),
     layout: layoutItems[layout] as Layout,
     iconStyle,
+    iconSize,
   };
-
-  if (!isFontsLoaded) return <Spinner />;
 
   const handleSetFont = (
     isFontSelected: boolean,
@@ -73,46 +60,41 @@ const Home = React.memo(({ data }: HomeProps) => {
     setStyles();
   };
 
-  // const download = (canvas: any) => {
-  //   const imageSrc = canvas.toDataURL();
-  //   // some download code down here
-  //   const a = document.createElement('a');
-  //   a.href = imageSrc;
-  //   a.download = 'image.png';
-  //   document.body.appendChild(a);
-  //   a.click();
-  //   document.body.removeChild(a);
-  // };
+  const handleLogoDownload = async (
+    customization: Customization,
+    Icon: React.ComponentType<any>,
+  ) => {
+    const svgIcon = renderToString(
+      <Icon
+        weight={customization.iconStyle}
+        color={customization.color}
+        size={customization.iconSize}
+      />,
+    );
 
-  // const handleLogoDownload = () => {
-  //   const canvas = new StaticCanvas();
-  //   const text = new FabricText('hello world', { fontFamily: 'Train One' });
-  //   canvas.centerObject(text);
+    const canvasUrl = await createCanvasLogo({ customization, svgIcon });
+    downloadImage(canvasUrl);
+  };
 
-  //   loadSVGFromString(svgString).then(({ objects }: any) => {
-  //     const icon = util.groupSVGElements(objects);
-  //     icon.set({ left: 50, top: 50, scaleX: 1, scaleY: 1 });
-  //     canvas.add(text, icon);
-  //     canvas.add(icon);
-  //     canvas.renderAll();
-  //     download(canvas);
-  //   });
-  // };
+  if (!isFontsLoaded)
+    return (
+      <div className="p-20 flex items-center justify-center">
+        <Spinner />
+      </div>
+    );
 
   return (
     <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 2xl:grid-cols-5 -mt-[1px]">
       {data.map((item: Logo) => {
-        const logo: Logo = {
-          ...item,
-          customization: {
-            ...customization,
-            iconName: iconName || item.iconName,
-            styles: styles || item.styles,
-          },
+        const customization = {
+          ...initCustomization,
+          iconName: iconName || item.iconName,
+          styles: styles || item.styles,
         };
+
         const isFontSelected = styles?.fontFamily === item.styles.fontFamily;
         const isIconSelected = iconName === item.iconName;
-
+        const Icon = icons[customization.iconName as keyof typeof icons];
         return (
           <LogoItem
             key={item.id}
@@ -120,10 +102,26 @@ const Home = React.memo(({ data }: HomeProps) => {
             isIconSelected={isIconSelected}
             onSetFont={() => handleSetFont(isFontSelected, item.styles)}
             onSetIcon={() => handleSetIcon(isIconSelected, item.iconName)}
-            onLogoDownload={() => {}}
-            {...logo}
+            onLogoDownload={() => handleLogoDownload(customization, Icon)}
+            {...item}
           >
-            <Logotype {...logo} />
+            <div
+              className={cn(
+                'flex items-center gap-x-3 gap-y-1',
+                customization.layout,
+              )}
+            >
+              <Icon
+                weight={customization.iconStyle}
+                size={customization.iconSize}
+                color={customization.color}
+              />
+              <p
+                style={{ ...customization.styles, color: customization.color }}
+              >
+                {customization.name}
+              </p>
+            </div>
           </LogoItem>
         );
       })}

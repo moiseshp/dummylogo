@@ -16,5 +16,6 @@ export interface Customization {
   layout: Layout;
   iconStyle: IconWeight;
   iconName?: string;
+  iconSize?: number;
   styles?: React.CSSProperties;
 }
