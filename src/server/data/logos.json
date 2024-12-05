@@ -138,7 +138,8 @@
     "styles": {
       "fontFamily": "Bubblegum Sans",
       "fontWeight": 400,
-      "fontSize": 38
+      "fontSize": 38,
+      "marginTop": 6
     },
     "category": "technology"
   },
