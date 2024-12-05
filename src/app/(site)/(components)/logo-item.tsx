@@ -2,12 +2,12 @@
 import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import type { Logo } from '@/app/(site)/(types)/logo';
-import Link from 'next/link';
+// import Link from 'next/link';
 import {
   CheckSquare,
   DownloadSimple,
-  Eye,
-  LinkSimple,
+  // Eye,
+  // LinkSimple,
   PhosphorLogo,
 } from '@phosphor-icons/react';
 
@@ -22,8 +22,8 @@ type LogoItemProps = {
 
 const LogoItem: React.FC<LogoItemProps> = React.memo(
   ({
-    id,
-    color,
+    // id,
+    // color,
     iconName,
     styles,
     isFontSelected = false,
@@ -46,7 +46,7 @@ const LogoItem: React.FC<LogoItemProps> = React.memo(
               alt="Google Fonts - Logo"
               width={16}
             />
-            {styles.fontFamily}
+            Set {styles.fontFamily}
             {isFontSelected && <CheckSquare weight="fill" />}
           </Button>
           <Button
@@ -55,7 +55,7 @@ const LogoItem: React.FC<LogoItemProps> = React.memo(
             onClick={onSetIcon}
           >
             <PhosphorLogo weight="fill" />
-            {iconName}
+            Set {iconName}
             {isIconSelected && <CheckSquare weight="fill" />}
           </Button>
         </div>
@@ -65,23 +65,22 @@ const LogoItem: React.FC<LogoItemProps> = React.memo(
         <div className="h-16 flex items-center px-4 text-xs justify-between">
           <div>
             <Button
-              size="sm"
               variant="ghost"
               className="!text-inherit"
               onClick={onLogoDownload}
             >
               <DownloadSimple />
             </Button>
-            <Button size="sm" variant="ghost" className="!text-inherit">
+            {/* <Button size="sm" variant="ghost" className="!text-inherit">
               <LinkSimple />
             </Button>
             <Button size="sm" variant="ghost" className="!text-inherit" asChild>
               <Link href={`/${id}`}>
                 <Eye />
               </Link>
-            </Button>
+            </Button> */}
           </div>
-          <Button variant="ghost" size="sm">
+          {/* <Button variant="ghost" size="sm">
             {color}
             <span
               className="w-3 h-3 rounded-full"
@@ -89,7 +88,7 @@ const LogoItem: React.FC<LogoItemProps> = React.memo(
                 backgroundColor: color,
               }}
             />
-          </Button>
+          </Button> */}
         </div>
       </div>
     );

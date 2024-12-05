@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { BrandLogo } from '@/components/brand-logo';
 import { LogoNameEditor } from './logo-name-editor';
-import { CategorySelector } from './category-selector';
+// import { CategorySelector } from './category-selector';
 import { LayoutPicker } from './layout-picker';
 import { ColorPicker } from './color-picker';
 import { ResetButton } from './reset-button';
@@ -17,7 +17,7 @@ export const Navbar = () => {
       </Link>
       <nav className="flex items-center gap-x-2 h-full text-muted-foreground">
         <ThemeToggle />
-        <CategorySelector />
+        {/* <CategorySelector /> */}
         <LogoNameEditor />
         <LayoutPicker />
         <IconStyleSelector />
