@@ -6,6 +6,7 @@
 - [x] Global Font Selector
 - [x] Download Logo (svg + png + jpg) (canvas) by [Fabric](https://fabricjs.com/)
 - [x] Add Google Analitics
+- [ ] Add 10 more example logos
 - [ ] Show Logo into new page
 - [ ] To init load font validate repeat fonts (mixeed fonts)
 - [ ] Validate an use ScrollInfite or Simple Pagination
