@@ -2,7 +2,6 @@
   {
     "id": "EcoSphere",
     "iconName": "Leaf",
-    "color": "#27AE60",
     "styles": {
       "fontFamily": "Poppins",
       "fontWeight": 400,
@@ -13,61 +12,62 @@
   {
     "id": "techify",
     "iconName": "Boat",
-    "color": "#007BFF",
     "styles": {
       "fontFamily": "Train One",
       "fontWeight": 400,
-      "fontSize": 28,
-      "letterSpacing": -0.5
+      "fontSize": 28
     },
     "category": "technology"
   },
   {
     "id": "codestream",
     "iconName": "Chats",
-    "color": "#E73E44",
     "styles": {
       "fontFamily": "Righteous",
       "fontWeight": 400,
-      "fontSize": 32,
-      "marginTop": -5
+      "fontSize": 32
     },
     "category": "technology"
   },
   {
     "id": "pixelgrid",
     "iconName": "GameController",
-    "color": "#4CAF50",
     "styles": {
       "fontFamily": "Pixelify Sans",
       "fontWeight": 500,
-      "fontSize": 32,
-      "marginTop": -3
+      "fontSize": 32
     },
     "category": "technology"
   },
   {
     "id": "datanode",
     "iconName": "Sword",
-    "color": "#FF9900",
     "styles": {
       "fontFamily": "Freckle Face",
       "fontWeight": 400,
-      "fontSize": 34,
-      "letterSpacing": 1
+      "fontSize": 34
     },
     "category": "technology"
   },
   {
     "id": "cybersphere",
     "iconName": "Skull",
-    "color": "#6C63FF",
     "styles": {
       "fontFamily": "Special Elite",
       "fontWeight": 400,
       "fontSize": 32,
-      "letterSpacing": -1,
-      "marginTop": 5
+      "marginTop": 4
+    },
+    "category": "technology"
+  },
+  {
+    "id": "cybersphere",
+    "iconName": "HighlighterCircle",
+    "styles": {
+      "fontFamily": "Zen Tokyo Zoo",
+      "fontWeight": 400,
+      "fontSize": 42,
+      "marginTop": -12
     },
     "category": "technology"
   }

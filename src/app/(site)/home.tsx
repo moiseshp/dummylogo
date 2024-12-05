@@ -115,8 +115,10 @@ const Home = React.memo(({ data }: HomeProps) => {
                 weight={customization.iconStyle}
                 size={customization.iconSize}
                 color={customization.color}
+                className="leading-none"
               />
               <p
+                className="-mt-1"
                 style={{ ...customization.styles, color: customization.color }}
               >
                 {customization.name}

@@ -1,12 +1,13 @@
-import { FabricText, loadSVGFromString, StaticCanvas, util } from 'fabric';
+import {
+  FabricText,
+  Group,
+  loadSVGFromString,
+  Rect,
+  StaticCanvas,
+  util,
+} from 'fabric';
 import { Customization } from '@/app/(site)/(types)/logo';
 import { layoutItems } from './layout-items';
-
-const GAP_H_LEFT = 9;
-const GAP_H_RIGHT = 14;
-const GAP_V_TOP = 5;
-const GAP_V_BOTTOM = 6;
-const MULTIPLIER = 3;
 
 export async function createCanvasLogo({
   customization,
@@ -15,121 +16,80 @@ export async function createCanvasLogo({
   customization: Customization;
   svgIcon: string;
 }) {
-  const text = getText(customization);
-  const icon = await getIcon(svgIcon, text, customization);
-  const canvas = new StaticCanvas('canvas', {
-    ...getCanvasSize(customization, text),
-  });
+  const gapH = 8;
+  const gapV = 8 / 2;
+  const multiplier = 3; // scale canvas
 
-  canvas.add(icon, text);
-  canvas.renderAll();
+  const { layout, iconSize = 0 } = customization;
+  const text = buildText(customization);
+  const icon = await buildIcon(svgIcon, iconSize);
+  const canvas = new StaticCanvas('canvas');
 
-  return canvas.toDataURL({
-    multiplier: MULTIPLIER,
-  });
-}
-
-function getCanvasSize({ layout, iconSize }: Customization, text: any) {
-  if ([layoutItems.top, layoutItems.bottom].includes(layout)) {
-    return {
-      width: text.width,
-      height: iconSize! + GAP_V_TOP + text.height,
-    };
+  if (layout.includes('row')) {
+    canvas.width = iconSize + text.width + gapH;
+    canvas.height = iconSize;
+    canvas.centerObjectV(icon);
+    canvas.centerObjectV(text);
+  } else {
+    canvas.width = text.width;
+    canvas.height = iconSize + text.height + gapV;
+    canvas.centerObjectH(icon);
+    canvas.centerObjectH(text);
   }
 
-  return {
-    width: iconSize! + GAP_H_LEFT + text.width,
-    height: iconSize,
-  };
-}
-
-async function getIcon(
-  svgIcon: string,
-  text: any,
-  { layout, iconSize }: Customization,
-) {
-  const { objects, options }: any = await loadSVGFromString(svgIcon);
-  const icon = util.groupSVGElements(objects, options);
-  icon.backgroundColor = 'red';
-
   if (layout === layoutItems.top) {
-    icon.top = 0;
-    icon.left = text.width / 2 - iconSize! / 2;
-    return icon;
+    text.top = iconSize + gapV;
   }
 
   if (layout === layoutItems.right) {
-    icon.top = 0;
-    icon.left = text.width + GAP_H_RIGHT;
-    return icon;
+    icon.left = text.width + gapH;
   }
 
   if (layout === layoutItems.bottom) {
-    icon.top = text.height + GAP_V_BOTTOM;
-    icon.left = text.width / 2 - iconSize! / 2;
-    return icon;
+    icon.top = text.height + gapV;
   }
 
-  icon.top = 0;
-  icon.left = 0;
+  if (layout === layoutItems.left) {
+    text.left = iconSize + gapH;
+  }
 
-  return icon;
+  const group = new Group([text, icon]);
+
+  canvas.add(group);
+  canvas.renderAll();
+
+  return canvas.toDataURL({ multiplier });
 }
 
-function getText({ name, color, iconSize, styles, layout }: Customization) {
+async function buildIcon(svgIcon: string, iconSize: number) {
+  const { objects }: any = await loadSVGFromString(svgIcon);
+  const icon = util.groupSVGElements(objects);
+  const box = new Rect({
+    width: iconSize,
+    height: iconSize,
+    fill: 'transparent',
+  });
+
+  return new Group([box, icon]);
+}
+
+function buildText({ name, color, styles }: Customization) {
   const text = new FabricText(name as string, {
     fontFamily: styles?.fontFamily,
     fontWeight: styles?.fontWeight,
     fontSize: styles?.fontSize as number,
-    backgroundColor: '#FF00cc',
+    lineHeight: 1,
     fill: color,
   });
 
-  if (layout === layoutItems.top) {
-    text.top = iconSize! + GAP_V_TOP;
-    text.left = 0;
-    return text;
-  }
+  const marginTopHack = -(Math.abs(styles?.marginTop as number) / 1.5) || 0;
+  text.top = marginTopHack;
 
-  if (layout === layoutItems.right) {
-    text.top = (iconSize! - text.height + Number(styles?.marginTop || 0)) / 2;
-    text.left = 0;
-    return text;
-  }
+  const box = new Rect({
+    width: text.width,
+    height: text.height,
+    fill: 'transparent',
+  });
 
-  if (layout === layoutItems.left) {
-    text.top = (iconSize! - text.height - Number(styles?.marginTop || 0)) / 2;
-    text.left = iconSize! + GAP_H_RIGHT;
-    return text;
-  }
-
-  text.top = 0;
-  text.left = 0;
-
-  return text;
+  return new Group([box, text]);
 }
-
-// const createLetterSpacedText = (text, options, letterSpacing) => {
-//   let leftPosition = 0;
-
-//   const letters = text.split('').map((char) => {
-//     const letter = new fabric.Text(char, {
-//       ...options,
-//       left: leftPosition,
-//     });
-//     leftPosition += letter.width + letterSpacing; // Incrementa según el ancho del carácter y el espaciado.
-//     return letter;
-//   });
-
-//   return new fabric.Group(letters, {
-//     originX: 'center',
-//     originY: 'center',
-//   });
-// };
-
-// // Ejemplo de uso
-// const letterSpacedText = createLetterSpacedText('FabricJS', {
-//   fontSize: 40,
-//   fontFamily: 'Arial',
-//   fill: 'black',
-// }, 5); // Espaciado entre letras: 5px
