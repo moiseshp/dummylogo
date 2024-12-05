@@ -84,7 +84,7 @@ const Home = React.memo(({ data }: HomeProps) => {
     );
 
   return (
-    <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 -mt-[1px]">
+    <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 3xl:grid-cols-5 -mt-[1px]">
       {data.map((item: Logo) => {
         const customization = {
           ...initCustomization,

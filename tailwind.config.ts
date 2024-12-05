@@ -6,6 +6,9 @@ const config: Config = {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
+      screens: {
+        '3xl': '1920px',
+      },
       container: {
         center: true,
       },

@@ -1,6 +1,6 @@
 [
   {
-    "id": "EcoSphere",
+    "id": "EcoSphere1",
     "iconName": "Leaf",
     "styles": {
       "fontFamily": "Poppins",
@@ -10,7 +10,7 @@
     "category": "environment"
   },
   {
-    "id": "techify",
+    "id": "techify2",
     "iconName": "Boat",
     "styles": {
       "fontFamily": "Train One",
@@ -20,7 +20,7 @@
     "category": "technology"
   },
   {
-    "id": "codestream",
+    "id": "codestream3",
     "iconName": "Chats",
     "styles": {
       "fontFamily": "Righteous",
@@ -30,7 +30,7 @@
     "category": "technology"
   },
   {
-    "id": "pixelgrid",
+    "id": "pixelgrid4",
     "iconName": "GameController",
     "styles": {
       "fontFamily": "Pixelify Sans",
@@ -40,8 +40,8 @@
     "category": "technology"
   },
   {
-    "id": "datanode",
-    "iconName": "Sword",
+    "id": "datanode5",
+    "iconName": "Ghost",
     "styles": {
       "fontFamily": "Freckle Face",
       "fontWeight": 400,
@@ -50,7 +50,7 @@
     "category": "technology"
   },
   {
-    "id": "cybersphere",
+    "id": "cybersphere6",
     "iconName": "Skull",
     "styles": {
       "fontFamily": "Special Elite",
@@ -61,13 +61,95 @@
     "category": "technology"
   },
   {
-    "id": "cybersphere",
-    "iconName": "HighlighterCircle",
+    "id": "cybersphere7",
+    "iconName": "CarBattery",
     "styles": {
       "fontFamily": "Zen Tokyo Zoo",
       "fontWeight": 400,
       "fontSize": 42,
       "marginTop": -12
+    },
+    "category": "technology"
+  },
+  {
+    "id": "cybersphere8",
+    "iconName": "Radio",
+    "styles": {
+      "fontFamily": "Warnes",
+      "fontWeight": 400,
+      "fontSize": 24,
+      "marginTop": 4
+    },
+    "category": "technology"
+  },
+  {
+    "id": "cybersphere9",
+    "iconName": "Balloon",
+    "styles": {
+      "fontFamily": "Rubik Moonrocks",
+      "fontWeight": 400,
+      "fontSize": 30
+    },
+    "category": "technology"
+  },
+  {
+    "id": "cybersphere10",
+    "iconName": "BeachBall",
+    "styles": {
+      "fontFamily": "Rampart One",
+      "fontWeight": 400,
+      "fontSize": 30
+    },
+    "category": "technology"
+  },
+  {
+    "id": "cybersphere10",
+    "iconName": "Planet",
+    "styles": {
+      "fontFamily": "Gorditas",
+      "fontWeight": 700,
+      "fontSize": 30
+    },
+    "category": "technology"
+  },
+  {
+    "id": "cybersphere10",
+    "iconName": "Flask",
+    "styles": {
+      "fontFamily": "Revalia",
+      "fontWeight": 400,
+      "fontSize": 28
+    },
+    "category": "technology"
+  },
+  {
+    "id": "cybersphere10",
+    "iconName": "AirplaneTakeoff",
+    "styles": {
+      "fontFamily": "Pacifico",
+      "fontWeight": 400,
+      "fontSize": 34
+    },
+    "category": "technology"
+  },
+  {
+    "id": "cybersphere10",
+    "iconName": "Bomb",
+    "styles": {
+      "fontFamily": "Bubblegum Sans",
+      "fontWeight": 400,
+      "fontSize": 38
+    },
+    "category": "technology"
+  },
+  {
+    "id": "cybersphere10",
+    "iconName": "BowlSteam",
+    "styles": {
+      "fontFamily": "Give You Glory",
+      "fontWeight": 400,
+      "fontSize": 34,
+      "marginTop": 8
     },
     "category": "technology"
   }

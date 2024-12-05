@@ -26,7 +26,7 @@ export const ColorPicker = () => {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuLabel>Panel Position</DropdownMenuLabel>
+        <DropdownMenuLabel>Color Picker</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <ColorPickerUI value={color} onChange={setColor} />
       </DropdownMenuContent>
