@@ -9,7 +9,7 @@ export const ResetButton = () => {
   return (
     <Button variant="ghost" onClick={reset}>
       <ArrowClockwise />
-      Reset all
+      <span className="hidden lg:block">Reset all</span>
     </Button>
   );
 };

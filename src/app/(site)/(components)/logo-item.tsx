@@ -41,7 +41,7 @@ const LogoItem: React.FC<LogoItemProps> = React.memo(
     children,
   }) => {
     return (
-      <div className="h-96 flex flex-col relative transition-all border -mr-[1px] -mb-[1px] text-muted-foreground hover:bg-muted">
+      <div className="h-96 flex flex-col relative transition-all border-b sm:border sm:-mr-[1px] sm:-mb-[1px] text-muted-foreground hover:bg-muted">
         <div className="h-16 flex items-center px-4 gap-x-1">
           <TooltipProvider>
             <Tooltip>
