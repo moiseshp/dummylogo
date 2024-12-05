@@ -32,8 +32,15 @@ export default function RootLayout({
           </header>
           <main className="flex flex-col flex-grow">{children}</main>
           <footer>
-            <div className="container text-center text-xs text-muted-foreground py-4">
-              Copyright © 2021 — 2024 Indian Type Foundry. All rights reserved.
+            <div className="container text-sm text-muted-foreground py-4 flex justify-center gap-x-1">
+              <span>2024 © dummylogo by</span>
+              <a
+                href="https://x.com/moiseseduardohp"
+                target="_blank"
+                className="font-semibold"
+              >
+                moiseshp
+              </a>
             </div>
           </footer>
         </ThemeProvider>

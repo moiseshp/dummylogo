@@ -9,7 +9,14 @@ import {
   // Eye,
   // LinkSimple,
   PhosphorLogo,
+  Square,
 } from '@phosphor-icons/react';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip';
 
 type LogoItemProps = {
   isFontSelected: boolean;
@@ -36,41 +43,68 @@ const LogoItem: React.FC<LogoItemProps> = React.memo(
     return (
       <div className="h-96 flex flex-col relative transition-all border -mr-[1px] -mb-[1px] text-muted-foreground hover:bg-muted">
         <div className="h-16 flex items-center px-4 gap-x-1">
-          <Button
-            variant={isFontSelected ? 'secondary' : 'ghost'}
-            size="sm"
-            onClick={onSetFont}
-          >
-            <img
-              src="/google-fonts-logo.png"
-              alt="Google Fonts - Logo"
-              width={16}
-            />
-            Set {styles.fontFamily}
-            {isFontSelected && <CheckSquare weight="fill" />}
-          </Button>
-          <Button
-            variant={isIconSelected ? 'secondary' : 'ghost'}
-            size="sm"
-            onClick={onSetIcon}
-          >
-            <PhosphorLogo weight="fill" />
-            Set {iconName}
-            {isIconSelected && <CheckSquare weight="fill" />}
-          </Button>
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button
+                  variant={isFontSelected ? 'secondary' : 'ghost'}
+                  size="sm"
+                  onClick={onSetFont}
+                >
+                  <img
+                    src="/google-fonts-logo.png"
+                    alt="Google Fonts - Logo"
+                    width={16}
+                  />
+                  {styles.fontFamily}
+                  {isFontSelected ? <CheckSquare weight="fill" /> : <Square />}
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Set font</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button
+                  variant={isIconSelected ? 'secondary' : 'ghost'}
+                  size="sm"
+                  onClick={onSetIcon}
+                >
+                  <PhosphorLogo weight="fill" />
+                  {iconName}
+                  {isIconSelected ? <CheckSquare weight="fill" /> : <Square />}
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Set icon</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
         </div>
         <div className="flex-grow flex items-center justify-center">
           {children}
         </div>
         <div className="h-16 flex items-center px-4 text-xs justify-between">
           <div>
-            <Button
-              variant="ghost"
-              className="!text-inherit"
-              onClick={onLogoDownload}
-            >
-              <DownloadSimple />
-            </Button>
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    className="!text-inherit"
+                    onClick={onLogoDownload}
+                  >
+                    <DownloadSimple />
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Download Logo</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
             {/* <Button size="sm" variant="ghost" className="!text-inherit">
               <LinkSimple />
             </Button>

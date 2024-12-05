@@ -1,4 +1,16 @@
-export default function Page({ params }: any) {
+import { notFound } from 'next/navigation';
+
+type Props = {
+  params: {
+    logo: string;
+  };
+};
+
+export default function Page({ params }: Props) {
+  if (params.logo !== 'mariafe') {
+    notFound();
+  }
+
   return (
     <div className="container bg-gray-100">
       <div className="sticky top-20 bg-yellow-400 w-[400px]">
