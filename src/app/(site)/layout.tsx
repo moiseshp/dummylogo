@@ -1,3 +1,4 @@
+import { GoogleTagManager } from '@next/third-parties/google';
 import type { Metadata } from 'next';
 import { baseFont } from '@/app/fonts';
 import { Navbar } from '@/app/(site)/(components)/navbar';
@@ -21,6 +22,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         {/* <script src="https://unpkg.com/react-scan/dist/auto.global.js" async /> */}
+        <GoogleTagManager gtmId="G-W7MJZQ006Q" />
       </head>
       <body className={cn('flex flex-col min-h-screen', baseFont.className)}>
         <ThemeProvider

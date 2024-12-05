@@ -5,11 +5,12 @@
 - [x] Global Icon Selector
 - [x] Global Font Selector
 - [x] Download Logo (svg + png + jpg) (canvas) by [Fabric](https://fabricjs.com/)
-- [ ] Validate an use ScrollInfite or Simple Pagination
+- [x] Add Google Analitics
+- [ ] Show Logo into new page
 - [ ] To init load font validate repeat fonts (mixeed fonts)
+- [ ] Validate an use ScrollInfite or Simple Pagination
 - [ ] Category Filter (logo-item)
 - [ ] Copy link of the Logo
-- [ ] Show Logo into new page
 
 ## Benchmarks
 
