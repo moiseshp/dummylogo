@@ -18,7 +18,7 @@ export async function createCanvasLogo({
 }) {
   const gapH = 8;
   const gapV = 8 / 2;
-  const multiplier = 3; // scale canvas
+  const multiplier = 3; // scale
 
   const { layout, iconSize = 0 } = customization;
   const text = buildText(customization);

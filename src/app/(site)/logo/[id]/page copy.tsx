@@ -29,13 +29,15 @@ export default function Page({ params }: Props) {
             Hero section (Ejemplo: En el centro de un fondo, junto con un
             eslogan o llamada a la acción. )
           </li>
-          <li>Icono de aplicación o favicon</li>
+          <li>Sidebar width Logo</li>
           <li>Redes sociales</li>
           <li>Pie de página (Footer)</li>
           <li>
             Banners publicitarios (Banners rectangulares, cuadrados o de redes
             sociales)
           </li>
+          <li>https://dribbble.com/shots/22955964-Social-UI</li>
+          <li>https://dribbble.com/shots/22999212-Social-UI</li>
         </ul>
         {/* {[...Array(130)].map((_, index) => (
           <p key={index}>Lorem Ipsum sit amet...</p>

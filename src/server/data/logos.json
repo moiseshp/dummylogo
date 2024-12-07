@@ -1,6 +1,6 @@
 [
   {
-    "id": "EcoSphere1",
+    "id": "Poppins-Leaf",
     "iconName": "Leaf",
     "styles": {
       "fontFamily": "Poppins",
@@ -103,7 +103,7 @@
     "category": "technology"
   },
   {
-    "id": "cybersphere10",
+    "id": "cybersphere11",
     "iconName": "Planet",
     "styles": {
       "fontFamily": "Gorditas",
@@ -113,7 +113,7 @@
     "category": "technology"
   },
   {
-    "id": "cybersphere10",
+    "id": "cybersphere12",
     "iconName": "Flask",
     "styles": {
       "fontFamily": "Revalia",
@@ -123,7 +123,7 @@
     "category": "technology"
   },
   {
-    "id": "cybersphere10",
+    "id": "cybersphere13",
     "iconName": "AirplaneTakeoff",
     "styles": {
       "fontFamily": "Pacifico",
@@ -133,7 +133,7 @@
     "category": "technology"
   },
   {
-    "id": "cybersphere10",
+    "id": "cybersphere14",
     "iconName": "Bomb",
     "styles": {
       "fontFamily": "Bubblegum Sans",
@@ -144,7 +144,7 @@
     "category": "technology"
   },
   {
-    "id": "cybersphere10",
+    "id": "cybersphere15",
     "iconName": "BowlSteam",
     "styles": {
       "fontFamily": "Give You Glory",

@@ -1,13 +1,8 @@
 import { Logo } from './(types)/logo';
-import { Home as HomePage } from './home';
+import PageClient from './page-client';
 import logosJSON from '@/server/data/logos.json';
 
-export default function Home() {
+export default function Page() {
   const data: Logo[] = logosJSON;
-
-  return (
-    <>
-      <HomePage data={data} />
-    </>
-  );
+  return <PageClient data={data} />;
 }
