@@ -1,6 +1,6 @@
 [
   {
-    "id": "Poppins-Leaf",
+    "id": "poppins-leaf",
     "iconName": "Leaf",
     "styles": {
       "fontFamily": "Poppins",
@@ -10,7 +10,7 @@
     "category": "environment"
   },
   {
-    "id": "techify2",
+    "id": "train-one-boat",
     "iconName": "Boat",
     "styles": {
       "fontFamily": "Train One",
