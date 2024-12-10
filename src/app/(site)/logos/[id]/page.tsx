@@ -1,4 +1,4 @@
-// import { notFound } from 'next/navigation';
+import { notFound } from 'next/navigation';
 import PageClient from './page-client';
 
 type Props = {
@@ -8,9 +8,9 @@ type Props = {
 };
 
 export default function Page({ params }: Props) {
-  // if (params.id !== 'mariafe') {
-  //   notFound();
-  // }
+  if (params.id !== 'mariafe') {
+    notFound();
+  }
 
   return <PageClient />;
 }
