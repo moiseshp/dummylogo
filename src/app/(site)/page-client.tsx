@@ -5,19 +5,18 @@ import { LogoItem } from './(components)/logo-item';
 import { useDynamicFonts } from '@/app/(site)/(hooks)/use-dynamic-fonts';
 import type { Customization, Logo } from './(types)/logo';
 import { Spinner } from '@/components/ui/spinner';
-import { createCanvasLogo } from './(utils)/create-canvas-logo';
 import { renderToString } from 'react-dom/server';
-import { downloadImage } from '@/lib/download-image';
 import * as icons from './(utils)/icons';
 import { Logotype } from './(components)/logotype';
-import { useCustomization } from './(hooks)/use-customization';
+import { useLogoUtilities } from './(hooks)/use-logo-utilities';
 
 type HomeProps = {
   data: Logo[];
 };
 
 export default function PageClient({ data }: HomeProps) {
-  const { initCustomization, buildCustomization } = useCustomization();
+  const { initCustomization, buildCustomization, downloadLogo } =
+    useLogoUtilities();
   const setIconName = useLogoStore((state) => state.setIconName);
   const setStyles = useLogoStore((state) => state.setStyles);
   const isFontsLoaded = useDynamicFonts(data);
@@ -43,9 +42,10 @@ export default function PageClient({ data }: HomeProps) {
     setStyles();
   };
 
-  const handleLogoDownload = async (
+  const handleDownloadLogo = async (
     customization: Customization,
     Icon: React.ComponentType<any>,
+    filename: string,
   ) => {
     const svgIcon = renderToString(
       <Icon
@@ -54,9 +54,7 @@ export default function PageClient({ data }: HomeProps) {
         size={customization.iconSize}
       />,
     );
-
-    const canvasUrl = await createCanvasLogo({ customization, svgIcon });
-    downloadImage(canvasUrl);
+    await downloadLogo(customization, svgIcon, filename);
   };
 
   if (!isFontsLoaded) {
@@ -82,10 +80,19 @@ export default function PageClient({ data }: HomeProps) {
             isIconSelected={isIconSelected}
             onSetFont={() => handleSetFont(isFontSelected, item.styles)}
             onSetIcon={() => handleSetIcon(isIconSelected, item.iconName)}
-            onLogoDownload={() => handleLogoDownload(customization, Icon)}
+            onLogoDownload={() =>
+              handleDownloadLogo(customization, Icon, item.id)
+            }
             {...item}
           >
-            <Logotype customization={customization} icon={Icon} />
+            <div
+              className="flex items-center justify-center w-full h-full rounded-md"
+              style={{
+                backgroundColor: customization.bgColor,
+              }}
+            >
+              <Logotype customization={customization} icon={Icon} />
+            </div>
           </LogoItem>
         );
       })}

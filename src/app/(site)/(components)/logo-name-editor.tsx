@@ -22,14 +22,14 @@ export const LogoNameEditor = () => {
   return (
     <Input
       placeholder="Your logo name"
-      className="border-none shadow-none hover:bg-muted-foreground/10 transition"
-      leftIcon={<PencilSimpleLine />}
+      className="border-none shadow-none transition"
+      leftIcon={<PencilSimpleLine className="size-5" />}
       rightIcon={
         inputText && (
           <Button
             size="icon"
             variant="link"
-            className="rounded-full text-inherit"
+            className="rounded-full"
             onClick={handleInputClear}
           >
             <X />

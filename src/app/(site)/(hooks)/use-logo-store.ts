@@ -6,7 +6,8 @@ import { IconWeight } from '@phosphor-icons/react';
 const LOGO_STORE_KEY = 'dummylogo_v0.1';
 const DEFAULT_LOGO_STORE = {
   name: undefined,
-  color: undefined,
+  color: '#313131',
+  bgColor: '#fbfcfe',
   layout: 'left',
   iconSize: 40,
   iconStyle: 'fill',
@@ -18,6 +19,7 @@ interface LogoStore extends Customization {
   setName: (name: string) => void;
   setLayout: (value: Layout) => void;
   setColor: (value: string) => void;
+  setBgColor: (value: string) => void;
   setIconStyle: (value: IconWeight) => void;
   setIconName: (value?: string) => void;
   setStyles: (value?: React.CSSProperties) => void;
@@ -31,6 +33,7 @@ export const useLogoStore = create<LogoStore>()(
       setName: (name) => set(() => ({ name })),
       setLayout: (layout) => set(() => ({ layout })),
       setColor: (color) => set(() => ({ color })),
+      setBgColor: (bgColor) => set(() => ({ bgColor })),
       setIconStyle: (iconStyle) => set(() => ({ iconStyle })),
       setIconName: (iconName) => set(() => ({ iconName })),
       setStyles: (styles) => set(() => ({ styles })),
