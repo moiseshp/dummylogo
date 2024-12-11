@@ -3,7 +3,7 @@ import { persist } from 'zustand/middleware';
 import { Layout, Customization } from '@/app/(logo)/(types)/logo';
 import { IconWeight } from '@phosphor-icons/react';
 
-const LOGO_STORE_KEY = 'dummylogo_v0.1';
+const LOGO_STORE_KEY = 'dummylogo_v0.2';
 const DEFAULT_LOGO_STORE = {
   name: undefined,
   color: '#313131',
