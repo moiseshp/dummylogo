@@ -5,7 +5,7 @@
     "styles": {
       "fontFamily": "Poppins",
       "fontWeight": 400,
-      "fontSize": 26
+      "fontSize": 27
     },
     "category": "environment"
   },
@@ -128,7 +128,7 @@
     "styles": {
       "fontFamily": "Pacifico",
       "fontWeight": 400,
-      "fontSize": 34
+      "fontSize": 36
     },
     "category": "technology"
   },
