@@ -1,13 +1,13 @@
 'use client';
 import * as React from 'react';
-import { useLogoStore } from '@/app/(site)/(hooks)/use-logo-store';
+import { useLogoStore } from '@/app/(logo)/(hooks)/use-logo-store';
 import { LogoItem } from './(components)/logo-item';
-import { useDynamicFonts } from '@/app/(site)/(hooks)/use-dynamic-fonts';
+import { useDynamicFonts } from '@/app/(logo)/(hooks)/use-dynamic-fonts';
 import type { Customization, Logo } from './(types)/logo';
 import { Spinner } from '@/components/ui/spinner';
 import { renderToString } from 'react-dom/server';
-import * as icons from './(utils)/icons';
-import { Logotype } from './(components)/logotype';
+import * as icons from '@/app/(logo)/(utils)/icons';
+import { Logotype, LogotypeBox } from './(components)/logotype';
 import { useLogoUtilities } from './(hooks)/use-logo-utilities';
 
 type HomeProps = {
@@ -85,14 +85,9 @@ export default function PageClient({ data }: HomeProps) {
             }
             {...item}
           >
-            <div
-              className="flex items-center justify-center w-full h-full rounded-md"
-              style={{
-                backgroundColor: customization.bgColor,
-              }}
-            >
+            <LogotypeBox bgColor={customization.bgColor}>
               <Logotype customization={customization} icon={Icon} />
-            </div>
+            </LogotypeBox>
           </LogoItem>
         );
       })}

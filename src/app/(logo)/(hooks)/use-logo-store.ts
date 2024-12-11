@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { Layout, Customization } from '@/app/(site)/(types)/logo';
+import { Layout, Customization } from '@/app/(logo)/(types)/logo';
 import { IconWeight } from '@phosphor-icons/react';
 
 const LOGO_STORE_KEY = 'dummylogo_v0.1';

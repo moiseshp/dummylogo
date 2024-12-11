@@ -8,9 +8,9 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { useLogoStore } from '@/app/(site)/(hooks)/use-logo-store';
+import { useLogoStore } from '@/app/(logo)/(hooks)/use-logo-store';
 
-export const ColorPicker = () => {
+export const TextColorPicker = () => {
   const color = useLogoStore((state) => state.color);
   const setColor = useLogoStore((state) => state.setColor);
 
@@ -18,7 +18,7 @@ export const ColorPicker = () => {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost">
-          Color
+          Logo Color
           <span
             className="w-3 h-3 rounded-full border border-muted-foreground"
             style={{ backgroundColor: color }}
@@ -26,7 +26,7 @@ export const ColorPicker = () => {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuLabel>Color Picker</DropdownMenuLabel>
+        <DropdownMenuLabel>Logo Color Picker</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <ColorPickerUI value={color} onChange={setColor} />
       </DropdownMenuContent>

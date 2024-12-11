@@ -8,8 +8,8 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { useLogoStore } from '@/app/(site)/(hooks)/use-logo-store';
-import { Layout } from '@/app/(site)/(types)/logo';
+import { useLogoStore } from '@/app/(logo)/(hooks)/use-logo-store';
+import { Layout } from '@/app/(logo)/(types)/logo';
 import { CaretDown } from '@phosphor-icons/react';
 
 const layoutOptions: Layout[] = ['top', 'right', 'bottom', 'left'];

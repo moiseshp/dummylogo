@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Input } from '@/components/ui/input';
-import { useLogoStore } from '@/app/(site)/(hooks)/use-logo-store';
+import { useLogoStore } from '@/app/(logo)/(hooks)/use-logo-store';
 import { Button } from '@/components/ui/button';
 import { PencilSimpleLine, X } from '@phosphor-icons/react';
 

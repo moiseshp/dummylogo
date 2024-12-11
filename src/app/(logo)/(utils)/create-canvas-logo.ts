@@ -6,7 +6,7 @@ import {
   StaticCanvas,
   util,
 } from 'fabric';
-import { Customization } from '@/app/(site)/(types)/logo';
+import { Customization } from '@/app/(logo)/(types)/logo';
 import { layoutItems } from './layout-items';
 
 export async function createCanvasLogo({

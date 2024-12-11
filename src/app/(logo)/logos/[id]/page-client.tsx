@@ -10,12 +10,12 @@ import {
   PhosphorLogo,
   Square,
 } from '@phosphor-icons/react';
-import { Logotype } from '@/app/(site)/(components)/logotype';
-import * as icons from '@/app/(site)/(utils)/icons';
+import { Logotype, LogotypeBox } from '@/app/(logo)/(components)/logotype';
+import * as icons from '@/app/(logo)/(utils)/icons';
 import { Spinner } from '@/components/ui/spinner';
-import { useDynamicFonts } from '@/app/(site)/(hooks)/use-dynamic-fonts';
+import { useDynamicFonts } from '@/app/(logo)/(hooks)/use-dynamic-fonts';
 import { renderToString } from 'react-dom/server';
-import { useLogoUtilities } from '@/app/(site)/(hooks)/use-logo-utilities';
+import { useLogoUtilities } from '@/app/(logo)/(hooks)/use-logo-utilities';
 import { useCopyToClipboard } from '@/hooks/use-copy-to-clipboard';
 import { BASE_URL } from '@/lib/config';
 import { toast } from 'sonner';
@@ -99,18 +99,13 @@ export default function PageClient() {
         </div>
         <div className="w-[45rem] mx-auto flex flex-col">
           <div className="w-full border border-t-0 p-6">
-            <div
-              className="h-[30rem] flex items-center justify-center w-full rounded-md"
-              style={{
-                backgroundColor: customization.bgColor,
-              }}
-            >
+            <LogotypeBox bgColor={customization.bgColor} className="h-[30rem]">
               <Logotype
                 customization={customization}
                 icon={Icon}
                 className="scale-[2]"
               />
-            </div>
+            </LogotypeBox>
           </div>
           <div className="flex justify-around border border-t-0 h-16">
             <Button
@@ -135,7 +130,7 @@ export default function PageClient() {
               variant="item"
               className="px-6"
               onClick={() => {
-                copyToClipboard(customization.color!);
+                copyToClipboard(customization.color);
                 toast.success('Color copied!');
               }}
             >

@@ -1,8 +1,8 @@
-import { layoutItems } from '@/app/(site)/(utils)/layout-items';
-import { useLogoStore } from '@/app/(site)/(hooks)/use-logo-store';
-import type { Customization, Layout, Logo } from '@/app/(site)/(types)/logo';
+import { layoutItems } from '@/app/(logo)/(utils)/layout-items';
+import { useLogoStore } from '@/app/(logo)/(hooks)/use-logo-store';
+import type { Customization, Layout, Logo } from '@/app/(logo)/(types)/logo';
 import { downloadImage } from '@/lib/download-image';
-import { createCanvasLogo } from '@/app/(site)/(utils)/create-canvas-logo';
+import { createCanvasLogo } from '@/app/(logo)/(utils)/create-canvas-logo';
 
 export function useLogoUtilities() {
   const name = useLogoStore((state) => state.name);

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Customization } from '@/app/(site)/(types)/logo';
+import { Customization } from '@/app/(logo)/(types)/logo';
 import { cn } from '@/lib/utils';
 
 type LogotypeProps = {
@@ -35,6 +35,32 @@ const Logotype = React.memo(
   },
 );
 
+type LogotypeBoxProps = {
+  bgColor: string;
+  className?: string;
+  children: React.ReactNode;
+};
+
+const LogotypeBox: React.FC<LogotypeBoxProps> = ({
+  bgColor,
+  className,
+  children,
+}) => {
+  return (
+    <div
+      className={cn(
+        'flex items-center justify-center w-full h-full rounded-md',
+        className,
+      )}
+      style={{
+        backgroundColor: bgColor,
+      }}
+    >
+      {children}
+    </div>
+  );
+};
+
 Logotype.displayName = 'Logotype';
 
-export { Logotype };
+export { Logotype, LogotypeBox };
