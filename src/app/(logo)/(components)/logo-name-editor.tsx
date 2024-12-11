@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Input } from '@/components/ui/input';
-import { useLogoStore } from '@/app/(site)/(hooks)/use-logo-store';
+import { useLogoStore } from '@/app/(logo)/(hooks)/use-logo-store';
 import { Button } from '@/components/ui/button';
 import { PencilSimpleLine, X } from '@phosphor-icons/react';
 
@@ -22,14 +22,14 @@ export const LogoNameEditor = () => {
   return (
     <Input
       placeholder="Your logo name"
-      className="border-none shadow-none hover:bg-muted-foreground/10 transition"
-      leftIcon={<PencilSimpleLine />}
+      className="border-none shadow-none transition"
+      leftIcon={<PencilSimpleLine className="size-5" />}
       rightIcon={
         inputText && (
           <Button
             size="icon"
             variant="link"
-            className="rounded-full text-inherit"
+            className="rounded-full"
             onClick={handleInputClear}
           >
             <X />

@@ -1,6 +1,6 @@
 'use client';
 import { Button } from '@/components/ui/button';
-import { useLogoStore } from '@/app/(site)/(hooks)/use-logo-store';
+import { useLogoStore } from '@/app/(logo)/(hooks)/use-logo-store';
 import { ArrowClockwise } from '@phosphor-icons/react';
 
 export const ResetButton = () => {

@@ -11,7 +11,8 @@ export interface Logo {
 
 export interface Customization {
   name?: string;
-  color?: string;
+  color: string;
+  bgColor: string;
   layout: Layout;
   iconStyle: IconWeight;
   iconName?: string;

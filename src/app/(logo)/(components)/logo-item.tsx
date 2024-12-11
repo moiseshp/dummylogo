@@ -1,13 +1,13 @@
 'use client';
 import * as React from 'react';
 import { Button } from '@/components/ui/button';
-import type { Logo } from '@/app/(site)/(types)/logo';
-// import Link from 'next/link';
+import type { Logo } from '@/app/(logo)/(types)/logo';
+import Link from 'next/link';
 import {
+  ArrowRight,
   CheckSquare,
+  Copy,
   DownloadSimple,
-  // Eye,
-  // LinkSimple,
   PhosphorLogo,
   Square,
 } from '@phosphor-icons/react';
@@ -17,6 +17,9 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
+import { useCopyToClipboard } from '@/hooks/use-copy-to-clipboard';
+import { toast } from 'sonner';
+import { BASE_URL } from '@/lib/config';
 
 type LogoItemProps = {
   isFontSelected: boolean;
@@ -29,8 +32,7 @@ type LogoItemProps = {
 
 const LogoItem: React.FC<LogoItemProps> = React.memo(
   ({
-    // id,
-    // color,
+    id,
     iconName,
     styles,
     isFontSelected = false,
@@ -40,9 +42,10 @@ const LogoItem: React.FC<LogoItemProps> = React.memo(
     onLogoDownload,
     children,
   }) => {
+    const { copyToClipboard } = useCopyToClipboard();
     return (
-      <div className="h-96 flex flex-col relative transition-all border-b sm:border sm:-mr-[1px] sm:-mb-[1px] text-muted-foreground hover:bg-muted">
-        <div className="h-16 flex items-center px-4 gap-x-1">
+      <div className="h-96 flex flex-col relative border-b sm:border sm:-mr-[1px] sm:-mb-[1px] text-muted-foreground/60 hover:text-black">
+        <div className="h-16 flex items-center px-4 gap-x-1 border-b border-dotted">
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger asChild>
@@ -61,7 +64,7 @@ const LogoItem: React.FC<LogoItemProps> = React.memo(
                 </Button>
               </TooltipTrigger>
               <TooltipContent>
-                <p>Set font</p>
+                <p>Set global font</p>
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>
@@ -79,24 +82,18 @@ const LogoItem: React.FC<LogoItemProps> = React.memo(
                 </Button>
               </TooltipTrigger>
               <TooltipContent>
-                <p>Set icon</p>
+                <p>Set global icon</p>
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>
         </div>
-        <div className="flex-grow flex items-center justify-center">
-          {children}
-        </div>
-        <div className="h-16 flex items-center px-4 text-xs justify-between">
+        <div className="flex-grow p-6">{children}</div>
+        <div className="h-16 flex items-center px-4 text-xs justify-between border-t border-dotted">
           <div>
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Button
-                    variant="ghost"
-                    className="!text-inherit"
-                    onClick={onLogoDownload}
-                  >
+                  <Button variant="ghost" onClick={onLogoDownload}>
                     <DownloadSimple />
                   </Button>
                 </TooltipTrigger>
@@ -105,24 +102,30 @@ const LogoItem: React.FC<LogoItemProps> = React.memo(
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>
-            {/* <Button size="sm" variant="ghost" className="!text-inherit">
-              <LinkSimple />
-            </Button>
-            <Button size="sm" variant="ghost" className="!text-inherit" asChild>
-              <Link href={`/${id}`}>
-                <Eye />
-              </Link>
-            </Button> */}
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    onClick={() => {
+                      copyToClipboard(`${BASE_URL}/logos/${id}`);
+                      toast.success('Link copied!');
+                    }}
+                  >
+                    <Copy />
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Copy Link</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
           </div>
-          {/* <Button variant="ghost" size="sm">
-            {color}
-            <span
-              className="w-3 h-3 rounded-full"
-              style={{
-                backgroundColor: color,
-              }}
-            />
-          </Button> */}
+          <Button size="sm" variant="ghost" asChild>
+            <Link href={`/logos/${id}`}>
+              <ArrowRight />
+            </Link>
+          </Button>
         </div>
       </div>
     );
