@@ -1,13 +1,24 @@
 'use client';
+import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { ArrowLeft, DownloadSimple, PhosphorLogo } from '@phosphor-icons/react';
+import {
+  ArrowLeft,
+  BoundingBox,
+  Copy,
+  DownloadSimple,
+  PhosphorLogo,
+  Square,
+} from '@phosphor-icons/react';
 import { Logotype } from '@/app/(site)/(components)/logotype';
 import * as icons from '@/app/(site)/(utils)/icons';
 import { Spinner } from '@/components/ui/spinner';
 import { useDynamicFonts } from '@/app/(site)/(hooks)/use-dynamic-fonts';
 import { renderToString } from 'react-dom/server';
 import { useLogoUtilities } from '@/app/(site)/(hooks)/use-logo-utilities';
+import { useCopyToClipboard } from '@/hooks/use-copy-to-clipboard';
+import { BASE_URL } from '@/lib/config';
+import { toast } from 'sonner';
 
 export default function PageClient() {
   const logo = {
@@ -24,6 +35,7 @@ export default function PageClient() {
   const { buildCustomization, downloadLogo } = useLogoUtilities();
   const customization = buildCustomization(logo);
   const isFontsLoaded = useDynamicFonts([logo]);
+  const { copyToClipboard } = useCopyToClipboard();
 
   if (!isFontsLoaded) {
     return (
@@ -56,7 +68,10 @@ export default function PageClient() {
                 <ArrowLeft />
               </Link>
             </Button>
-            <h2>{logo.id}</h2>
+            <div className="flex gap-x-4 items-center">
+              <BoundingBox size={20} />
+              <h2>{logo.id}</h2>
+            </div>
           </div>
           <div className="flex items-center">
             <Button variant="item" className="border-l border-r px-6" asChild>
@@ -100,15 +115,33 @@ export default function PageClient() {
           <div className="flex justify-around border border-t-0 h-16">
             <Button
               variant="item"
-              className="flex-1"
+              className="flex-1 border-r"
               onClick={handleDownloadLogo}
             >
               <DownloadSimple />
               Download Logo
             </Button>
-            {/* <Button variant="item" className="flex-1">
-              <Copy /> Copy Link
-            </Button> */}
+            <Button
+              variant="item"
+              className="px-6 border-r"
+              onClick={() => {
+                copyToClipboard(`${BASE_URL}/logos/${logo.id}`);
+                toast.success('Link copied!');
+              }}
+            >
+              <Copy />
+            </Button>
+            <Button
+              variant="item"
+              className="px-6"
+              onClick={() => {
+                copyToClipboard(customization.color!);
+                toast.success('Color copied!');
+              }}
+            >
+              <Square color={customization.color} weight="fill" />
+              {customization.color}
+            </Button>
           </div>
         </div>
       </div>

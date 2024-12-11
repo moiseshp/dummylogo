@@ -4,6 +4,7 @@ import { baseFont } from '@/app/fonts';
 import { Navbar } from '@/app/(site)/(components)/navbar';
 import { cn } from '@/lib/utils';
 import { ThemeProvider } from '@/components/theme-provider';
+import { Toaster } from '@/components/ui/toast';
 import '@/app/globals.css';
 
 export const metadata: Metadata = {
@@ -47,6 +48,7 @@ export default function RootLayout({
               </a>
             </div>
           </footer>
+          <Toaster richColors />
         </ThemeProvider>
       </body>
     </html>

@@ -4,10 +4,10 @@ import { Button } from '@/components/ui/button';
 import type { Logo } from '@/app/(site)/(types)/logo';
 import Link from 'next/link';
 import {
-  ArrowSquareIn,
+  ArrowRight,
   CheckSquare,
+  Copy,
   DownloadSimple,
-  // Eye,
   PhosphorLogo,
   Square,
 } from '@phosphor-icons/react';
@@ -17,6 +17,9 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
+import { useCopyToClipboard } from '@/hooks/use-copy-to-clipboard';
+import { toast } from 'sonner';
+import { BASE_URL } from '@/lib/config';
 
 type LogoItemProps = {
   isFontSelected: boolean;
@@ -39,6 +42,7 @@ const LogoItem: React.FC<LogoItemProps> = React.memo(
     onLogoDownload,
     children,
   }) => {
+    const { copyToClipboard } = useCopyToClipboard();
     return (
       <div className="h-96 flex flex-col relative border-b sm:border sm:-mr-[1px] sm:-mb-[1px] text-muted-foreground/60 hover:text-black">
         <div className="h-16 flex items-center px-4 gap-x-1 border-b border-dotted">
@@ -98,17 +102,30 @@ const LogoItem: React.FC<LogoItemProps> = React.memo(
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>
-            {/* <Button size="sm" variant="ghost" className="!text-inherit" asChild>
-              <Link href={`/logos/${id}`}>
-                <Eye />
-              </Link>
-            </Button> */}
-            <Button size="sm" variant="ghost" asChild>
-              <Link href={`/logos/${id}`}>
-                <ArrowSquareIn />
-              </Link>
-            </Button>
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    onClick={() => {
+                      copyToClipboard(`${BASE_URL}/logos/${id}`);
+                      toast.success('Link copied!');
+                    }}
+                  >
+                    <Copy />
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Copy Link</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
           </div>
+          <Button size="sm" variant="ghost" asChild>
+            <Link href={`/logos/${id}`}>
+              <ArrowRight />
+            </Link>
+          </Button>
         </div>
       </div>
     );
