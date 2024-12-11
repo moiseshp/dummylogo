@@ -1,5 +1,4 @@
 import { Navbar } from '@/app/(logo)/(components)/navbar';
-import '@/app/globals.css';
 
 export default function Layout({
   children,

@@ -1,4 +1,4 @@
-import { Logo } from './(types)/logo';
+import type { Logo } from '@/app/(logo)/(types)/logo';
 import PageClient from './page-client';
 import logosJSON from '@/server/data/logos.json';
 

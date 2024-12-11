@@ -20,7 +20,7 @@
     "category": "technology"
   },
   {
-    "id": "codestream3",
+    "id": "righteous-chats",
     "iconName": "Chats",
     "styles": {
       "fontFamily": "Righteous",
@@ -30,7 +30,7 @@
     "category": "technology"
   },
   {
-    "id": "pixelgrid4",
+    "id": "pixelify-sans-game-controller",
     "iconName": "GameController",
     "styles": {
       "fontFamily": "Pixelify Sans",
@@ -40,7 +40,7 @@
     "category": "technology"
   },
   {
-    "id": "datanode5",
+    "id": "freckle-face-ghost",
     "iconName": "Ghost",
     "styles": {
       "fontFamily": "Freckle Face",
@@ -50,7 +50,7 @@
     "category": "technology"
   },
   {
-    "id": "cybersphere6",
+    "id": "special-elite-skull",
     "iconName": "Skull",
     "styles": {
       "fontFamily": "Special Elite",
@@ -61,7 +61,7 @@
     "category": "technology"
   },
   {
-    "id": "cybersphere7",
+    "id": "zen-tokyo-zoo-car-battery",
     "iconName": "CarBattery",
     "styles": {
       "fontFamily": "Zen Tokyo Zoo",
@@ -72,7 +72,7 @@
     "category": "technology"
   },
   {
-    "id": "cybersphere8",
+    "id": "warnes-radio",
     "iconName": "Radio",
     "styles": {
       "fontFamily": "Warnes",
@@ -83,7 +83,7 @@
     "category": "technology"
   },
   {
-    "id": "cybersphere9",
+    "id": "rubik-moonrocks-balloon",
     "iconName": "Balloon",
     "styles": {
       "fontFamily": "Rubik Moonrocks",
@@ -93,7 +93,7 @@
     "category": "technology"
   },
   {
-    "id": "cybersphere10",
+    "id": "rampartone-beach-ball",
     "iconName": "BeachBall",
     "styles": {
       "fontFamily": "Rampart One",
@@ -103,7 +103,7 @@
     "category": "technology"
   },
   {
-    "id": "cybersphere11",
+    "id": "gorditas-planet",
     "iconName": "Planet",
     "styles": {
       "fontFamily": "Gorditas",
@@ -113,7 +113,7 @@
     "category": "technology"
   },
   {
-    "id": "cybersphere12",
+    "id": "revalia-flask",
     "iconName": "Flask",
     "styles": {
       "fontFamily": "Revalia",
@@ -123,7 +123,7 @@
     "category": "technology"
   },
   {
-    "id": "cybersphere13",
+    "id": "pacifico-airplane-takeoff",
     "iconName": "AirplaneTakeoff",
     "styles": {
       "fontFamily": "Pacifico",
@@ -133,7 +133,7 @@
     "category": "technology"
   },
   {
-    "id": "cybersphere14",
+    "id": "bubblegum-sans-bomb",
     "iconName": "Bomb",
     "styles": {
       "fontFamily": "Bubblegum Sans",
@@ -144,7 +144,7 @@
     "category": "technology"
   },
   {
-    "id": "cybersphere15",
+    "id": "give-you-glory-bowl-steam",
     "iconName": "BowlSteam",
     "styles": {
       "fontFamily": "Give You Glory",

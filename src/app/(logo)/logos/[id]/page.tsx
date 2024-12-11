@@ -1,5 +1,7 @@
 import { notFound } from 'next/navigation';
+import type { Logo } from '@/app/(logo)/(types)/logo';
 import PageClient from './page-client';
+import logosJSON from '@/server/data/logos.json';
 
 type Props = {
   params: {
@@ -8,9 +10,12 @@ type Props = {
 };
 
 export default function Page({ params }: Props) {
-  if (params.id !== 'mariafe') {
+  const data: Logo[] = logosJSON;
+  const logo = data.find((item) => item.id == params.id);
+
+  if (!logo) {
     notFound();
   }
 
-  return <PageClient />;
+  return <PageClient data={logo} />;
 }
