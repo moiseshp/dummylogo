@@ -6,16 +6,16 @@
 - [x] Global Font Selector
 - [x] Download Logo (svg + png + jpg) (canvas) by [Fabric](https://fabricjs.com/)
 - [x] Add Google Analitics
-- [ ] Show Logo into new page [WIP]
-- [ ] Change default name when download logo
-- [ ] Copy link of the Logo
-- [ ] Error page when logotype is not exists
+- [x] Show Logo into new page
+- [x] Change default name when download logo
+- [x] Copy link of the Logo
+- [x] Error page when logotype is not exists
+- [x] Improvement size spinner
 - [ ] Add 10 more example logos
 - [ ] To init load font validate repeat fonts (mixeed fonts)
 - [ ] Validate an use ScrollInfite or Simple Pagination
 - [ ] Category Filter (logo-item)
 - [ ] Fix logo text when press "reset all"
-- [ ] Improvement size spinner
 - [ ] Improvement dark theme similar to https://www.fontshare.com/
 
 ## Benchmarks
