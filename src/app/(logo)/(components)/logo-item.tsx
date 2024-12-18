@@ -76,7 +76,7 @@ const LogoItem: React.FC<LogoItemProps> = React.memo(
                   size="sm"
                   onClick={onSetIcon}
                 >
-                  <PhosphorLogo weight="fill" />
+                  <PhosphorLogo weight="fill" color="#3C402B" />
                   {iconName}
                   {isIconSelected ? <CheckSquare weight="fill" /> : <Square />}
                 </Button>
