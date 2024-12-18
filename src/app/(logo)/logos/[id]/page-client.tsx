@@ -12,8 +12,6 @@ import {
 } from '@phosphor-icons/react';
 import { Logotype, LogotypeBox } from '@/app/(logo)/(components)/logotype';
 import * as icons from '@/app/(logo)/(utils)/icons';
-import { Spinner } from '@/components/ui/spinner';
-import { useDynamicFonts } from '@/app/(logo)/(hooks)/use-dynamic-fonts';
 import { renderToString } from 'react-dom/server';
 import { useLogoUtilities } from '@/app/(logo)/(hooks)/use-logo-utilities';
 import { useCopyToClipboard } from '@/hooks/use-copy-to-clipboard';
@@ -24,16 +22,7 @@ import { toast } from 'sonner';
 export default function PageClient({ data: logo }: { data: Logo }) {
   const { buildCustomization, downloadLogo } = useLogoUtilities();
   const customization = buildCustomization(logo);
-  const isFontsLoaded = useDynamicFonts([logo]);
   const { copyToClipboard } = useCopyToClipboard();
-
-  if (!isFontsLoaded) {
-    return (
-      <div className="p-20 flex items-center justify-center">
-        <Spinner />
-      </div>
-    );
-  }
 
   const Icon = icons[customization.iconName as keyof typeof icons];
 
@@ -74,6 +63,7 @@ export default function PageClient({ data: logo }: { data: Logo }) {
             <a
               href={`https://fonts.google.com/specimen/${customization.styles?.fontFamily}?preview.text=${customization.name}`}
               target="_blank"
+              title="Go to Google Font page"
             >
               <img
                 src="/google-fonts-logo.png"
@@ -87,8 +77,9 @@ export default function PageClient({ data: logo }: { data: Logo }) {
             <a
               href={`https://phosphoricons.com/?q="${customization.iconName}"`}
               target="_blank"
+              title="Go to Phosphor Icons page"
             >
-              <PhosphorLogo weight="fill" /> {customization.iconName}{' '}
+              <PhosphorLogo weight="fill" /> {customization.iconName}
             </a>
           </Button>
         </div>
@@ -111,6 +102,7 @@ export default function PageClient({ data: logo }: { data: Logo }) {
             variant="item"
             className="flex-1 border-r"
             onClick={handleDownloadLogo}
+            aria-label={`Download dummylogo: ${logo.id}`}
           >
             <DownloadSimple />
             Download Logo
@@ -122,6 +114,7 @@ export default function PageClient({ data: logo }: { data: Logo }) {
               copyToClipboard(`${BASE_URL}/logos/${logo.id}`);
               toast.success('Link copied!');
             }}
+            aria-label={`Clipboard dummylogo: ${logo.id}`}
           >
             <Copy />
           </Button>
@@ -132,6 +125,7 @@ export default function PageClient({ data: logo }: { data: Logo }) {
               copyToClipboard(customization.color);
               toast.success('Color copied!');
             }}
+            aria-label={`Clipboard dummylogo color`}
           >
             <Square color={customization.color} weight="fill" />
             {customization.color}

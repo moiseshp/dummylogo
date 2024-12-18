@@ -1,25 +1,18 @@
 'use client';
-import * as React from 'react';
+import { LogoItem } from '@/app/(logo)/(components)/logo-item';
+import { Logotype, LogotypeBox } from '@/app/(logo)/(components)/logotype';
+import { useLogoUtilities } from '@/app/(logo)/(hooks)/use-logo-utilities';
 import { useLogoStore } from '@/app/(logo)/(hooks)/use-logo-store';
-import { LogoItem } from './(components)/logo-item';
-import { useDynamicFonts } from '@/app/(logo)/(hooks)/use-dynamic-fonts';
-import type { Customization, Logo } from './(types)/logo';
-import { Spinner } from '@/components/ui/spinner';
+import type { Customization, Logo } from '@/app/(logo)/(types)/logo';
 import { renderToString } from 'react-dom/server';
 import * as icons from '@/app/(logo)/(utils)/icons';
-import { Logotype, LogotypeBox } from './(components)/logotype';
-import { useLogoUtilities } from './(hooks)/use-logo-utilities';
 
-type HomeProps = {
-  data: Logo[];
-};
-
-export default function PageClient({ data }: HomeProps) {
+export const LogoListGroup = ({ items }: { items: Logo[] }) => {
   const { initCustomization, buildCustomization, downloadLogo } =
     useLogoUtilities();
+
   const setIconName = useLogoStore((state) => state.setIconName);
   const setStyles = useLogoStore((state) => state.setStyles);
-  const isFontsLoaded = useDynamicFonts(data);
 
   const handleSetFont = (
     isFontSelected: boolean,
@@ -57,17 +50,9 @@ export default function PageClient({ data }: HomeProps) {
     await downloadLogo(customization, svgIcon, filename);
   };
 
-  if (!isFontsLoaded) {
-    return (
-      <div className="p-20 flex items-center justify-center">
-        <Spinner />
-      </div>
-    );
-  }
-
   return (
     <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 3xl:grid-cols-5 -mt-[1px]">
-      {data.map((item: Logo) => {
+      {items.map((item: Logo) => {
         const customization = buildCustomization(item);
         const isFontSelected =
           initCustomization.styles?.fontFamily === item.styles.fontFamily;
@@ -86,11 +71,11 @@ export default function PageClient({ data }: HomeProps) {
             {...item}
           >
             <LogotypeBox bgColor={customization.bgColor}>
-              <Logotype customization={customization} icon={Icon} />
+              <Logotype customization={customization!} icon={Icon} />
             </LogotypeBox>
           </LogoItem>
         );
       })}
     </div>
   );
-}
+};

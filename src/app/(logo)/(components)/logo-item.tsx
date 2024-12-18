@@ -53,6 +53,7 @@ const LogoItem: React.FC<LogoItemProps> = React.memo(
                   variant={isFontSelected ? 'secondary' : 'ghost'}
                   size="sm"
                   onClick={onSetFont}
+                  aria-label={`Set ${styles.fontFamily} as global font to your logo`}
                 >
                   <img
                     src="/google-fonts-logo.png"
@@ -75,6 +76,7 @@ const LogoItem: React.FC<LogoItemProps> = React.memo(
                   variant={isIconSelected ? 'secondary' : 'ghost'}
                   size="sm"
                   onClick={onSetIcon}
+                  aria-label={`Set ${iconName} as global icon to your logo`}
                 >
                   <PhosphorLogo weight="fill" color="#3C402B" />
                   {iconName}
@@ -93,7 +95,11 @@ const LogoItem: React.FC<LogoItemProps> = React.memo(
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Button variant="ghost" onClick={onLogoDownload}>
+                  <Button
+                    variant="ghost"
+                    onClick={onLogoDownload}
+                    aria-label={`Download dummylogo: ${id}`}
+                  >
                     <DownloadSimple />
                   </Button>
                 </TooltipTrigger>
@@ -111,6 +117,7 @@ const LogoItem: React.FC<LogoItemProps> = React.memo(
                       copyToClipboard(`${BASE_URL}/logos/${id}`);
                       toast.success('Link copied!');
                     }}
+                    aria-label={`Clipboard dummylogo: ${id}`}
                   >
                     <Copy />
                   </Button>
@@ -122,7 +129,7 @@ const LogoItem: React.FC<LogoItemProps> = React.memo(
             </TooltipProvider>
           </div>
           <Button size="sm" variant="ghost" asChild>
-            <Link href={`/logos/${id}`}>
+            <Link href={`/logos/${id}`} title={`See dummylogo ${id}`}>
               <ArrowRight />
             </Link>
           </Button>
