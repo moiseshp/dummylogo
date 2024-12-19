@@ -27,8 +27,8 @@ type LogoItemProps = {
   onSetFont: () => void;
   onSetIcon: () => void;
   onLogoDownload: () => void;
-  children: React.ReactNode;
-} & Logo;
+} & Logo &
+  React.HTMLAttributes<HTMLDivElement>;
 
 const LogoItem: React.FC<LogoItemProps> = React.memo(
   ({
@@ -57,7 +57,7 @@ const LogoItem: React.FC<LogoItemProps> = React.memo(
                 >
                   <img
                     src="/google-fonts-logo.png"
-                    alt="Google Fonts - Logo"
+                    alt={`create your logo fake with ${styles.fontFamily} from Google Fonts`}
                     width={16}
                   />
                   {styles.fontFamily}
@@ -98,7 +98,7 @@ const LogoItem: React.FC<LogoItemProps> = React.memo(
                   <Button
                     variant="ghost"
                     onClick={onLogoDownload}
-                    aria-label={`Download dummylogo: ${id}`}
+                    aria-label={`Download your custom dummylogo created with ${iconName} + ${styles.fontFamily}`}
                   >
                     <DownloadSimple />
                   </Button>
@@ -117,7 +117,7 @@ const LogoItem: React.FC<LogoItemProps> = React.memo(
                       copyToClipboard(`${BASE_URL}/logos/${id}`);
                       toast.success('Link copied!');
                     }}
-                    aria-label={`Clipboard dummylogo: ${id}`}
+                    aria-label={`Clipboard logo ${iconName} created by dummylogo maker`}
                   >
                     <Copy />
                   </Button>
@@ -129,7 +129,10 @@ const LogoItem: React.FC<LogoItemProps> = React.memo(
             </TooltipProvider>
           </div>
           <Button size="sm" variant="ghost" asChild>
-            <Link href={`/logos/${id}`} title={`See dummylogo ${id}`}>
+            <Link
+              href={`/logos/${id}`}
+              title={`Create you custom dummylogo with ${iconName} + ${styles.fontFamily}`}
+            >
               <ArrowRight />
             </Link>
           </Button>

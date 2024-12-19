@@ -19,7 +19,6 @@ export const Navbar = () => {
         <BrandLogo />
       </Link>
       <nav className="items-center gap-x-2 h-full hidden md:flex text-muted-foreground">
-        <ThemeToggle />
         {/* <CategorySelector /> */}
         <LogoNameEditor />
         <LayoutPicker />
@@ -27,6 +26,7 @@ export const Navbar = () => {
         <TextColorPicker />
         <BgColorPicker />
         <ResetButton />
+        <ThemeToggle />
       </nav>
       <nav className="block md:hidden">
         <Button variant="ghost" size="icon">

@@ -11,7 +11,7 @@ type LogotypeProps = {
 const Logotype = React.memo(
   ({ customization, icon: Icon, className }: LogotypeProps) => {
     return (
-      <div
+      <figure
         className={cn(
           'flex items-center gap-x-3 gap-y-1',
           customization.layout,
@@ -30,7 +30,7 @@ const Logotype = React.memo(
         >
           {customization.name}
         </p>
-      </div>
+      </figure>
     );
   },
 );

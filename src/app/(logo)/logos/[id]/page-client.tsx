@@ -50,7 +50,10 @@ export default function PageClient({ data: logo }: { data: Logo }) {
           <div className="flex gap-x-3 items-center">
             <ShootingStar size={20} />
             <h2 className="text-xs tracking-wider">
-              {logo.id.replaceAll('-', ' ').toUpperCase()}
+              {logo.id
+                .replaceAll('_', ' ')
+                .replaceAll('-', ' - ')
+                .toUpperCase()}
             </h2>
           </div>
         </div>

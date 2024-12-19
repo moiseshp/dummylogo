@@ -1,16 +1,119 @@
 [
   {
+    "id": "montez-baby_carriage",
+    "iconName": "BabyCarriage",
+    "styles": {
+      "fontFamily": "Montez",
+      "fontWeight": 400,
+      "fontSize": 46
+    },
+    "category": "technology"
+  },
+  {
+    "id": "bruno_ace_sc-metronome",
+    "iconName": "Metronome",
+    "styles": {
+      "fontFamily": "Bruno Ace SC",
+      "fontWeight": 400,
+      "fontSize": 28
+    },
+    "category": "technology"
+  },
+  {
+    "id": "tourney-jeep",
+    "iconName": "Jeep",
+    "styles": {
+      "fontFamily": "Tourney",
+      "fontWeight": 600,
+      "fontSize": 30
+    },
+    "category": "technology"
+  },
+  {
+    "id": "dongle-chat_circle_dots",
+    "iconName": "ChatCircleDots",
+    "styles": {
+      "fontFamily": "Dongle",
+      "fontWeight": 700,
+      "fontSize": 50,
+      "marginTop": 6
+    },
+    "category": "technology"
+  },
+  {
+    "id": "barlow_condensed-high_heel",
+    "iconName": "HighHeel",
+    "styles": {
+      "fontFamily": "Barlow Condensed",
+      "fontWeight": 700,
+      "fontSize": 40
+    },
+    "category": "technology"
+  },
+  {
+    "id": "cybersphere",
+    "iconName": "Alien",
+    "styles": {
+      "fontFamily": "Gluten",
+      "fontWeight": 400,
+      "fontSize": 30,
+      "marginTop": 4
+    },
+    "category": "technology"
+  },
+  {
+    "id": "matemasie-flying_saucer",
+    "iconName": "FlyingSaucer",
+    "styles": {
+      "fontFamily": "Matemasie",
+      "fontWeight": 400,
+      "fontSize": 30,
+      "marginTop": -14
+    },
+    "category": "cosmic"
+  },
+  {
+    "id": "mochiy_pop_p_one-mountains",
+    "iconName": "Mountains",
+    "styles": {
+      "fontFamily": "Mochiy Pop P One",
+      "fontWeight": 400,
+      "fontSize": 28
+    },
+    "category": "technology"
+  },
+  {
+    "id": "caprasimo-hand_tap",
+    "iconName": "HandTap",
+    "styles": {
+      "fontFamily": "Caprasimo",
+      "fontWeight": 400,
+      "fontSize": 30
+    },
+    "category": "technology"
+  },
+  {
+    "id": "bungee_shade-flag_checkered",
+    "iconName": "FlagCheckered",
+    "styles": {
+      "fontFamily": "Bungee Shade",
+      "fontWeight": 400,
+      "fontSize": 25
+    },
+    "category": "car"
+  },
+  {
     "id": "poppins-leaf",
     "iconName": "Leaf",
     "styles": {
       "fontFamily": "Poppins",
       "fontWeight": 400,
-      "fontSize": 27
+      "fontSize": 28
     },
     "category": "environment"
   },
   {
-    "id": "train-one-boat",
+    "id": "train_one-boat",
     "iconName": "Boat",
     "styles": {
       "fontFamily": "Train One",
@@ -30,7 +133,7 @@
     "category": "technology"
   },
   {
-    "id": "pixelify-sans-game-controller",
+    "id": "pixelify_sans-game_controller",
     "iconName": "GameController",
     "styles": {
       "fontFamily": "Pixelify Sans",
@@ -40,7 +143,7 @@
     "category": "technology"
   },
   {
-    "id": "freckle-face-ghost",
+    "id": "freckle_face-ghost",
     "iconName": "Ghost",
     "styles": {
       "fontFamily": "Freckle Face",
@@ -50,7 +153,7 @@
     "category": "technology"
   },
   {
-    "id": "special-elite-skull",
+    "id": "special_elite-skull",
     "iconName": "Skull",
     "styles": {
       "fontFamily": "Special Elite",
@@ -61,7 +164,7 @@
     "category": "technology"
   },
   {
-    "id": "zen-tokyo-zoo-car-battery",
+    "id": "zen_tokyo_zoo-car_battery",
     "iconName": "CarBattery",
     "styles": {
       "fontFamily": "Zen Tokyo Zoo",
@@ -83,7 +186,7 @@
     "category": "technology"
   },
   {
-    "id": "rubik-moonrocks-balloon",
+    "id": "rubik_moonrocks-balloon",
     "iconName": "Balloon",
     "styles": {
       "fontFamily": "Rubik Moonrocks",
@@ -93,7 +196,7 @@
     "category": "technology"
   },
   {
-    "id": "rampartone-beach-ball",
+    "id": "rampart_one-beach_ball",
     "iconName": "BeachBall",
     "styles": {
       "fontFamily": "Rampart One",
@@ -123,7 +226,7 @@
     "category": "technology"
   },
   {
-    "id": "pacifico-airplane-takeoff",
+    "id": "pacifico-airplane_takeoff",
     "iconName": "AirplaneTakeoff",
     "styles": {
       "fontFamily": "Pacifico",
@@ -133,7 +236,7 @@
     "category": "technology"
   },
   {
-    "id": "bubblegum-sans-bomb",
+    "id": "bubblegum_sans-bomb",
     "iconName": "Bomb",
     "styles": {
       "fontFamily": "Bubblegum Sans",
@@ -144,7 +247,7 @@
     "category": "technology"
   },
   {
-    "id": "give-you-glory-bowl-steam",
+    "id": "give_you_glory-bowl_steam",
     "iconName": "BowlSteam",
     "styles": {
       "fontFamily": "Give You Glory",

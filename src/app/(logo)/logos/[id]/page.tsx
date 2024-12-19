@@ -18,7 +18,7 @@ export async function generateMetadata({
   const logo = data.find((item) => item.id == params.id);
 
   return {
-    title: `${logo?.iconName} - ${logo?.category} font family: ${logo?.styles?.fontFamily}`,
+    title: `Create you custom logo with Dummy Logo Maker - ${logo?.iconName} - ${logo?.category} font family: ${logo?.styles?.fontFamily}`,
     applicationName: 'dummylogo',
     publisher: 'DummyLogo by moiseshp',
     description: `Discover the beauty of ${logo?.iconName}, a font designed for the ${logo?.category} category. This font uses ${logo?.styles?.fontFamily} with a weight of ${logo?.styles?.fontWeight} and a size of ${logo?.styles?.fontSize}px. Perfect for your next project!`,
