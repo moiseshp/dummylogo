@@ -1,4 +1,4 @@
-import { Navbar } from '@/app/(logo)/(components)/navbar';
+import { Navbar } from '@/app/blog/(components)/navbar';
 import { Footer } from '@/components/footer';
 
 export default function Layout({
