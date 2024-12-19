@@ -31,7 +31,7 @@ export default function RootLayout({
           <Toaster richColors />
         </ThemeProvider>
       </body>
-      {/* <GoogleAnalytics gaId="G-W7MJZQ006Q" /> */}
+      <GoogleAnalytics gaId="G-W7MJZQ006Q" />
     </html>
   );
 }
