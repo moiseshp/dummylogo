@@ -1,88 +1,70 @@
-// import Image from 'next/image';
-import {
-  Calendar,
-  User,
-  Tag,
-  ChatCircle,
-} from '@phosphor-icons/react/dist/ssr';
+import { Calendar, User, Tag } from '@phosphor-icons/react/dist/ssr';
+import { DummyLogoBanner } from '@/app/blog/(components)/dummy-logo-banner';
+import postJSON from '@/server/data/post.json';
+import { notFound } from 'next/navigation';
+import { Metadata } from 'next';
 
-export default function Page() {
+type PageProps = {
+  params: {
+    slug: string;
+  };
+};
+
+export async function generateMetadata({
+  params: { slug },
+}: PageProps): Promise<Metadata> {
+  const post = postJSON.find((item) => item.slug === slug);
+
+  return {
+    title: `DummyLogo - ${post?.title}`,
+    applicationName: 'dummylogo',
+    publisher: 'DummyLogo by moiseshp',
+    description: post?.metaDescription,
+  };
+}
+
+export default function Page({ params: { slug } }: PageProps) {
+  const post = postJSON.find((item) => item.slug === slug);
+
+  if (!post) {
+    notFound();
+  }
+
   return (
-    <article className="max-w-2xl mx-auto px-4 py-8">
+    <article className="max-w-3xl mx-auto px-4 lg:px-6 py-4 lg:py-6">
+      <DummyLogoBanner />
+
       <img
-        src="/placeholder.svg?height=400&width=800"
-        alt="Imagen principal del blog"
-        width={800}
-        height={400}
-        className="w-full h-auto rounded-lg shadow-md mb-8"
+        src={post.imageUrl}
+        alt={post.title}
+        className="w-full h-48 sm:h-64 md:h-96 rounded-lg border mb-8 mt-6 object-cover"
       />
 
-      <h1 className="text-4xl font-bold mb-4">Título del Post del Blog</h1>
+      <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
 
-      <div className="flex items-center text-gray-600 mb-4">
+      <div className="flex items-center text-muted-foreground mb-4">
         <User className="mr-2" />
-        <span className="mr-4">Autor del Post</span>
+        <span className="mr-4">moiseshp</span>
         <Calendar className="mr-2" />
-        <span>15 de Junio, 2023</span>
+        <span>{post.createdAt}</span>
       </div>
 
-      <div className="prose max-w-none mb-8">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
-        </p>
-        <p>
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-          proident, sunt in culpa qui officia deserunt mollit anim id est
-          laborum.
-        </p>
-        <h2>Subtítulo del Post</h2>
-        <p>
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
-          ab illo inventore veritatis et quasi architecto beatae vitae dicta
-          sunt explicabo.
-        </p>
+      <div className="prose max-w-none text-foreground mb-10">
+        <div dangerouslySetInnerHTML={{ __html: post.content }} />
       </div>
 
-      <div className="flex items-center mb-8">
+      <div className="flex items-center mb-10">
         <Tag className="mr-2" />
-        <span className="text-sm font-semibold mr-2">Etiquetas:</span>
-        <div className="flex flex-wrap">
-          {['React', 'Tailwind', 'Blog'].map((tag) => (
+        <span className="text-sm font-semibold mr-2">Tags:</span>
+        <div className="flex flex-wrap items-center gap-x-2">
+          {post.tags.map((item) => (
             <span
-              key={tag}
-              className="bg-gray-200 text-gray-700 px-2 py-1 rounded-full text-sm mr-2 mb-2"
+              key={item}
+              className="bg-secondary text-foreground px-3 py-1 rounded-sm text-sm"
             >
-              {tag}
+              {item}
             </span>
           ))}
-        </div>
-      </div>
-
-      <div className="border-t pt-8">
-        <h3 className="text-xl font-semibold mb-4 flex items-center">
-          <ChatCircle className="mr-2" />
-          Comentarios
-        </h3>
-        <div className="space-y-4">
-          <div className="bg-gray-100 p-4 rounded-lg">
-            <p className="font-semibold">Usuario Comentarista</p>
-            <p className="text-sm text-gray-600">14 de Junio, 2023</p>
-            <p className="mt-2">
-              Gran artículo, muy informativo y bien escrito.
-            </p>
-          </div>
-          <div className="bg-gray-100 p-4 rounded-lg">
-            <p className="font-semibold">Otro Usuario</p>
-            <p className="text-sm text-gray-600">13 de Junio, 2023</p>
-            <p className="mt-2">
-              Me encantó este post. ¿Podrías escribir más sobre este tema?
-            </p>
-          </div>
         </div>
       </div>
     </article>

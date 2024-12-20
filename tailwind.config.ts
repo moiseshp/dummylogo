@@ -1,11 +1,30 @@
 import type { Config } from 'tailwindcss';
 import tailwindcssAnimate from 'tailwindcss-animate';
+import tailwindTypography from '@tailwindcss/typography';
 
 const config: Config = {
   darkMode: ['class'],
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
+      typography: () => ({
+        DEFAULT: {
+          css: {
+            h2: {
+              fontWeight: '600',
+              color: 'hsl(var(--base-foreground))',
+              marginBottom: '0.5rem',
+              marginTop: '0',
+            },
+            a: {
+              color: 'hsl(var(--primary))',
+            },
+            p: {
+              marginBottom: '2rem',
+            },
+          },
+        },
+      }),
       screens: {
         '3xl': '1920px',
       },
@@ -72,6 +91,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [tailwindcssAnimate],
+  plugins: [tailwindcssAnimate, tailwindTypography],
 };
 export default config;

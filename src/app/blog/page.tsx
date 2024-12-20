@@ -1,8 +1,7 @@
-import Link from 'next/link';
 import { Metadata } from 'next';
-import { Sparkle } from '@phosphor-icons/react/dist/ssr';
 import postJSON from '@/server/data/post.json';
 import { PostCard } from '@/app/blog/(components)/post-card';
+import { DummyLogoBanner } from '@/app/blog/(components)/dummy-logo-banner';
 
 export const metadata: Metadata = {
   title:
@@ -22,19 +21,7 @@ export default function Page() {
         </p>
       </article>
 
-      <figure className="border rounded-lg px-5 py-4 flex flex-col sm:flex-row sm:items-center gap-4">
-        <Sparkle className="w-6 h-6" />
-        <p>
-          <strong className="mr-1">Do you want to create your own logo?</strong>
-          <span>
-            Visit
-            <Link href="/" className="font-medium mx-1">
-              DummyLogo Maker
-            </Link>
-            and create as many logos as you want.
-          </span>
-        </p>
-      </figure>
+      <DummyLogoBanner />
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {posts.map((item) => (
