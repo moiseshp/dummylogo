@@ -1,50 +1,34 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { Calendar, User, ArrowRight } from '@phosphor-icons/react/dist/ssr';
+import { IPost } from '@/interfaces/post';
+import { Button } from '@/components/ui/button';
 
-interface PostCardProps {
-  title: string;
-  excerpt: string;
-  author: string;
-  date: string;
-  slug: string;
-  image_url: string;
-}
-
-export default function PostCard({
+export const PostCard: React.FC<IPost> = ({
   title,
-  excerpt,
-  author,
-  date,
+  createdAt,
   slug,
-  image_url: imageUrl,
-}: PostCardProps) {
+  metaDescription,
+  imageUrl,
+}) => {
   return (
     <div className="rounded-lg border overflow-hidden">
-      <Image
-        src={imageUrl}
-        alt={title}
-        width={400}
-        height={200}
-        className="w-full h-48 object-cover"
-      />
+      <img src={imageUrl} alt={title} className="w-full h-48 object-cover" />
       <div className="p-5 md:p-8">
         <h2 className="text-2xl font-bold mb-2">{title}</h2>
-        <p className="text-gray-600 mb-4">{excerpt}</p>
-        <div className="flex items-center text-sm text-gray-500 mb-4">
+        <p className="text-gray-600 mb-4">{metaDescription}</p>
+        <div className="flex items-center text-sm text-gray-500 mb-6">
           <User className="mr-2" />
-          <span className="mr-4">{author}</span>
+          <span className="mr-4">moiseshp</span>
           <Calendar className="mr-2" />
-          <span>{date}</span>
+          <span>{createdAt}</span>
         </div>
-        <Link
-          href={`/blog/${slug}`}
-          className="inline-flex items-center text-blue-600 hover:text-blue-800"
-        >
-          Leer más
-          <ArrowRight className="ml-2" />
-        </Link>
+        <Button asChild>
+          <Link href={`/blog/${slug}`} title={`Read more about ${title}`}>
+            Leer más
+            <ArrowRight />
+          </Link>
+        </Button>
       </div>
     </div>
   );
-}
+};

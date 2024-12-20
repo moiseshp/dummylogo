@@ -12,6 +12,12 @@ export const Navbar = () => {
         <BrandLogo />
       </Link>
       <nav className="items-center gap-x-2 h-full hidden md:flex text-muted-foreground">
+        <Button variant="ghost" asChild>
+          <Link href="/">Home</Link>
+        </Button>
+        <Button variant="ghost" asChild>
+          <Link href="/blog">Articles</Link>
+        </Button>
         <ThemeToggle />
       </nav>
       <nav className="block md:hidden">

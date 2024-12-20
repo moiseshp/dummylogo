@@ -1,8 +1,8 @@
-import PostCard from '@/app/blog/(components)/post-card';
+import Link from 'next/link';
+import { Metadata } from 'next';
 import { Sparkle } from '@phosphor-icons/react/dist/ssr';
 import postJSON from '@/server/data/post.json';
-import { Metadata } from 'next';
-import Link from 'next/link';
+import { PostCard } from '@/app/blog/(components)/post-card';
 
 export const metadata: Metadata = {
   title:
@@ -22,7 +22,7 @@ export default function Page() {
         </p>
       </article>
 
-      <figure className="border rounded-lg px-5 py-4 flex items-center gap-4">
+      <figure className="border rounded-lg px-5 py-4 flex flex-col sm:flex-row sm:items-center gap-4">
         <Sparkle className="w-6 h-6" />
         <p>
           <strong className="mr-1">Do you want to create your own logo?</strong>
@@ -37,8 +37,8 @@ export default function Page() {
       </figure>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {posts.map((post) => (
-          <PostCard key={post.slug} {...post} />
+        {posts.map((item) => (
+          <PostCard key={item.slug} {...item} />
         ))}
       </div>
     </div>

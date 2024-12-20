@@ -9,13 +9,13 @@ import {
 export default function Page() {
   return (
     <article className="max-w-2xl mx-auto px-4 py-8">
-      {/* <Image
+      <img
         src="/placeholder.svg?height=400&width=800"
         alt="Imagen principal del blog"
         width={800}
         height={400}
         className="w-full h-auto rounded-lg shadow-md mb-8"
-      /> */}
+      />
 
       <h1 className="text-4xl font-bold mb-4">Título del Post del Blog</h1>
 
