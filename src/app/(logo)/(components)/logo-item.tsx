@@ -44,7 +44,7 @@ const LogoItem: React.FC<LogoItemProps> = React.memo(
   }) => {
     const { copyToClipboard } = useCopyToClipboard();
     return (
-      <div className="h-96 flex flex-col relative border-b sm:border sm:-mr-[1px] sm:-mb-[1px] text-muted-foreground/60 hover:text-black">
+      <div className="h-96 flex flex-col relative border-b sm:border sm:-mr-[1px] sm:-mb-[1px] text-muted-foreground hover:text-foreground">
         <div className="h-16 flex items-center px-4 gap-x-1 border-b border-dotted">
           <TooltipProvider>
             <Tooltip>
@@ -78,7 +78,7 @@ const LogoItem: React.FC<LogoItemProps> = React.memo(
                   onClick={onSetIcon}
                   aria-label={`Set ${iconName} as global icon to your logo`}
                 >
-                  <PhosphorLogo weight="fill" color="#3C402B" />
+                  <PhosphorLogo weight="fill" />
                   {iconName}
                   {isIconSelected ? <CheckSquare weight="fill" /> : <Square />}
                 </Button>
@@ -128,7 +128,7 @@ const LogoItem: React.FC<LogoItemProps> = React.memo(
               </Tooltip>
             </TooltipProvider>
           </div>
-          <Button size="sm" variant="ghost" asChild>
+          <Button variant="ghost" asChild>
             <Link
               href={`/logos/${id}`}
               title={`Create you custom dummylogo with ${iconName} + ${styles.fontFamily}`}

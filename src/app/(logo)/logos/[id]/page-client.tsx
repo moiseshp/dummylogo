@@ -130,7 +130,11 @@ export default function PageClient({ data: logo }: { data: Logo }) {
             }}
             aria-label={`Clipboard dummylogo color`}
           >
-            <Square color={customization.color} weight="fill" />
+            <Square
+              color={customization.color}
+              weight="fill"
+              className="border"
+            />
             {customization.color}
           </Button>
         </div>
