@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Calendar, User, ArrowRight } from '@phosphor-icons/react/dist/ssr';
-import { IPost } from '@/interfaces/post';
+import { IPost } from '@/app/blog/(types)/post';
 import { Button } from '@/components/ui/button';
 
 export const PostCard: React.FC<IPost> = ({
