@@ -1,9 +1,9 @@
 import { notFound } from 'next/navigation';
 import type { Logo } from '@/app/(logo)/(types)/logo';
 import { generateGoogleFont } from '@/app/(logo)/(utils)/generate-google-font';
-import logosJSON from '@/server/data/logos.json';
 import PageClient from './page-client';
 import { Metadata } from 'next';
+import allLogos from '@/app/(logo)/(data)/logos.json';
 
 type PageProps = {
   params: {
@@ -14,7 +14,7 @@ type PageProps = {
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
-  const data: Logo[] = logosJSON;
+  const data: Logo[] = allLogos;
   const logo = data.find((item) => item.id == params.id);
 
   return {
@@ -26,7 +26,7 @@ export async function generateMetadata({
 }
 
 export default function Page({ params }: PageProps) {
-  const data: Logo[] = logosJSON;
+  const data: Logo[] = allLogos;
   const logo = data.find((item) => item.id == params.id);
 
   if (!logo) {

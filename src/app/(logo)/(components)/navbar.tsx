@@ -10,6 +10,7 @@ import { BgColorPicker } from '@/app/(logo)/(components)/bg-color-picker';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { List } from '@phosphor-icons/react';
 import { Button } from '@/components/ui/button';
+import { GithubLogo } from '@phosphor-icons/react/dist/ssr';
 
 export const Navbar = () => {
   return (
@@ -24,6 +25,16 @@ export const Navbar = () => {
         <TextColorPicker />
         <BgColorPicker />
         <ResetButton />
+        <Button variant="ghost" size="icon" asChild>
+          <a
+            href="https://github.com/moiseshp/dummylogo"
+            target="_blank"
+            title="Go to github project"
+            className="font-semibold"
+          >
+            <GithubLogo />
+          </a>
+        </Button>
         <ThemeToggle />
       </nav>
       <nav className="block md:hidden">
