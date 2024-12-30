@@ -105,7 +105,7 @@ export default function PageClient({ data: logo }: { data: Logo }) {
             variant="item"
             className="flex-1 border-r"
             onClick={handleDownloadLogo}
-            aria-label={`Download dummylogo: ${logo.id}`}
+            title={`Download dummylogo: ${logo.id}`}
           >
             <DownloadSimple />
             Download Logo
@@ -117,7 +117,7 @@ export default function PageClient({ data: logo }: { data: Logo }) {
               copyToClipboard(`${BASE_URL}/logos/${logo.id}`);
               toast.success('Link copied!');
             }}
-            aria-label={`Clipboard dummylogo: ${logo.id}`}
+            title={`Clipboard dummylogo: ${logo.id}`}
           >
             <Copy />
           </Button>
@@ -128,7 +128,7 @@ export default function PageClient({ data: logo }: { data: Logo }) {
               copyToClipboard(customization.color);
               toast.success('Color copied!');
             }}
-            aria-label={`Clipboard dummylogo color`}
+            title={`Clipboard dummylogo color`}
           >
             <Square
               color={customization.color}
