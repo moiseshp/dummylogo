@@ -16,7 +16,7 @@ export const ThemeToggle = () => {
   if (!isMounted) return;
 
   return (
-    <Button variant="ghost" onClick={handleTheme}>
+    <Button variant="ghost" size="icon" onClick={handleTheme}>
       {isDark() ? <Sun /> : <MoonStars />}
     </Button>
   );

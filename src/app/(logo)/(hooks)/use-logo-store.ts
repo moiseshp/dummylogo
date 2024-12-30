@@ -6,8 +6,8 @@ import { IconWeight } from '@phosphor-icons/react';
 const LOGO_STORE_KEY = 'dummylogo_v0.2';
 const DEFAULT_LOGO_STORE = {
   name: undefined,
-  color: '#313131',
-  bgColor: '#fbfcfe',
+  color: '#FAFAFA',
+  bgColor: '#252626',
   layout: 'left',
   iconSize: 40,
   iconStyle: 'fill',
