@@ -10,6 +10,7 @@ export async function getPostBySlug(slug: string) {
     .single();
 
   if (error) {
+    console.error(`GET_POST_BY_SLUG: ${JSON.stringify(error)}`);
     return { error };
   }
 

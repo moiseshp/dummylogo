@@ -5,6 +5,7 @@ export async function getPosts() {
   const { data, error } = await db.from('posts').select();
 
   if (error) {
+    console.error(`GET_POSTS: ${JSON.stringify(error)}`);
     return { error };
   }
 
