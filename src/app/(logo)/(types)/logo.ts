@@ -4,7 +4,6 @@ export type Layout = 'top' | 'right' | 'bottom' | 'left';
 export interface Logo {
   id: string;
   iconName: string;
-  category: string;
   styles: React.CSSProperties;
   customization?: Customization;
 }

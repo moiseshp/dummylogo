@@ -6,8 +6,7 @@
       "fontFamily": "Montez",
       "fontWeight": 400,
       "fontSize": 46
-    },
-    "category": "technology"
+    }
   },
   {
     "id": "bruno_ace_sc-metronome",
@@ -16,8 +15,7 @@
       "fontFamily": "Bruno Ace SC",
       "fontWeight": 400,
       "fontSize": 28
-    },
-    "category": "technology"
+    }
   },
   {
     "id": "tourney-jeep",
@@ -26,8 +24,7 @@
       "fontFamily": "Tourney",
       "fontWeight": 600,
       "fontSize": 30
-    },
-    "category": "technology"
+    }
   },
   {
     "id": "dongle-chat_circle_dots",
@@ -37,8 +34,7 @@
       "fontWeight": 700,
       "fontSize": 50,
       "marginTop": 6
-    },
-    "category": "technology"
+    }
   },
   {
     "id": "barlow_condensed-high_heel",
@@ -47,8 +43,7 @@
       "fontFamily": "Barlow Condensed",
       "fontWeight": 700,
       "fontSize": 40
-    },
-    "category": "technology"
+    }
   },
   {
     "id": "cybersphere",
@@ -58,8 +53,7 @@
       "fontWeight": 400,
       "fontSize": 30,
       "marginTop": 4
-    },
-    "category": "technology"
+    }
   },
   {
     "id": "matemasie-flying_saucer",
@@ -69,8 +63,7 @@
       "fontWeight": 400,
       "fontSize": 30,
       "marginTop": -14
-    },
-    "category": "cosmic"
+    }
   },
   {
     "id": "mochiy_pop_p_one-mountains",
@@ -79,8 +72,7 @@
       "fontFamily": "Mochiy Pop P One",
       "fontWeight": 400,
       "fontSize": 28
-    },
-    "category": "technology"
+    }
   },
   {
     "id": "caprasimo-hand_tap",
@@ -89,8 +81,7 @@
       "fontFamily": "Caprasimo",
       "fontWeight": 400,
       "fontSize": 30
-    },
-    "category": "technology"
+    }
   },
   {
     "id": "bungee_shade-flag_checkered",
@@ -99,8 +90,7 @@
       "fontFamily": "Bungee Shade",
       "fontWeight": 400,
       "fontSize": 25
-    },
-    "category": "car"
+    }
   },
   {
     "id": "poppins-leaf",
@@ -109,8 +99,7 @@
       "fontFamily": "Poppins",
       "fontWeight": 400,
       "fontSize": 28
-    },
-    "category": "environment"
+    }
   },
   {
     "id": "train_one-boat",
@@ -119,8 +108,7 @@
       "fontFamily": "Train One",
       "fontWeight": 400,
       "fontSize": 28
-    },
-    "category": "technology"
+    }
   },
   {
     "id": "righteous-chats",
@@ -129,8 +117,7 @@
       "fontFamily": "Righteous",
       "fontWeight": 400,
       "fontSize": 32
-    },
-    "category": "technology"
+    }
   },
   {
     "id": "pixelify_sans-game_controller",
@@ -139,8 +126,7 @@
       "fontFamily": "Pixelify Sans",
       "fontWeight": 500,
       "fontSize": 32
-    },
-    "category": "technology"
+    }
   },
   {
     "id": "freckle_face-ghost",
@@ -149,8 +135,7 @@
       "fontFamily": "Freckle Face",
       "fontWeight": 400,
       "fontSize": 34
-    },
-    "category": "technology"
+    }
   },
   {
     "id": "special_elite-skull",
@@ -160,8 +145,7 @@
       "fontWeight": 400,
       "fontSize": 32,
       "marginTop": 4
-    },
-    "category": "technology"
+    }
   },
   {
     "id": "zen_tokyo_zoo-car_battery",
@@ -171,8 +155,7 @@
       "fontWeight": 400,
       "fontSize": 42,
       "marginTop": -12
-    },
-    "category": "technology"
+    }
   },
   {
     "id": "warnes-radio",
@@ -182,8 +165,7 @@
       "fontWeight": 400,
       "fontSize": 24,
       "marginTop": 4
-    },
-    "category": "technology"
+    }
   },
   {
     "id": "rubik_moonrocks-balloon",
@@ -192,8 +174,7 @@
       "fontFamily": "Rubik Moonrocks",
       "fontWeight": 400,
       "fontSize": 30
-    },
-    "category": "technology"
+    }
   },
   {
     "id": "rampart_one-beach_ball",
@@ -202,8 +183,7 @@
       "fontFamily": "Rampart One",
       "fontWeight": 400,
       "fontSize": 30
-    },
-    "category": "technology"
+    }
   },
   {
     "id": "gorditas-planet",
@@ -212,8 +192,7 @@
       "fontFamily": "Gorditas",
       "fontWeight": 700,
       "fontSize": 30
-    },
-    "category": "technology"
+    }
   },
   {
     "id": "revalia-flask",
@@ -222,8 +201,7 @@
       "fontFamily": "Revalia",
       "fontWeight": 400,
       "fontSize": 28
-    },
-    "category": "technology"
+    }
   },
   {
     "id": "pacifico-airplane_takeoff",
@@ -232,8 +210,7 @@
       "fontFamily": "Pacifico",
       "fontWeight": 400,
       "fontSize": 36
-    },
-    "category": "technology"
+    }
   },
   {
     "id": "bubblegum_sans-bomb",
@@ -243,8 +220,7 @@
       "fontWeight": 400,
       "fontSize": 38,
       "marginTop": 6
-    },
-    "category": "technology"
+    }
   },
   {
     "id": "give_you_glory-bowl_steam",
@@ -254,7 +230,6 @@
       "fontWeight": 400,
       "fontSize": 34,
       "marginTop": 8
-    },
-    "category": "technology"
+    }
   }
 ]
