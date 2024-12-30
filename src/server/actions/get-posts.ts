@@ -13,6 +13,7 @@ export async function getPosts() {
       ...item,
       imageUrl: item.image_url,
       metaDescription: item.meta_description,
+      createdAt: item.created_at,
     })),
   };
 }
