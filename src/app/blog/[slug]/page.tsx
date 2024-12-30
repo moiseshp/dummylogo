@@ -1,8 +1,8 @@
 import { Calendar, User, Tag } from '@phosphor-icons/react/dist/ssr';
 import { DummyLogoBanner } from '@/app/blog/(components)/dummy-logo-banner';
-import postJSON from '@/server/data/post.json';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
+import { getPostBySlug } from '@/server/actions/get-post-by-slug';
 
 type PageProps = {
   params: {
@@ -13,7 +13,7 @@ type PageProps = {
 export async function generateMetadata({
   params: { slug },
 }: PageProps): Promise<Metadata> {
-  const post = postJSON.find((item) => item.slug === slug);
+  const post = await getPostBySlug(slug);
 
   return {
     title: `DummyLogo - ${post?.title}`,
@@ -23,8 +23,8 @@ export async function generateMetadata({
   };
 }
 
-export default function Page({ params: { slug } }: PageProps) {
-  const post = postJSON.find((item) => item.slug === slug);
+export default async function Page({ params: { slug } }: PageProps) {
+  const post = await getPostBySlug(slug);
 
   if (!post) {
     notFound();
@@ -57,7 +57,7 @@ export default function Page({ params: { slug } }: PageProps) {
         <Tag className="mr-2" />
         <span className="text-sm font-semibold mr-2">Tags:</span>
         <div className="flex flex-wrap items-center gap-x-2">
-          {post.tags.map((item) => (
+          {post.tags.map((item: string) => (
             <span
               key={item}
               className="bg-secondary text-foreground px-3 py-1 rounded-sm text-sm"
