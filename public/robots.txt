@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://dummylogo.vercel.app
+
+# Sitemaps
+Sitemap: https://dummylogo.vercel.app/sitemap.xml
