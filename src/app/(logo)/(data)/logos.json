@@ -1,5 +1,50 @@
 [
   {
+    "id": "cybersphere",
+    "iconName": "Armchair",
+    "styles": {
+      "fontFamily": "Hammersmith One",
+      "fontWeight": 400,
+      "fontSize": 34
+    }
+  },
+  {
+    "id": "mailbox_hepta-slab",
+    "iconName": "Mailbox",
+    "styles": {
+      "fontFamily": "Hepta Slab",
+      "fontWeight": 600,
+      "fontSize": 28
+    }
+  },
+  {
+    "id": "robot_jura",
+    "iconName": "Robot",
+    "styles": {
+      "fontFamily": "Jura",
+      "fontWeight": 700,
+      "fontSize": 30
+    }
+  },
+  {
+    "id": "rainbow-cloud_playwrite-hr-lijeva",
+    "iconName": "RainbowCloud",
+    "styles": {
+      "fontFamily": "Playwrite HR Lijeva",
+      "fontWeight": 400,
+      "fontSize": 30
+    }
+  },
+  {
+    "id": "basball-cap_poiret-one",
+    "iconName": "BaseballCap",
+    "styles": {
+      "fontFamily": "Poiret One",
+      "fontWeight": 400,
+      "fontSize": 36
+    }
+  },
+  {
     "id": "montez-baby_carriage",
     "iconName": "BabyCarriage",
     "styles": {

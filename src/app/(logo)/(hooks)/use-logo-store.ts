@@ -10,7 +10,7 @@ const DEFAULT_LOGO_STORE = {
   bgColor: '#252626',
   layout: 'left',
   iconSize: 40,
-  iconStyle: 'fill',
+  iconStyle: 'regular',
   iconName: undefined,
   styles: undefined,
 } as Customization;

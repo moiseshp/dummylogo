@@ -1,313 +1,155 @@
 [
   {
     "id": "cybersphere",
-    "name": "CyberSphere",
     "iconName": "Radio",
-    "strokeWidth": 1.3,
-    "color": "#6C63FF",
-    "styles": {
-      "fontFamily": "Poiret One",
-      "fontWeight": 400,
-      "fontSize": 36
-    },
-    "category": "technology"
-  },
-  {
-    "id": "cybersphere",
-    "name": "CyberSphere",
-    "iconName": "Radio",
-    "strokeWidth": 1.3,
-    "color": "#6C63FF",
-    "styles": {
-      "fontFamily": "Noto Sans SC",
-      "fontWeight": 700,
-      "fontSize": 36,
-      "letterSpacing": -1
-    },
-    "category": "technology"
-  },
-  {
-    "id": "cybersphere",
-    "name": "CyberSphere",
-    "iconName": "Radio",
-    "strokeWidth": 1.3,
-    "color": "#6C63FF",
-    "styles": {
-      "fontFamily": "Playwrite HR Lijeva",
-      "fontWeight": 400,
-      "fontSize": 36
-    },
-    "category": "technology"
-  },
-  {
-    "id": "cybersphere",
-    "name": "CyberSphere",
-    "iconName": "Radio",
-    "strokeWidth": 1.3,
-    "color": "#6C63FF",
-    "styles": {
-      "fontFamily": "Jura",
-      "fontWeight": 700,
-      "fontSize": 36,
-      "letterSpacing": -1.5
-    },
-    "category": "technology"
-  },
-  {
-    "id": "cybersphere",
-    "name": "CyberSphere",
-    "iconName": "Radio",
-    "strokeWidth": 1.3,
-    "color": "#6C63FF",
-    "styles": {
-      "fontFamily": "Readex Pro",
-      "fontWeight": 700,
-      "fontSize": 34,
-      "letterSpacing": -1
-    },
-    "category": "technology"
-  },
-  {
-    "id": "cybersphere",
-    "name": "CyberSphere",
-    "iconName": "Radio",
-    "strokeWidth": 1.3,
-    "color": "#6C63FF",
-    "styles": {
-      "fontFamily": "Hepta Slab",
-      "fontWeight": 600,
-      "fontSize": 34
-    },
-    "category": "technology"
-  },
-  {
-    "id": "cybersphere",
-    "name": "CyberSphere",
-    "iconName": "Radio",
-    "strokeWidth": 1.3,
-    "color": "#6C63FF",
     "styles": {
       "fontFamily": "Hammersmith One",
       "fontWeight": 400,
-      "fontSize": 34,
-      "letterSpacing": -1
-    },
-    "category": "technology"
+      "fontSize": 34
+    }
   },
   {
     "id": "cybersphere",
-    "name": "CyberSphere",
     "iconName": "Radio",
-    "strokeWidth": 1.3,
-    "color": "#6C63FF",
     "styles": {
       "fontFamily": "Comfortaa",
       "fontWeight": 700,
       "fontSize": 34
-    },
-    "category": "technology"
+    }
   },
   {
     "id": "cybersphere",
-    "name": "CyberSphere",
     "iconName": "Radio",
-    "strokeWidth": 1.3,
-    "color": "#6C63FF",
     "styles": {
       "fontFamily": "Syne",
       "fontWeight": 700,
-      "fontSize": 34,
-      "letterSpacing": -0.5
-    },
-    "category": "technology"
+      "fontSize": 34
+    }
   },
   {
     "id": "cybersphere",
-    "name": "CyberSphere",
     "iconName": "Radio",
-    "strokeWidth": 1.3,
-    "color": "#6C63FF",
     "styles": {
       "fontFamily": "Tsukimi Rounded",
       "fontWeight": 700,
-      "fontSize": 34,
-      "letterSpacing": -1
-    },
-    "category": "technology"
+      "fontSize": 34
+    }
   },
   {
     "id": "cybersphere",
-    "name": "CyberSphere",
     "iconName": "Radio",
-    "strokeWidth": 1.3,
-    "color": "#6C63FF",
     "styles": {
       "fontFamily": "Aldrich",
       "fontWeight": 400,
-      "fontSize": 34,
-      "letterSpacing": -1
-    },
-    "category": "technology"
+      "fontSize": 34
+    }
   },
   {
     "id": "cybersphere",
-    "name": "CyberSphere",
     "iconName": "Radio",
-    "strokeWidth": 1.3,
-    "color": "#6C63FF",
     "styles": {
       "fontFamily": "Black Ops One",
       "fontWeight": 400,
       "fontSize": 34
-    },
-    "category": "technology"
+    }
   },
   {
     "id": "cybersphere",
-    "name": "CyberSphere",
     "iconName": "Radio",
-    "strokeWidth": 1.3,
-    "color": "#6C63FF",
     "styles": {
       "fontFamily": "Nabla",
       "fontWeight": 400,
       "fontSize": 34
-    },
-    "category": "technology"
+    }
   },
   {
     "id": "cybersphere",
-    "name": "CyberSphere",
     "iconName": "Radio",
-    "strokeWidth": 1.3,
-    "color": "#6C63FF",
     "styles": {
       "fontFamily": "Rye",
       "fontWeight": 400,
       "fontSize": 34
-    },
-    "category": "technology"
+    }
   },
   {
     "id": "cybersphere",
-    "name": "CyberSphere",
     "iconName": "Radio",
-    "strokeWidth": 1.3,
-    "color": "#6C63FF",
     "styles": {
       "fontFamily": "Syncopate",
       "fontWeight": 700,
-      "fontSize": 20,
-      "letterSpacing": -1
-    },
-    "category": "technology"
+      "fontSize": 20
+    }
   },
   {
     "id": "cybersphere",
-    "name": "CyberSphere",
     "iconName": "Radio",
-    "strokeWidth": 1.3,
-    "color": "#6C63FF",
     "styles": {
       "fontFamily": "Smokum",
       "fontWeight": 400,
       "fontSize": 38
-    },
-    "category": "technology"
+    }
   },
   {
     "id": "cybersphere",
-    "name": "CyberSphere",
     "iconName": "Radio",
-    "strokeWidth": 1.3,
-    "color": "#6C63FF",
     "styles": {
       "fontFamily": "Vast Shadow",
       "fontWeight": 400,
-      "fontSize": 30,
-      "letterSpacing": -2
-    },
-    "category": "technology"
+      "fontSize": 30
+    }
   },
   {
     "id": "cybersphere",
-    "name": "CyberSphere",
     "iconName": "Radio",
-    "strokeWidth": 1.3,
-    "color": "#6C63FF",
     "styles": {
       "fontFamily": "Secular One",
       "fontWeight": 400,
       "fontSize": 30
-    },
-    "category": "technology"
+    }
   },
   {
     "id": "cybersphere",
-    "name": "CyberSphere",
     "iconName": "Radio",
-    "strokeWidth": 1.3,
-    "color": "#6C63FF",
     "styles": {
       "fontFamily": "Tilt Warp",
       "fontWeight": 400,
       "fontSize": 30
-    },
-    "category": "technology"
+    }
   },
   {
     "id": "cybersphere",
-    "name": "CyberSphere",
     "iconName": "Radio",
-    "strokeWidth": 1.3,
-    "color": "#6C63FF",
     "styles": {
       "fontFamily": "Rubik Wet Paint",
       "fontWeight": 400,
-      "fontSize": 30,
-      "letterSpacing": -1
-    },
-    "category": "technology"
+      "fontSize": 30
+    }
   },
   {
     "id": "cybersphere",
-    "name": "CyberSphere",
     "iconName": "Radio",
-    "strokeWidth": 1.3,
-    "color": "#6C63FF",
     "styles": {
       "fontFamily": "Rubik Vinyl",
       "fontWeight": 400,
       "fontSize": 30
-    },
-    "category": "technology"
+    }
   },
   {
     "id": "cybersphere",
-    "name": "CyberSphere",
     "iconName": "Radio",
-    "strokeWidth": 1.3,
-    "color": "#6C63FF",
     "styles": {
       "fontFamily": "Nosifer",
       "fontWeight": 400,
-      "fontSize": 22,
-      "letterSpacing": -0.8
-    },
-    "category": "technology"
+      "fontSize": 22
+    }
   },
   {
     "id": "cybersphere",
-    "name": "CyberSphere",
     "iconName": "Radio",
-    "strokeWidth": 1.3,
-    "color": "#6C63FF",
     "styles": {
       "fontFamily": "Rammetto One",
       "fontWeight": 400,
-      "fontSize": 22,
-      "letterSpacing": -0.8
-    },
-    "category": "technology"
+      "fontSize": 22
+    }
   }
 ]

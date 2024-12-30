@@ -26,6 +26,11 @@ import {
   Mountains,
   HandTap,
   FlagCheckered,
+  BaseballCap,
+  RainbowCloud,
+  Robot,
+  Mailbox,
+  Armchair,
 } from '@phosphor-icons/react';
 export {
   Leaf,
@@ -55,4 +60,9 @@ export {
   Mountains,
   HandTap,
   FlagCheckered,
+  BaseballCap,
+  RainbowCloud,
+  Robot,
+  Mailbox,
+  Armchair,
 };
