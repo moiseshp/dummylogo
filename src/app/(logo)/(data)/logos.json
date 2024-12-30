@@ -1,6 +1,78 @@
 [
   {
-    "id": "cybersphere",
+    "id": "rammetto_one-cybersphere",
+    "iconName": "Football",
+    "styles": {
+      "fontFamily": "Rammetto One",
+      "fontWeight": 400,
+      "fontSize": 22
+    }
+  },
+  {
+    "id": "rubik_vinyl-cybersphere",
+    "iconName": "Barcode",
+    "styles": {
+      "fontFamily": "Rubik Vinyl",
+      "fontWeight": 400,
+      "fontSize": 30
+    }
+  },
+  {
+    "id": "tilt_warp-football_helmet",
+    "iconName": "FootballHelmet",
+    "styles": {
+      "fontFamily": "Tilt Warp",
+      "fontWeight": 400,
+      "fontSize": 30
+    }
+  },
+  {
+    "id": "rye-barn",
+    "iconName": "Barn",
+    "styles": {
+      "fontFamily": "Rye",
+      "fontWeight": 400,
+      "fontSize": 28
+    }
+  },
+  {
+    "id": "black_ops_one-cybersphere",
+    "iconName": "Disc",
+    "styles": {
+      "fontFamily": "Black Ops One",
+      "fontWeight": 400,
+      "fontSize": 30
+    }
+  },
+  {
+    "id": "tsukimi_rounded-meteor",
+    "iconName": "Meteor",
+    "styles": {
+      "fontFamily": "Tsukimi Rounded",
+      "fontWeight": 700,
+      "fontSize": 30
+    }
+  },
+  {
+    "id": "syne-crosshair",
+    "iconName": "Crosshair",
+    "styles": {
+      "fontFamily": "Syne",
+      "fontWeight": 700,
+      "fontSize": 28
+    }
+  },
+  {
+    "id": "comfortaa-golf",
+    "iconName": "Golf",
+    "styles": {
+      "fontFamily": "Comfortaa",
+      "fontWeight": 700,
+      "fontSize": 30
+    }
+  },
+  {
+    "id": "hammersmith_one-armchair",
     "iconName": "Armchair",
     "styles": {
       "fontFamily": "Hammersmith One",
@@ -9,7 +81,7 @@
     }
   },
   {
-    "id": "mailbox_hepta-slab",
+    "id": "hepta_slab-mailbox",
     "iconName": "Mailbox",
     "styles": {
       "fontFamily": "Hepta Slab",
@@ -18,7 +90,7 @@
     }
   },
   {
-    "id": "robot_jura",
+    "id": "robot-jura",
     "iconName": "Robot",
     "styles": {
       "fontFamily": "Jura",
@@ -27,7 +99,7 @@
     }
   },
   {
-    "id": "rainbow-cloud_playwrite-hr-lijeva",
+    "id": "playwrite_hr_lijeva-rainbow_cloud",
     "iconName": "RainbowCloud",
     "styles": {
       "fontFamily": "Playwrite HR Lijeva",
@@ -36,7 +108,7 @@
     }
   },
   {
-    "id": "basball-cap_poiret-one",
+    "id": "poiret-one-basball_cap",
     "iconName": "BaseballCap",
     "styles": {
       "fontFamily": "Poiret One",
@@ -258,7 +330,7 @@
     }
   },
   {
-    "id": "bubblegum_sans-bomb",
+    "id": "bubblegum-sans-bomb",
     "iconName": "Bomb",
     "styles": {
       "fontFamily": "Bubblegum Sans",

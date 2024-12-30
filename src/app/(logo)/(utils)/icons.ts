@@ -31,6 +31,14 @@ import {
   Robot,
   Mailbox,
   Armchair,
+  Golf,
+  Crosshair,
+  Meteor,
+  Disc,
+  Barn,
+  FootballHelmet,
+  Barcode,
+  Football,
 } from '@phosphor-icons/react';
 export {
   Leaf,
@@ -65,4 +73,12 @@ export {
   Robot,
   Mailbox,
   Armchair,
+  Golf,
+  Crosshair,
+  Meteor,
+  Disc,
+  Barn,
+  FootballHelmet,
+  Barcode,
+  Football,
 };
