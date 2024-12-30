@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="public/Screenshot-My-Portfolio-Web.png" alt="Screenshot - Dummy Logo Maker" />
+  <img src="public/Screenshot-DummyLogo.png" alt="Screenshot - Dummy Logo Maker" />
 </div>
 
 <div align="center">

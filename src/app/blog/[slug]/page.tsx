@@ -3,6 +3,7 @@ import { DummyLogoBanner } from '@/app/blog/(components)/dummy-logo-banner';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import { getPostBySlug } from '@/server/actions/get-post-by-slug';
+import { BASE_URL } from '@/lib/config';
 
 type PageProps = {
   params: {
@@ -14,12 +15,32 @@ export async function generateMetadata({
   params: { slug },
 }: PageProps): Promise<Metadata> {
   const post = await getPostBySlug(slug);
+  const title = `DummyLogo - ${post?.title}`;
 
   return {
-    title: `DummyLogo - ${post?.title}`,
+    title,
     applicationName: 'dummylogo',
     publisher: 'DummyLogo by moiseshp',
     description: post?.metaDescription,
+    openGraph: {
+      title,
+      description: post?.metaDescription,
+      url: `${BASE_URL}/blog/${post?.slug}`,
+      images: [
+        {
+          url: post?.imageUrl,
+          width: 1200,
+          height: 900,
+          alt: post?.description,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      site: '@moiseseduardohp',
+      title,
+      description: post?.metaDescription,
+    },
   };
 }
 
