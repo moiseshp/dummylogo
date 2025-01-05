@@ -1,4 +1,4 @@
-import { GoogleAnalytics } from '@next/third-parties/google';
+import Script from 'next/script';
 import { baseFont } from '@/app/fonts';
 import { cn } from '@/lib/utils';
 import { ThemeProvider } from '@/components/theme-provider';
@@ -12,6 +12,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <Script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="IuxWFn6CmIedmOeYrsN4dw"
+          async
+        />
+      </head>
       <body className={cn('flex flex-col min-h-screen', baseFont.className)}>
         <ThemeProvider
           attribute="class"
@@ -23,7 +30,6 @@ export default function RootLayout({
           <Toaster richColors />
         </ThemeProvider>
       </body>
-      <GoogleAnalytics gaId="G-W7MJZQ006Q" />
     </html>
   );
 }
